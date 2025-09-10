@@ -1,0 +1,80 @@
+.skillsContainer {
+  margin-top: 50px;
+}
+
+.sectionTitle {
+  font-weight: 800;
+  font-size: 30px;
+  font-family: cursive;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 60px;
+}
+.sectionTitle span {
+    font-size: 16px;
+    font-weight: 500;
+    color: grey;
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+        color: black;
+    }
+
+}
+.sectionDescription {
+  font-size: 15px;
+  color: grey;
+}
+
+.skillsContainer .skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+  /* background-color: yellow; */
+  
+  /* remove margin later on media queries */
+  /* margin-left: -20px; */
+}
+@media screen and (max-width) {
+    
+}
+.skillsContainer .skill {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  /* background-color: yellow; */
+  height: 40px;
+  background-color: #f1f1f1b7;
+  padding: 7px;
+  border-radius: 10px;
+}
+.skillsContainer .skillIconContainer {
+  /* background-color: red; */
+  aspect-ratio: 1/1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+.skillsContainer .colored {
+    font-size: 23px;
+}
+.skillsContainer .skillTitle {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 1px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;  color: #717171;
+
+}
+.skillsContainer .skillDescription {
+  font-size: 10.5px;
+  /* font-weight: 600; */
+  color: #828282;
+}

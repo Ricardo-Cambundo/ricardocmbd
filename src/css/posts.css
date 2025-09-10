@@ -1,0 +1,93 @@
+#postsSection .posts {
+  margin-top: 20px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  /* padding-inline: 25px; */
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+#postsSection .post {
+  display: flex;
+  flex-direction: row;
+  padding: 25px;
+  gap: 20px;
+  background-color: white;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(0.96);
+  }
+}
+#postsSection .post:not(:first-child) {
+    /* background-color: red !important; */
+    border-top: 1px solid #e0e0e0;
+}
+
+#postsSection .left {
+  flex: 1;
+}
+#postsSection .right {
+  color: #858585;
+  text-align: right;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.right .date {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 10px;
+    text-align: right;
+}
+#postsSection .postTitle {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  color: #292929;
+  margin-bottom: 4px;
+
+}
+#postsSection .postDescription {
+  color: grey;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; /* Number of lines to display */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#postsSection .postTags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 25px;
+}
+
+#postsSection .tag {
+  color: #000013d2;
+  background-color: #eeeeee;
+  font-size: 14px;
+  padding: 2px 6px;
+  font-weight: 500;
+  border-radius: 7px;
+}
+
+#postsSection .tag2 {
+  color: #000000;
+  background-color: white;
+  font-size: 13.5px;
+  padding: 1px 6px;
+  font-weight: 500;
+  border-radius: 7px;
+  border: 1px solid #dddcdc;
+}
