@@ -8,21 +8,28 @@ import Featured from './components/featured';
 import Posts from './components/posts';
 import Footer from './components/footer';
 import Work from './components/work';
+import { Route, Routes } from 'react-router-dom';
+import Projects from './pages/projects';
+import Privacy from './pages/privacy';
 
 
 function App() {
 
   return (
-    <div className='homeBodyContainer'>
-      <Header />
-      <Hero />
-      <Work />
-      <Skills />
-      <Featured />
-      <Posts />
+    <Routes>
+      <Route path='/' element={<div className='homeBodyContainer'>
+          <Header />
+          <Hero />
+          <Work />
+          <Skills />
+          <Featured />
+          <Posts />
+          <Footer/>
+        </div>}/>
 
-      <Footer/>
-    </div>
+        <Route path='/projects' element={<Projects />}/>
+        <Route path='/privacy' element={<Privacy />}/>
+    </Routes>
   )
 }
 

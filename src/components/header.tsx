@@ -1,9 +1,11 @@
 import { useState } from "react";
 import "../css/header.css";
 import logo from '../assets/images/logo-long-black.png'
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [dark, setDark] = useState(false);
+  const navigate = useNavigate()
   return (
     <nav className="headerContainer">
       <div className="header">
@@ -11,8 +13,12 @@ const Header = () => {
             <img src={logo}/>
         </div>
         <ul className="menuItems">
-          <li>home</li>
-          <li>projects</li>
+          <li onClick={() => {
+            location.pathname != '/' && navigate('/')
+          }}>home</li>
+          <li onClick={() => {
+            location.pathname != '/projects' && navigate('/projects')
+          }}>projects</li>
           <li>blog</li>
           <li>contact</li>
         </ul>

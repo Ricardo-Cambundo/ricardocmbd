@@ -1,12 +1,14 @@
+import { useNavigate } from "react-router-dom";
 import "../css/footer.css";
 
 const Footer = () => {
+  const navigate = useNavigate()
   return (
     <div className="skillsContainer" id="footer">
       <span>
         © {new Date().getFullYear()} {window.location.protocol}//
         {window.location.host} <span onClick={() => {
-          
+          location.pathname != '/privacy' && navigate('/privacy')
         }} style={{fontWeight: '600', color: 'black', cursor: 'pointer'}}> | privacy?</span>
       </span>
 
