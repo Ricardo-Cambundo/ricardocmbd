@@ -4,8 +4,10 @@ import levelrh from '../assets/images/levelrh.png'
 import levelinvoice from '../assets/images/levelinvoice.png'
 import navia from '../assets/images/navia.png'
 import going from '../assets/images/going_places.png'
+import { useNavigate } from "react-router-dom";
 
 const Featured = () => {
+  const navigate = useNavigate()
   const [posts, setPosts] = useState([
     {
       title: "Level RH",
@@ -46,7 +48,9 @@ const Featured = () => {
     <div className="skillsContainer" id="featuredSection">
       <div className="sectionTitle">
         featured projects{" "}
-        <span>
+        <span onClick={() => {
+          navigate('/projects')
+        }}>
           view more <i className="bi bi-arrow-right-short"></i>
         </span>
       </div>

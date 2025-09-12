@@ -8,6 +8,9 @@ import navia from "../assets/images/navia.png";
 import going from "../assets/images/going_places.png";
 import angotrans from "../assets/images/angotrans.png";
 import animescmbd from "../assets/images/animescmbd.png";
+import ispaj from "../assets/images/ispaj.png";
+import angotrans_site from "../assets/images/angotrans_site.png";
+
 import {
   Select,
   SelectContent,
@@ -89,6 +92,42 @@ const Projects = () => {
       source: true,
     },
     {
+      title: "ISPAJ",
+      description:
+        "Official website for one of Angola's biggest Higher Polytechnic Institute with 10k+ monthly visitors...",
+      image: ispaj,
+      tags: [
+        "React",
+        "JavaScript",
+        "Laravel/PHP",
+        "PostgreSQL",
+        "Google SMTP",
+        "RestAPIs",
+        "JWT",
+        "10k+ visitors/month",
+      ],
+      source: true,
+      website: "https://ispaj.co.ao/",
+    },
+    {
+      title: "AngoTrans Express website",
+      description:
+        "Corporate website for a company specialized in road transport and cargo transportation solutions...",
+      image: angotrans_site,
+      tags: [
+        "AngularJS",
+        "JavaScript",
+        "Laravel/PHP",
+        "PostgreSQL",
+        "Google SMTP",
+        "Twilio SMS",
+        "Docker",
+        "JWT",
+      ],
+      source: true,
+      website: 'https://angotransexpress.ao/'
+    },
+    {
       title: "AngoTrans Express",
       description: "Real-time bus tracking mobile app for IOS and Android...",
       image: angotrans,
@@ -123,7 +162,7 @@ const Projects = () => {
       source: true,
     },
   ]);
-  const [filtered, setFiltered] = useState(posts)
+  const [filtered, setFiltered] = useState(posts);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -131,24 +170,34 @@ const Projects = () => {
   const [filter, setFilter] = useState<any>("all");
   const [search, setSearch] = useState("");
   useEffect(() => {
-    setFiltered(posts.filter((item: any) => {
-      if (filter == "all"){
-        return true
-      }
-      else if (filter == "mobile"){
-        return [...item?.tags].some((i) => i == "IOS")
-      }
-      else {
-        return !([...item?.tags].some((i) => i == "IOS"))
-      }
-    }).filter((item: any) => {
-      if (search.length == 0){
-        return true
-      }else {
-        return `${item?.title}`.toLowerCase().includes(search.toLowerCase()) || `${item?.description}`.toLowerCase().includes(search.toLowerCase()) || [...item?.tags].some((i: string) => i?.toLowerCase().includes(search.toLowerCase()))
-      }
-    }))
-  }, [filter, search])
+    setFiltered(
+      posts
+        .filter((item: any) => {
+          if (filter == "all") {
+            return true;
+          } else if (filter == "mobile") {
+            return [...item?.tags].some((i) => i == "IOS");
+          } else {
+            return ![...item?.tags].some((i) => i == "IOS");
+          }
+        })
+        .filter((item: any) => {
+          if (search.length == 0) {
+            return true;
+          } else {
+            return (
+              `${item?.title}`.toLowerCase().includes(search.toLowerCase()) ||
+              `${item?.description}`
+                .toLowerCase()
+                .includes(search.toLowerCase()) ||
+              [...item?.tags].some((i: string) =>
+                i?.toLowerCase().includes(search.toLowerCase())
+              )
+            );
+          }
+        })
+    );
+  }, [filter, search]);
   return (
     <div className="homeBodyContainer">
       <Header />
@@ -163,18 +212,24 @@ const Projects = () => {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
-            <span onClick={() => {
-              setSearch('')
-            }}><i className="bi bi-backspace"></i>
-      </span>
+            <span
+              onClick={() => {
+                setSearch("");
+              }}
+            >
+              <i className="bi bi-backspace"></i>
+            </span>
           </div>
-          <Select onValueChange={(e) => {
-            setFilter(e)
-          }} value={filter}>
-            <SelectTrigger style={{outline: 'none'}} className="w-[180px]">
-              <SelectValue style={{outline: 'none'}} defaultValue={filter}/>
+          <Select
+            onValueChange={(e) => {
+              setFilter(e);
+            }}
+            value={filter}
+          >
+            <SelectTrigger style={{ outline: "none" }} className="w-[180px]">
+              <SelectValue style={{ outline: "none" }} defaultValue={filter} />
             </SelectTrigger>
-            <SelectContent style={{outline: 'none'}}>
+            <SelectContent style={{ outline: "none" }}>
               <SelectItem value="all">All</SelectItem>
               <SelectItem value="web">Web</SelectItem>
               <SelectItem value="mobile">Mobile</SelectItem>
@@ -202,6 +257,14 @@ const Projects = () => {
                       })}
                     </div>
                     <div className="projectLinks">
+                      {i?.website && (
+                        <div className="projectLink" onClick={() => {
+                          window.open(i?.website)
+                        }}>
+                          <i className="bi bi-globe"></i>
+                          Website
+                        </div>
+                      )}
                       {i?.source && (
                         <div className="projectLink">
                           <i className="bi bi-github"></i> Source
