@@ -9,8 +9,12 @@ const Header = () => {
   return (
     <nav className="headerContainer">
       <div className="header">
-        <div className="logoContainer">
-            <img src={logo}/>
+        <div className="logoContainer" style={{cursor: 'pointer !important'}} onClick={() => {
+          location.pathname != '/' && navigate('/')
+        }}>
+            <img src={logo} onClick={() => {
+          location.pathname != '/' && navigate('/')
+        }}/>
         </div>
         <ul className="menuItems">
           <li onClick={() => {

@@ -123,73 +123,102 @@ const Projects = () => {
       source: true,
     },
   ]);
+  const [filtered, setFiltered] = useState(posts)
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  const [filter, setFilter] = useState<any>(null);
+  const [filter, setFilter] = useState<any>("all");
   const [search, setSearch] = useState("");
+  useEffect(() => {
+    setFiltered(posts.filter((item: any) => {
+      if (filter == "all"){
+        return true
+      }
+      else if (filter == "mobile"){
+        return [...item?.tags].some((i) => i == "IOS")
+      }
+      else {
+        return !([...item?.tags].some((i) => i == "IOS"))
+      }
+    }).filter((item: any) => {
+      if (search.length == 0){
+        return true
+      }else {
+        return `${item?.title}`.toLowerCase().includes(search.toLowerCase()) || `${item?.description}`.toLowerCase().includes(search.toLowerCase()) || [...item?.tags].some((i: string) => i?.toLowerCase().includes(search.toLowerCase()))
+      }
+    }))
+  }, [filter, search])
   return (
-    <div className="homeBodyContainer page">
+    <div className="homeBodyContainer">
       <Header />
-
-      <div className="greetings">my projects</div>
-      <div className="searchContainer">
-        <input
-          type="text"
-          className="search"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-        <Select>
-          <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Theme" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="light">Light</SelectItem>
-            <SelectItem value="dark">Dark</SelectItem>
-            <SelectItem value="system">System</SelectItem>
-          </SelectContent>
-        </Select>
-      </div>
-
-      <div id="featuredSection">
-        <div className="projects">
-          {posts.map((i: any, index: number) => {
-            return (
-              <div className="project" key={index}>
-                <div className="imageContainer">
-                  <img src={i?.image} style={{}} />
-                </div>
-                <div className="projectInfo">
-                  <div className="projectTitle">{i?.title}</div>
-                  <div className="projectDescription">{i?.description}</div>
-                  <div className="projectTags">
-                    {[...(i?.tags || [])].map((tag: any, ind: number) => {
-                      return (
-                        <div className="projectTag" key={ind}>
-                          {tag}
-                        </div>
-                      );
-                    })}
+      <div className="page">
+        <div className="greetings">my projects</div>
+        <div className="searchContainer">
+          <div className="inputContainer">
+            <input
+              type="text"
+              className="search"
+              placeholder="Search something..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+            <span onClick={() => {
+              setSearch('')
+            }}><i className="bi bi-backspace"></i>
+      </span>
+          </div>
+          <Select onValueChange={(e) => {
+            setFilter(e)
+          }} value={filter}>
+            <SelectTrigger style={{outline: 'none'}} className="w-[180px]">
+              <SelectValue style={{outline: 'none'}} defaultValue={filter}/>
+            </SelectTrigger>
+            <SelectContent style={{outline: 'none'}}>
+              <SelectItem value="all">All</SelectItem>
+              <SelectItem value="web">Web</SelectItem>
+              <SelectItem value="mobile">Mobile</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+        <div id="featuredSection">
+          <div className="projects">
+            {filtered.map((i: any, index: number) => {
+              return (
+                <div className="project" key={index}>
+                  <div className="imageContainer">
+                    <img src={i?.image} style={{}} />
                   </div>
-                  <div className="projectLinks">
-                    {i?.source && (
+                  <div className="projectInfo">
+                    <div className="projectTitle">{i?.title}</div>
+                    <div className="projectDescription">{i?.description}</div>
+                    <div className="projectTags">
+                      {[...(i?.tags || [])].map((tag: any, ind: number) => {
+                        return (
+                          <div className="projectTag" key={ind}>
+                            {tag}
+                          </div>
+                        );
+                      })}
+                    </div>
+                    <div className="projectLinks">
+                      {i?.source && (
+                        <div className="projectLink">
+                          <i className="bi bi-github"></i> Source
+                        </div>
+                      )}
                       <div className="projectLink">
-                        <i className="bi bi-github"></i> Source
+                        <i className="bi bi-info-circle-fill"></i>Read more
                       </div>
-                    )}
-                    <div className="projectLink">
-                      <i className="bi bi-info-circle-fill"></i>Read more
                     </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 };

@@ -8,6 +8,7 @@ body {
     "Helvetica Neue", Helvetica, Arial, sans-serif, system-ui;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 body::before {
@@ -33,10 +34,15 @@ body::before {
 }
 .homeBodyContainer {
   /* background-color: red; */
+  
+  /* position: relative; */
+  
+}
+.page {
+  padding-top: 70px;
+  /* overflow-y: scroll !important; */
+  position: relative;
   max-width: 800px;
   margin-inline: auto;
   padding-inline: 10px;
-}
-.page {
-  padding-top: 130px;
 }
