@@ -62,7 +62,7 @@ const Hero = () => {
                 Resume <i className="bi bi-file-earmark-text"></i>
             </div>
             <i onClick={() => {
-                window.open('www.linkedin.com/in/ricardo-cambundo-bab2a0210')
+                window.open('https://linkedin.com/in/ricardo-cambundo-bab2a0210')
             }} className="bi bi-linkedin" style={{color: '#bebebe', cursor: 'pointer'}}></i>
             <i onClick={() => {
                 window.open('https://github.com/Ricardo-Cambundo')

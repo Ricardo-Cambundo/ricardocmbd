@@ -63,6 +63,7 @@
   -webkit-line-clamp: 3; /* Number of lines to display */
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 14px;
 }
 
 #postsSection .postTags {
@@ -70,7 +71,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   gap: 7px;
-  margin-top: 25px;
+  margin-top: 20px;
 }
 
 #postsSection .tag {

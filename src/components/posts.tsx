@@ -1,8 +1,10 @@
 import { useState } from "react";
 import "../css/posts.css";
 import { format } from 'date-fns'
+import { useNavigate } from "react-router-dom";
 
 const Posts = () => {
+  const navigate = useNavigate()
   const [posts, setPosts] = useState([
     {
       title: 'Hello World!',
@@ -16,7 +18,9 @@ const Posts = () => {
     <div className="skillsContainer" id="postsSection">
       <div className="sectionTitle">
         recent posts{" "}
-        <span>
+        <span onClick={() => {
+          navigate('/projects')
+        }}>
           view more <i className="bi bi-arrow-right-short"></i>
         </span>
       </div>

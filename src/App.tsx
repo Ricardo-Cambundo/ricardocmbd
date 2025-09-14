@@ -12,30 +12,36 @@ import { Route, Routes } from "react-router-dom";
 import Projects from "./pages/projects";
 import Privacy from "./pages/privacy";
 import "./index.css";
+import { ScrollProvider } from "./store/context";
+import Blog from "./pages/blog";
+import Contact from "./pages/contact";
 
 function App() {
   return (
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <div className="homeBodyContainer">
-            <Header />
-            <div className="page">
-              <Hero />
-              <Work />
-              <Skills />
-              <Featured />
-              <Posts />
-              <Footer />
+    <ScrollProvider>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div className="homeBodyContainer">
+              <Header />
+              <div className="page">
+                <Hero />
+                <Work />
+                <Skills />
+                <Featured />
+                <Posts />
+                <Footer />
+              </div>
             </div>
-          </div>
-        }
-      />
-
-      <Route path="/projects" element={<Projects />} />
-      <Route path="/privacy" element={<Privacy />} />
-    </Routes>
+          }
+        />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </ScrollProvider>
   );
 }
 

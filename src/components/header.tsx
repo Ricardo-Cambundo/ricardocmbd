@@ -1,13 +1,34 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "../css/header.css";
 import logo from '../assets/images/logo-long-black.png'
 import { useNavigate } from "react-router-dom";
+import { ScrollContext } from "@/store/context";
 
 const Header = () => {
   const [dark, setDark] = useState(false);
+  // const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate()
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.scrollY > 50) {
+  //       setScrolled(true);
+  //     } else {
+  //       setScrolled(false);
+  //     }
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+  //   // Cleanup
+  //   // return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
+
+  const { scrolled } = useContext(ScrollContext)
   return (
-    <nav className="headerContainer">
+    <nav className="headerContainer" 
+    style={{
+        backgroundColor: scrolled ? "#ffffffcb" : "#ffffff00",
+        backdropFilter: scrolled ? 'blur(5px)' : "none",
+      }}>
       <div className="header">
         <div className="logoContainer" style={{cursor: 'pointer !important'}} onClick={() => {
           location.pathname != '/' && navigate('/')
@@ -23,8 +44,12 @@ const Header = () => {
           <li onClick={() => {
             location.pathname != '/projects' && navigate('/projects')
           }}>projects</li>
-          <li>blog</li>
-          <li>contact</li>
+          <li onClick={() => {
+            location.pathname != '/blog' && navigate('/blog')
+          }}>blog</li>
+          <li onClick={() => {
+            location.pathname != '/contact' && navigate('/contact')
+          }}>contact</li>
         </ul>
         <div className="toggles">
           <div className="toggleContainer">

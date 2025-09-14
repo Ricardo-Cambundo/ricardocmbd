@@ -15,7 +15,7 @@ const Footer = () => {
       <div className="contacts">
         <i
           onClick={() => {
-            window.open("www.linkedin.com/in/ricardo-cambundo-bab2a0210");
+            window.open("https://linkedin.com/in/ricardo-cambundo-bab2a0210");
           }}
           className="bi bi-linkedin"
           style={{ color: "#bebebe", cursor: "pointer" }}

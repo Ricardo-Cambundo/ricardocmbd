@@ -12,7 +12,7 @@ const Featured = () => {
     {
       title: "Level RH",
       description:
-        "Complete human resource management system for employee tracking, payroll and much more...",
+        "Highly tested and used complete human resource management system for employee tracking, payroll and much more",
       image: levelrh,
       tags: ["AngularJS", "JavaScript", "Laravel/PHP", "PostgreSQL", "Google SMTP", "Twilio SMS", "Docker", "JWT"],
       source: true,
@@ -20,7 +20,7 @@ const Featured = () => {
     {
       title: "Level Invoice",
       description:
-        "Web-based platform for generating, tracking, and automating invoices...",
+        "Highly tested and used web-based platform for generating, tracking, automating invoices and much more",
       image: levelinvoice,
       tags: ["AngularJS", "JavaScript", "Laravel/PHP", "PostgreSQL", "Google SMTP", "Twilio SMS", "Docker", "JWT"],
       source: true
@@ -39,7 +39,7 @@ const Featured = () => {
       description:
         "Car rental/sharing mobile application for IOS and Android...",
       image: going,
-      tags: ["React Native", "JavaScript", "JWT", "PostgreSQL", "Laravel/PHP", "Firebase", "Websockets"],
+      tags: ["React Native", "JavaScript", "Django", "Python", "JWT", "PostgreSQL",  "Firebase", "Websockets"],
       source: true
 
     },

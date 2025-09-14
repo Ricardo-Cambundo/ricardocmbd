@@ -10,6 +10,7 @@ import angotrans from "../assets/images/angotrans.png";
 import animescmbd from "../assets/images/animescmbd.png";
 import ispaj from "../assets/images/ispaj.png";
 import angotrans_site from "../assets/images/angotrans_site.png";
+import sge from '../assets/images/sge.png'
 
 import {
   Select,
@@ -24,7 +25,7 @@ const Projects = () => {
     {
       title: "Level RH",
       description:
-        "Complete human resource management system for employee tracking, payroll and much more...",
+        "Highly tested and used complete human resource management system for employee tracking, payroll and much more",
       image: levelrh,
       tags: [
         "AngularJS",
@@ -37,11 +38,12 @@ const Projects = () => {
         "JWT",
       ],
       source: true,
+      highlight: 'Extensively tested and reliable for large-scale deployments'
     },
     {
       title: "Level Invoice",
       description:
-        "Web-based platform for generating, tracking, and automating invoices...",
+        "Highly tested and used web-based platform for generating, tracking, and automating invoices",
       image: levelinvoice,
       tags: [
         "AngularJS",
@@ -58,7 +60,7 @@ const Projects = () => {
     {
       title: "NaVia",
       description:
-        "Cross-platform m-commerce app with courier logistics (IOS/Android)...",
+        "Cross-platform m-commerce app with courier logistics (IOS/Android)",
       image: navia,
       tags: [
         "React Native",
@@ -76,14 +78,14 @@ const Projects = () => {
     {
       title: "GoingPlaces",
       description:
-        "Car rental/sharing mobile application for IOS and Android...",
+        "Car rental/sharing mobile application for IOS and Android",
       image: going,
       tags: [
         "React Native",
         "JavaScript",
+        "Django", "Python",
         "JWT",
         "PostgreSQL",
-        "Laravel/PHP",
         "Firebase",
         "Websockets",
         "IOS",
@@ -94,7 +96,7 @@ const Projects = () => {
     {
       title: "ISPAJ",
       description:
-        "Official website for one of Angola's biggest Higher Polytechnic Institute with 10k+ monthly visitors...",
+        "Official website for one of Angola's biggest Higher Polytechnic Institute with 10k+ monthly visitors",
       image: ispaj,
       tags: [
         "React",
@@ -112,10 +114,10 @@ const Projects = () => {
     {
       title: "AngoTrans Express website",
       description:
-        "Corporate website for a company specialized in road transport and cargo transportation solutions...",
+        "Corporate website for a company specialized in road transport and cargo transportation solutions",
       image: angotrans_site,
       tags: [
-        "AngularJS",
+        "React",
         "JavaScript",
         "Laravel/PHP",
         "PostgreSQL",
@@ -129,7 +131,7 @@ const Projects = () => {
     },
     {
       title: "AngoTrans Express",
-      description: "Real-time bus tracking mobile app for IOS and Android...",
+      description: "Real-time bus tracking mobile app for IOS and Android",
       image: angotrans,
       tags: [
         "React Native",
@@ -146,18 +148,34 @@ const Projects = () => {
     },
     {
       title: "AnimesCMBD",
-      description: "Anime cataloging mobile app for IOS and Android...",
+      description: "Anime cataloging mobile app for IOS and Android",
       image: animescmbd,
       tags: [
         "React Native",
         "JavaScript",
+        "Django", "Python",
         "JWT",
         "PostgreSQL",
-        "Laravel/PHP",
         "Firebase",
         "Websockets",
         "IOS",
         "Android",
+      ],
+      source: true,
+    },
+    {
+      title: "Internship Management System",
+      description:
+        "Already in use, this is an enterprise platform for academic/medical internship coordination",
+      image: sge,
+      tags: [
+        "React",
+        "JavaScript",
+        "Laravel/PHP",
+        "PostgreSQL",
+        "Google SMTP",
+        "Docker",
+        "JWT",
       ],
       source: true,
     },
