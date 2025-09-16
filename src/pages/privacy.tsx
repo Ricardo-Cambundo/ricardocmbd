@@ -6,7 +6,14 @@ const Privacy = () => {
   return (
     <div className="homeBodyContainer">
       <Header />
-      <Footer />
+      <div className="page">
+        <div className="greetings">privacy policy</div>
+        
+        <div id="featuredSection">
+          
+        </div>
+        <Footer />
+      </div>
     </div>
   );
 };
