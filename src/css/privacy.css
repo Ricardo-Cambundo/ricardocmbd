@@ -1,0 +1,43 @@
+#privacySection .sectionTitle {
+    font-size: 28px;
+    margin-top: 30px;
+    color: black;
+}
+#privacySection {
+    color: #525252;
+}
+#privacySection .date {
+    color: grey;
+    padding-bottom: 20px;
+}
+#privacySection ol {
+    list-style: decimal;
+    padding-left: 16px;
+}
+#privacySection ol li {
+    padding-block: 12px;
+}
+#privacySection ul li {
+    padding-block: 8px;
+}
+
+#privacySection ul div, #privacySection ol div {
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+}
+#privacySection ul {
+    margin-top: 10px;
+    list-style: circle;
+    padding-left: 16px;
+}
+#privacySection span {
+    font-weight: 500;
+    text-decoration: underline;
+    cursor: pointer;
+    color: black;
+
+    &:hover {
+        color: #05002e;
+    }
+}

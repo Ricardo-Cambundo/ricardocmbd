@@ -68,6 +68,7 @@
     width: 75px;
     height: 50px;
     cursor: pointer !important;
+    z-index: 10000000;
 }
 .header .logoContainer img {
     width: 100%;

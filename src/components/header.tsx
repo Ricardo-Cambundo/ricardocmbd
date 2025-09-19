@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import "../css/header.css";
-import logo from '../assets/images/logo-long-black.png'
+import logo from '../assets/images/logo-long-black.webp'
 import { useNavigate } from "react-router-dom";
 import { ScrollContext } from "@/store/context";
 
