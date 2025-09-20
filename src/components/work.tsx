@@ -57,7 +57,7 @@ const Work = () => {
           location: "Hybrid",
           type: "Full-time",
           descriptions: [
-            "Designing and developing innovative mobile applications (for IOS and Android platforms) and web applications",
+            "Designing and developing innovative mobile applications (for IOS and Android platforms) and web applications (some in the projects page)" ,
           ],
         },
         {
@@ -129,6 +129,12 @@ const Work = () => {
     },
   ]);
 
+  const [education, setEducation] = useState([
+    {
+
+    }
+  ])
+
   return (
     <div className="skillsContainer" id="workSection">
       <div className="tabHeaders">
@@ -197,7 +203,7 @@ const Work = () => {
                   {!item?.nest && (
                     <div className="workPosition">
                       {item?.position}{" "}
-                      {!item?.nest && `(${item?.type}, ${item?.location})`}
+                      {!item?.nest && `(${item?.type} - ${item?.location})`}
                     </div>
                   )}
 
