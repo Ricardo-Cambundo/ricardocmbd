@@ -22,6 +22,7 @@ const Header = () => {
   // }, []);
 
   const { scrolled, dark, setDark, chat, setChat } = useContext(ScrollContext);
+  const [chatExpand, setChatExpand] = useState(false)
   useEffect(() => {
     if (dark) {
       // dark background color
@@ -39,6 +40,12 @@ const Header = () => {
         backdropFilter: scrolled ? "blur(5px)" : "none",
       }}
     >
+      <div className="chatbox">
+        <div className="chatHeader">
+          <span>Chat with</span>
+          <div>CMBD Support</div>
+        </div>
+      </div>
       <div className="header">
         <div
           className="logoContainer"
