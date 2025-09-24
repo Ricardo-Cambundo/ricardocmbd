@@ -4,6 +4,8 @@ export const ScrollContext = createContext();
 
 export const ScrollProvider = ({ children }: { children: any }) => {
   const [scrolled, setScrolled] = useState(false);
+  const [dark, setDark] = useState(false)
+  const [chat, setChat] = useState(true)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,7 +19,7 @@ export const ScrollProvider = ({ children }: { children: any }) => {
   }, []);
 
   return (
-    <ScrollContext.Provider value={{ scrolled }}>
+    <ScrollContext.Provider value={{ scrolled, dark, setDark, chat, setChat }}>
       {children}
     </ScrollContext.Provider>
   );

@@ -42,6 +42,44 @@ const Work = () => {
         : end.toLocaleString("default", { month: "short", year: "numeric" })
     } · ${yearStr}${months > 0 ? " " + monthStr : ""}`;
   }
+  function getDuration1(startDate: any, endDate: any = null) {
+    const start = new Date(startDate);
+    const end = endDate ? new Date(endDate) : new Date();
+
+    let totalMonths =
+      (end.getFullYear() - start.getFullYear()) * 12 +
+      (end.getMonth() - start.getMonth());
+
+    const years = Math.floor(totalMonths / 12);
+    const months = totalMonths % 12;
+
+    // Format  and months
+    const yearStr = Math.abs(years) === 1 ? "1 yr": Math.abs(years) === 0 ? '' : `${Math.abs(years)} yrs`;
+    const monthStr =
+      Math.abs(months) === 1 ? "1 mo" : `${Math.abs(months)} mos`;
+
+    if (years === 0 && months === 0) {
+      return "Less than a month";
+    }
+
+    const isOngoing = end >= start;
+
+    const startStr = start.toLocaleString("default", {
+      month: "short",
+      year: "numeric",
+    });
+
+    if (!isOngoing) {
+      return "Invalid date range";
+    }
+
+    return `${startStr} - ${
+      !endDate
+        ? "Present"
+        : end.toLocaleString("default", { month: "short", year: "numeric" })
+    }`;
+  }
+  
   const [work, setWork] = useState([
     {
       company: "Level Soft - Angola",
@@ -79,6 +117,7 @@ const Work = () => {
       location: "Hybrid",
       type: "Full-time",
       logo: "https://ispaj.co.ao/images/logotrans.png",
+      link: 'https://ispaj.co.ao/',
       descriptions: [
         "Designing, developing and maintaining innovative web-based management systems",
         "Creating solutions that respond to the specific needs of one of Angola's biggest private academic institutions",
@@ -97,7 +136,7 @@ const Work = () => {
       ],
     },
     {
-      company: "CMBD",
+      company: "CMBD (My personal freelancing brand)",
       position: "Mobile Application Developer",
       duration: getDuration('2022-11-01'),
       logo: logo,
@@ -131,8 +170,26 @@ const Work = () => {
 
   const [education, setEducation] = useState([
     {
-
-    }
+      company: "Lone Star College-CyFair",
+      position: "AS of science in Computer Science",
+      duration: getDuration('2024-06-01'),
+      location: "Hybrid",
+      type: "Full-time",
+      logo: 'https://www.lonestar.edu/img/logo/LSC_Texas_Treatment_Circle_Logo.png',
+      link: "https://www.lonestar.edu/",
+      descriptions: [
+        "Currently pursuing it so no highlights just yet haha.",
+      ],
+      skills: [
+        "AngularJS",
+        "Web Development",
+        "System Design",
+        "Database Management",
+        "API Development",
+        "Maintenance",
+        "Problem Solving",
+      ],
+    },
   ])
 
   return (
@@ -161,7 +218,9 @@ const Work = () => {
             return (
               <div className="work" key={index}>
                 <div className="workLeft">
-                  <div className="imageContainer">
+                  <div style={{cursor: item?.link ? 'pointer': 'unset'}} className="imageContainer" onClick={() => {
+                        item?.link && window.open(item?.link)
+                      }}>
                     <img src={item?.logo} />
                   </div>
                 </div>
@@ -169,7 +228,115 @@ const Work = () => {
                   <div className="workHeader">
                     <div style={{ flex: 1 }}>
                       <div className="workDate">{item?.duration}</div>
-                      <div className="workTitle">{item?.company}</div>
+                      <div style={{cursor: item?.link ? 'pointer': 'unset'}} className="workTitle" onClick={() => {
+                        item?.link && window.open(item?.link)
+                      }}>{item?.company}</div>
+                    </div>
+                    {item?.nest && (
+                      <div
+                        className={
+                          item?.expanded ? "workButton1" : "workButton"
+                        }
+                        onClick={() => {
+                          setWork(
+                            work.map((i: any, ind: number) => {
+                              if (ind == index) {
+                                return {
+                                  ...i,
+                                  expanded: !i?.expanded,
+                                };
+                              }
+                              return {
+                                ...i,
+                              };
+                            })
+                          );
+                        }}
+                      >
+                        {item?.expanded ? (
+                          <i className="bi bi-arrows-collapse"></i>
+                        ) : (
+                          <i className="bi bi-arrows-expand"></i>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                  {!item?.nest && (
+                    <div className="workPosition">
+                      {item?.position}{" "}
+                      {!item?.nest && `(${item?.type} - ${item?.location})`}
+                    </div>
+                  )}
+
+                  {item?.nest && item?.expanded ? (
+                    <div className="workList1">
+                      <div className="verticalLine"></div>
+                      {[...(item?.nest || [])].map((i: any, ind: number) => {
+                        return (
+                          <div className="work1" key={ind}>
+                            <div className="workTitle1">{i?.position}</div>
+                            <div className="workDate">
+                              {i?.type} - {i?.location}
+                            </div>
+                            <div className="workDate">{i?.duration}</div>
+
+                            <div>
+                              <ul>
+                                {[...(i?.descriptions || [])]
+                                  .slice(0, 2)
+                                  .map((desc: any, indi: number) => (
+                                    <li key={indi}>{desc}</li>
+                                  ))}
+                              </ul>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  ) : (
+                    <div>
+                      {[...(item?.nest || [])]?.length > 1 && item?.nest && (
+                        <div className="tag2">
+                          +{[...(item?.nest || [])]?.length}
+                        </div>
+                      )}
+                    </div>
+                  )}
+                  <div>
+                    <ul>
+                      {[...(item?.descriptions || [])]
+                        .slice(0, 2)
+                        .map((desc: any, indi: number) => (
+                          <li key={indi}>{desc}</li>
+                        ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      {tab == "education" && (
+        <div className="workList">
+          {education.map((item: any, index: number) => {
+            return (
+              <div className="work" key={index}>
+                <div className="workLeft">
+                  <div style={{cursor: item?.link ? 'pointer': 'unset'}} className="imageContainer" onClick={() => {
+                        item?.link && window.open(item?.link)
+                      }}>
+                    <img src={item?.logo} />
+                  </div>
+                </div>
+                <div className="workInfo">
+                  <div className="workHeader">
+                    <div style={{ flex: 1 }}>
+                      <div className="workDate">{item?.duration}</div>
+                      <div style={{cursor: item?.link ? 'pointer': 'unset'}} className="workTitle" onClick={() => {
+                        item?.link && window.open(item?.link)
+                      }}>{item?.company}</div>
                     </div>
                     {item?.nest && (
                       <div
