@@ -169,7 +169,7 @@
     flex-direction: column;
     gap: 20px;
     overflow-y: auto;
-    max-height: 300px;
+    max-height: 288px;
 }
 .chatContainer .meMessage {
     background-color: black;

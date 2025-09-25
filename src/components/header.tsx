@@ -54,7 +54,7 @@ const Header = () => {
   const [chatText, setChatText] = useState('')
   return (
     <>
-    <Chatbot chatText={chatText} setChatText={setChatText} chatExpand={chatExpand} setChatExpand={setChatExpand} history={history} setHistory={setHistory}/>
+    {chat && <Chatbot chatText={chatText} setChatText={setChatText} chatExpand={chatExpand} setChatExpand={setChatExpand} history={history} setHistory={setHistory}/>}
     <nav
       className="headerContainer"
       style={{
@@ -117,6 +117,7 @@ const Header = () => {
             }}
           >
             <svg
+            style={{color: chat ? '#004ac0': 'unset'}}
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
