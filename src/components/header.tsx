@@ -3,6 +3,7 @@ import "../css/header.css";
 import logo from "../assets/images/logo-long-black.webp";
 import { useNavigate } from "react-router-dom";
 import { ScrollContext } from "@/store/context";
+import Chatbot from "./chatbot";
 
 const Header = () => {
   // const [scrolled, setScrolled] = useState(false);
@@ -32,7 +33,28 @@ const Header = () => {
       document.body.style.backgroundColor = "#FFFFFF"; // replace with your light color
     }
   }, [dark]);
+  const [history, setHistory] = useState([
+    {
+      bot: false,
+      message: "Hello there"
+    },
+    {
+      bot: true,
+      message: "Hello, I'm CMBD support. How can i help you."
+    },
+    {
+      bot: false,
+      message: 'I wanna know who let you in. I wanna know how you got here.'
+    }, 
+    { 
+      bot: true,
+      message: "I'm afraid I can not give you that info. What else can I help you with"
+    }
+  ])
+  const [chatText, setChatText] = useState('')
   return (
+    <>
+    <Chatbot chatText={chatText} setChatText={setChatText} chatExpand={chatExpand} setChatExpand={setChatExpand} history={history} setHistory={setHistory}/>
     <nav
       className="headerContainer"
       style={{
@@ -40,12 +62,7 @@ const Header = () => {
         backdropFilter: scrolled ? "blur(5px)" : "none",
       }}
     >
-      <div className="chatbox">
-        <div className="chatHeader">
-          <span>Chat with</span>
-          <div>CMBD Support</div>
-        </div>
-      </div>
+      
       <div className="header">
         <div
           className="logoContainer"
@@ -167,6 +184,7 @@ const Header = () => {
         </div>
       </div>
     </nav>
+    </>
   );
 };
 export default Header;

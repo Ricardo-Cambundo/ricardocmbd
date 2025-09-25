@@ -76,3 +76,126 @@
     object-fit: contain;  
     
 }
+.chatbox {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10000;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid rgba(230, 230, 230, 0.856);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    overflow: hidden;
+    max-width: 300px;
+    min-width: 200px;
+    width: 100%;
+}
+.chatHeader {
+    padding: 15px 20px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    justify-content: space-between;
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+        background-color: rgb(240, 240, 240);
+    }
+}
+.chatHeader .left span {
+    font-size: 12px;
+}
+.chatHeader .left > div {
+    font-weight: 600;
+    margin-top: -3px;
+}
+.chatbox .chatContainer {
+    background-color: white;
+    transition: 0.2s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}   
+
+.chatContainer .chatDialog {
+    flex: 1;
+}
+.chatFooter {
+    
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: space-between;
+    width: 100%;
+    border-top: 1px solid #dddddd;
+
+}
+.chatFooter input {
+    border: 1px solid #e4e4e4;
+    border-radius: 5px;
+    padding: 2px;
+    box-sizing: border-box;
+    font-size: 14px;
+    padding-inline: 10px;
+    flex: 8;
+}
+.chatFooter svg {
+    border: 1px solid #e4e4e4;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    flex: 1;
+    transition: 0.2s ease-in-out;
+    border-radius: 6px;
+
+    &:hover {
+        background-color: #eeeeeea9;
+    }
+}
+.chatFooter .bi-trash {
+    color: red;
+    
+}
+.chatContainer .messages {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+    max-height: 300px;
+}
+.chatContainer .meMessage {
+    background-color: black;
+    color: white;
+    font-size: 14px;
+    padding: 8px 10px;
+    border-radius: 13px;
+    border-bottom-right-radius: 0;
+    display: inline;
+    width: fit-content;
+    align-self: flex-end;
+    margin-left: 22px;
+}
+.chatContainer .botMessage {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+.chatContainer .botMessage > div {
+    font-size: 14px;
+    padding: 8px 10px;
+    border-radius: 13px;
+    border-bottom-left-radius: 0;
+    display: inline;
+    width: fit-content;
+    align-self: flex-end;
+    border: 1px solid #dbdbdbbe;
+}
