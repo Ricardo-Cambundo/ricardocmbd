@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
+import dotenv from 'dotenv';
+dotenv.config();
 
 
 // fix the thinkiniggg logic to automatically scroll down after sending and while thinking
@@ -19,7 +21,7 @@ const Chatbot = ({
   setHistory: any;
 }) => {
   const [thinking, setThinking] = useState(false);
-  const HF_API_KEY = "***REMOVED***";
+  const HF_API_KEY = process.env.REACT_APP_HUGGINGFACE_API_KEY;
 
   const portfolioData = {
     experience: [
@@ -191,7 +193,7 @@ Assistant Response:`
           timeout: 10000
         }
       );
-      // d
+      
       
       return response.data.generated_text;
     } catch (error) {
