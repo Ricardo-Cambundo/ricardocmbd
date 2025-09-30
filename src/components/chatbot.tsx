@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
-import dotenv from 'dotenv';
-dotenv.config();
+import { pipeline } from "@huggingface/transformers";
+
+// const chatPipeline = await pipeline("conversational", "microsoft/DialoGPT-medium");
 
 
 // fix the thinkiniggg logic to automatically scroll down after sending and while thinking
@@ -20,8 +21,9 @@ const Chatbot = ({
   history: Array<{}>;
   setHistory: any;
 }) => {
+
   const [thinking, setThinking] = useState(false);
-  const HF_API_KEY = process.env.REACT_APP_HUGGINGFACE_API_KEY;
+  const HF_API_KEY = "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"
 
   const portfolioData = {
     experience: [
