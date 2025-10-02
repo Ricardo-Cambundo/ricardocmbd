@@ -189,6 +189,10 @@
     gap: 10px;
     align-items: center;
 }
+.chatContainer .botMessage ul, .chatContainer .botMessage ol {
+    list-style: disc;
+    padding-left: 16px;
+}
 .chatContainer .botMessage > div {
     font-size: 14px;
     padding: 8px 10px;

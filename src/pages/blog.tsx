@@ -95,7 +95,7 @@ const Blog = () => {
   const [search, setSearch] = useState("");
   useEffect(() => {
     setFiltered(
-      posts
+      posts.slice(0, 1)
         .sort((a: any, b: any) => {
           if (filter == "newest") {
             return (new Date(b?.date) - new Date(a?.date));

@@ -34,22 +34,22 @@ const Header = () => {
     }
   }, [dark]);
   const [history, setHistory] = useState([
-    {
-      bot: false,
-      message: "Hello there"
-    },
-    {
-      bot: true,
-      message: "Hello, I'm CMBD support. How can i help you."
-    },
-    {
-      bot: false,
-      message: 'I wanna know who let you in. I wanna know how you got here.'
-    }, 
-    { 
-      bot: true,
-      message: "I'm afraid I can not give you that info. What else can I help you with"
-    }
+    // {
+    //   bot: false,
+    //   message: "Hello there"
+    // },
+    // {
+    //   bot: true,
+    //   message: "Hello, I'm CMBD support. How can i help you."
+    // },
+    // {
+    //   bot: false,
+    //   message: 'I wanna know who let you in. I wanna know how you got here.'
+    // }, 
+    // { 
+    //   bot: true,
+    //   message: "I'm afraid I can not give you that info. What else can I help you with"
+    // }
   ])
   const [chatText, setChatText] = useState('')
   return (
