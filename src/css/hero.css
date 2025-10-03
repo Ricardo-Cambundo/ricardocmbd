@@ -1,11 +1,14 @@
 .heroSection {
     /* margin-top: 130px; */
 }
-.greetings {
+.greetings, .greetings1 {
     font-weight: 800;
     font-size: 36px;
     font-family: cursive;
     margin-bottom: 15px;
+}
+.greetings1 {
+    color: white;
 }
 .heroSection .description {
     font-size: 15px;

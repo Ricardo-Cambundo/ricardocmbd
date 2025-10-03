@@ -59,7 +59,7 @@ const Featured = () => {
           return(
             <div className="project" key={index}>
               <div className="imageContainer">
-                <img src={i?.image} style={{}}/>
+                <img loading="eager" src={i?.image} style={{}}/>
                 
               </div>
               <div className="projectInfo">

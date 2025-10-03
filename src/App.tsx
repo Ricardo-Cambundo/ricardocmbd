@@ -15,6 +15,8 @@ import "./index.css";
 import { ScrollProvider } from "./store/context";
 import Blog from "./pages/blog";
 import Contact from "./pages/contact";
+import Blog1 from "./pages/blog/blog1";
+import NotFound from "./pages/404";
 
 function App() {
   return (
@@ -39,7 +41,11 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/1" element={<Blog1 />} />
+
         <Route path="/contact" element={<Contact />} />
+
+        <Route path='*' element={<NotFound/>}/>
       </Routes>
     </ScrollProvider>
   );

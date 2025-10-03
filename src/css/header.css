@@ -1,205 +1,247 @@
 .headerContainer {
-    /* background-color: yellow; */
-    position: sticky;
-    top: 0;
-    right: 0;
-    left: 0;
-    backdrop-filter: blur(5px);
-    background-color: #ffffffcb;
-    z-index: 5;
-    transition: background-color 0.3s ease; /* smooth transition */
-
+  /* background-color: yellow; */
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  backdrop-filter: blur(5px);
+  background-color: #ffffffcb;
+  z-index: 5;
+  transition: background-color 0.3s ease; /* smooth transition */
 }
 .header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 20px;
-    max-width: 800px;
-    margin-inline: auto;
-    /* padding-inline: 10px; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  max-width: 800px;
+  margin-inline: auto;
+  /* padding-inline: 10px; */
 }
-.header .menuItems {
-    flex: 1;
-    display: flex;
-    flex-direction: row;
-    list-style: none !important;
-    gap: 20px;
-    justify-content: center;
-    margin-left: -40px;
+.header .menuItems, .header .menuItemsLight {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  list-style: none !important;
+  gap: 20px;
+  justify-content: center;
+  margin-left: -40px;
 }
-.header li {
-    cursor: pointer;
-    color: grey;
-    font-size: 16px;
-    transition: 0.2s ease-in-out;
 
-    &:hover {
-        color: black;
-    }
+
+.header li {
+  cursor: pointer;
+  color: grey;
+  font-size: 16px;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    color: black;
+  }
+}
+.header .menuItemsLight li {
+  cursor: pointer;
+  color: #a3a3a3;
+  font-size: 16px;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    color: #ffffff;
+  }
 }
 .header .toggles {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 7px
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 7px;
 }
 .header .toggleContainer {
-    aspect-ratio: 1/1;
-    width: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
+  aspect-ratio: 1/1;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
 
-    &:hover{
-        background-color: #f5f5f5;
-        color: #004ac0;
-    }
+  &:hover {
+    background-color: #f5f5f5;
+    color: #004ac0 !important;
+  }
+}
+.header .toggleContainer1 {
+  aspect-ratio: 1/1;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #00193da2;
+    color: #004ac0 !important;
+  }
 }
 .header .toggleContainer svg {
-    width: 15px;
-    height: 15px;
+  width: 15px;
+  height: 15px;
 }
 .header .logoContainer {
-    width: 75px;
-    height: 50px;
-    cursor: pointer !important;
-    z-index: 10000000;
+  width: 75px;
+  height: 50px;
+  cursor: pointer !important;
+  z-index: 10000000;
 }
 .header .logoContainer img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;  
-    
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .chatbox {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 10000;
-    background-color: white;
-    border-radius: 10px;
-    border: 1px solid rgba(230, 230, 230, 0.856);
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10000;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid rgba(230, 230, 230, 0.856);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
     rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
-    overflow: hidden;
-    max-width: 330px;
-    min-width: 200px;
-    width: 100%;
+  overflow: hidden;
+  max-width: 330px;
+  min-width: 200px;
+  width: 100%;
 }
 .chatHeader {
-    padding: 15px 20px;
-    font-size: 14px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    
-    justify-content: space-between;
-    cursor: pointer;
-    overflow: hidden;
-    transition: 0.2s ease-in-out;
+  padding: 15px 20px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 
-    &:hover {
-        background-color: rgb(240, 240, 240);
-    }
+  justify-content: space-between;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    background-color: rgb(240, 240, 240);
+  }
 }
 .chatHeader .left span {
-    font-size: 12px;
+  font-size: 12px;
 }
 .chatHeader .left > div {
-    font-weight: 600;
-    margin-top: -3px;
+  font-weight: 600;
+  margin-top: -3px;
 }
 .chatbox .chatContainer {
-    background-color: white;
-    transition: 0.2s ease-in-out;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-}   
+  background-color: white;
+  transition: 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
 
 .chatContainer .chatDialog {
-    flex: 1;
+  flex: 1;
 }
 .chatFooter {
-    
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-    justify-content: space-between;
-    width: 100%;
-    border-top: 1px solid #dddddd;
-
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  justify-content: space-between;
+  width: 100%;
+  border-top: 1px solid #dddddd;
 }
 .chatFooter input {
-    border: 1px solid #e4e4e4;
-    border-radius: 5px;
-    padding: 2px;
-    box-sizing: border-box;
-    font-size: 14px;
-    padding-inline: 10px;
-    flex: 8;
+  border: 1px solid #e4e4e4;
+  border-radius: 5px;
+  padding: 2px;
+  box-sizing: border-box;
+  font-size: 14px;
+  padding-inline: 10px;
+  flex: 8;
 }
 .chatFooter svg {
-    border: 1px solid #e4e4e4;
-    width: 40px;
-    height: 40px;
-    padding: 10px;
-    flex: 1;
-    transition: 0.2s ease-in-out;
-    border-radius: 6px;
+  border: 1px solid #e4e4e4;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  flex: 1;
+  transition: 0.2s ease-in-out;
+  border-radius: 6px;
 
-    &:hover {
-        background-color: #eeeeeea9;
-    }
+  &:hover {
+    background-color: #eeeeeea9;
+  }
 }
 .chatFooter .bi-trash {
-    color: red;
-    
+  color: red;
 }
 .chatContainer .messages {
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    overflow-y: auto;
-    max-height: 288px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto;
+  max-height: 288px;
 }
 .chatContainer .meMessage {
-    background-color: black;
-    color: white;
-    font-size: 14px;
-    padding: 8px 10px;
-    border-radius: 13px;
-    border-bottom-right-radius: 0;
-    display: inline;
-    width: fit-content;
-    align-self: flex-end;
-    margin-left: 22px;
+  background-color: black;
+  color: white;
+  font-size: 14px;
+  padding: 8px 10px;
+  border-radius: 13px;
+  border-bottom-right-radius: 0;
+  display: inline;
+  width: fit-content;
+  align-self: flex-end;
+  margin-left: 22px;
 }
 .chatContainer .botMessage {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
 }
-.chatContainer .botMessage ul, .chatContainer .botMessage ol {
-    list-style: disc;
-    padding-left: 16px;
+.chatContainer .botMessage ul,
+.chatContainer .botMessage ol {
+  list-style: disc;
+  padding-left: 16px;
 }
 .chatContainer .botMessage > div {
-    font-size: 14px;
-    padding: 8px 10px;
-    border-radius: 13px;
-    border-bottom-left-radius: 0;
-    display: inline;
-    width: fit-content;
-    align-self: flex-end;
-    border: 1px solid #dbdbdbbe;
+  font-size: 14px;
+  padding: 8px 10px;
+  border-radius: 13px;
+  border-bottom-left-radius: 0;
+  display: inline;
+  width: fit-content;
+  align-self: flex-end;
+  border: 1px solid #dbdbdbbe;
+}
+
+.backHome {
+  transition: 0.2s ease-in-out !important;
+  color: grey;
+  &:hover {
+    color: black !important;
+  }
+}
+.backHome-light {
+  transition: 0.2s ease-in-out !important;
+  color: rgb(192, 192, 192);
+  &:hover {
+    color: white !important;
+  }
+}
+.ligh #c {
+  display: block;
+  margin: 20px auto 0;
 }

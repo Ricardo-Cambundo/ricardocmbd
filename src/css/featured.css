@@ -14,14 +14,14 @@
     rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
   border-radius: 10px;
 }
-#featuredSection .imageContainer {
+#featuredSection .imageContainer, #featuredSection .imageContainer-light {
   width: 100%;
   aspect-ratio: 4/2.8;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#featuredSection .imageContainer img {
+#featuredSection .imageContainer img, #featuredSection .imageContainer-light img {
   object-fit: contain !important;
   width: 92%;
   height: 92%;

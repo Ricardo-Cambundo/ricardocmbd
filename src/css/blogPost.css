@@ -1,0 +1,132 @@
+.blogPage .image {
+  padding-block: 35px;
+}
+.blogPage .image span {
+  color: grey;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  font-size: 14px;
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #eeeeee;
+  border-radius: 5px;
+  display: inline-block;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.blogPage .imageContainer {
+  all: unset;
+  min-height: 200px;
+  background-color: #e9e9e9;
+  border-radius: 15px;
+  border-top-left-radius: 0;
+  padding: 10px;
+  transition: 0.2s ease-in-out;
+  overflow: hidden;
+  aspect-ratio: 4/2 !important;
+  overflow: hidden;
+
+  
+  /* &:hover {
+    background-color: #cccccc;
+
+    img {
+      transition: 0.3s ease-in-out;
+
+      transform: scale(1.3);
+    }
+  } */
+}
+.blogPage .imageContainer-light {
+  all: unset;
+  min-height: 200px;
+  background-color: #a3a3a3;
+  border-radius: 15px;
+  border-top-left-radius: 0;
+  padding: 10px;
+  transition: 0.2s ease-in-out;
+  overflow: hidden;
+  aspect-ratio: 4/2 !important;
+  overflow: hidden;
+
+/*   
+  &:hover {
+    background-color: #ececec;
+
+    img {
+      transition: 0.3s ease-in-out;
+
+      transform: scale(1.3);
+    }
+  } */
+}
+.blogPage .imageContainer img, .blogPage .imageContainer-light img {
+  transition: 0.4s ease-in-out;
+  all: unset;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  /* display: none; */
+}
+.blogPage .preDescription {
+  color: grey;
+}
+.blogPage .dateInfo {
+  text-align: left !important;
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+
+}
+.blogPage .postTags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 20px;
+}
+
+.blogPage .tag {
+  color: #000013d2;
+  background-color: #eeeeee;
+  font-size: 14px;
+  padding: 2px 9px;
+  font-weight: 500;
+  border-radius: 7px;
+}
+
+.blogPage .tag2 {
+  color: #000000;
+  background-color: white;
+  font-size: 13.5px;
+  padding: 1px 6px;
+  font-weight: 500;
+  border-radius: 7px;
+  border: 1px solid #dddcdc;
+}
+
+.blogPage .content {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    font-size: 16px;
+    margin-top: 30px;
+    color: #2c2c2c;
+    line-height: 30px;
+    
+}
+.blogPage h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.blogPage ol {
+    list-style: decimal;
+    padding-left: 28px;
+}
+.blogPage ul {
+    list-style: circle;
+    padding-left: 28px;
+}

@@ -29,7 +29,7 @@
 #postsSection .left {
   flex: 1;
 }
-#postsSection .right {
+#postsSection .right, .dateInfo {
   color: #858585;
   text-align: right;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
@@ -39,7 +39,8 @@
     flex-direction: column;
     gap: 5px;
 }
-.right .date {
+
+.right .date{
     display: flex;
     align-items: center;
     flex-direction: row;

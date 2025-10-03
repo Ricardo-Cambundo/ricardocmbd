@@ -189,7 +189,7 @@ He specializes in full-stack and mobile development.`;
     const messages = [
     {
       role: 'system',
-      content: `You are Ricardo Cambundo's portfolio assistant. 
+      content: `You are Ricardo Cambundo's portfolio assistant called CMBD support. 
       Ricardo was born in March 3rd 2004, so do calculations if they ask for age or something. This is my linkedin about section: 'What does it take to truly get acquainted with someone? I could share my passion for delving deeply into the intricacies of software engineering and the complexities of computer science problems, subjects, and ventures. I'm so enamored with these topics, in fact, that I've decided to fashion a career out of it.
 
 Or perhaps I could outline my history to demonstrate my genuine enthusiasm for this stuff. For instance, my fascination with programming dates back to as far as my memory can reach. As a little boy i would study game dev concepts out of curiosity about how my favorite games were made.

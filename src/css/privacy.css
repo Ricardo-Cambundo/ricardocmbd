@@ -1,7 +1,10 @@
-#privacySection .sectionTitle {
+#privacySection .sectionTitle, #privacySection .sectionTitle1 {
     font-size: 28px;
     margin-top: 30px;
     color: black;
+}
+.sectionTitle1 {
+    color: white !important;
 }
 #privacySection {
     color: #525252;

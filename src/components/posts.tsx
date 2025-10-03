@@ -7,6 +7,7 @@ const Posts = () => {
   const navigate = useNavigate()
   const [posts, setPosts] = useState([
     {
+      id: 1,
       title: 'Hello World!',
       description: "This is my first post on my blog as I get everything set up and see how it all looks in Markdown. I’m using this as a little test to see how the formatting turns out. Overtime, I'll share more about my projects, insights on technology, helpful tips, and maybe even some personal stories along the way.",
       read: 1,
@@ -29,7 +30,7 @@ const Posts = () => {
         {posts.slice(0, 4).map((i: any, index: number) => {
           return (
             <div className="post" key={index} onClick={() => {
-
+              navigate(`/blog/${i?.id}`)
             }}>
               <div className="left">
                 <div className="postTitle">{i?.title}</div>

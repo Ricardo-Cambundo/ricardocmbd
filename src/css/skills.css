@@ -2,7 +2,7 @@
   margin-top: 50px;
 }
 
-.sectionTitle {
+.sectionTitle, .sectionTitle1 {
   font-weight: 800;
   font-size: 30px;
   font-family: cursive;
@@ -13,7 +13,10 @@
   align-items: center;
   margin-top: 60px;
 }
-.sectionTitle span {
+.sectionTitle1 {
+  color: white;
+}
+.sectionTitle span, .sectionTitle1 span {
     font-size: 15px;
     font-weight: 400;
     color: grey;
@@ -24,7 +27,12 @@
     &:hover {
         color: black;
     }
-
+}
+.sectionTitle1 span {
+  color: #a3a3a3;
+  &:hover {
+    color: white;
+  }
 }
 .sectionDescription {
   font-size: 15px;

@@ -1,6 +1,11 @@
+import { useContext } from "react";
 import "../css/hero.css";
+import { ScrollContext } from "@/store/context";
 
 const Hero = () => {
+  const { chat, setChat } = useContext(ScrollContext);
+  
+  
   return (
     <div className="heroSection">
       <div className="left">
@@ -34,7 +39,9 @@ const Hero = () => {
           digital world
         </div>
 
-        <div className="stat1">
+        <div className="stat1" style={{cursor: 'pointer'}} onClick={() => {
+          setChat(true)
+        }}>
           For Q&A, start a chat with CMBD support
           <svg
             xmlns="http://www.w3.org/2000/svg"
