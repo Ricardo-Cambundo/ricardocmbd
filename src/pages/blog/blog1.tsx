@@ -35,7 +35,7 @@ const Blog1 = () => {
   return (
     <div className="homeBodyContainer">
       <Header />
-      <div className="page" style={{ paddingTop: 20 }}>
+      <div className="page" style={{ paddingTop: 40 }}>
         {/* <div className="greetings">contact me</div> */}
         <div
           onClick={() => {
@@ -66,7 +66,7 @@ const Blog1 = () => {
               className={`${dark ? "imageContainer-light" : "imageContainer"}`}
              style={{overflow: 'hidden', maxHeight: 500, position: 'relative', padding: 0}}>
               {" "}
-              {/* <img loading="eager" src={levelinvoice} /> */}
+              {/* <img loading="lazy" src={levelinvoice} /> */}
               <Earth
               
                 baseColor={[1, 1, 1]}

@@ -1,10 +1,31 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "../css/featured.css";
-import levelrh from '../assets/images/levelrh.png'
-import levelinvoice from '../assets/images/levelinvoice.png'
-import navia from '../assets/images/navia.png'
-import going from '../assets/images/going_places.png'
+import levelrh from '../assets/images/levelrh.webp'
+import levelinvoice from '../assets/images/levelinvoice.webp'
+import navia from '../assets/images/navia.webp'
+import going from '../assets/images/going_places.webp'
 import { useNavigate } from "react-router-dom";
+import { Blurhash } from "react-blurhash";
+
+const OptimizedImage = React.memo(({ src, alt }: {src: any, alt?: any}) => {
+  const [loaded, setLoaded] = useState(false);
+
+  return(
+    <>
+    {!loaded && (
+        <Blurhash hash={'L7QJfn_N000000-;M{ay00-;t7M{'} width="92%" height="92%" resolutionX={32} resolutionY={32} punch={1} />
+      )}
+      <img
+        src={src}
+        alt={alt}
+        style={{
+          display: loaded ? 'block' : 'none',
+          height: 'auto',
+        }}
+        onLoad={() => setLoaded(true)}
+      />
+    </>
+)});
 
 const Featured = () => {
   const navigate = useNavigate()
@@ -59,7 +80,7 @@ const Featured = () => {
           return(
             <div className="project" key={index}>
               <div className="imageContainer">
-                <img loading="eager" src={i?.image} style={{}}/>
+                <OptimizedImage src={i?.image} alt={i?.title} />
                 
               </div>
               <div className="projectInfo">

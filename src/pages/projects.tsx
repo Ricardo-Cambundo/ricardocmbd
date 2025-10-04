@@ -1,16 +1,17 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "../components/footer";
 import Header from "../components/header";
 import "../css/projects.css";
-import levelrh from "../assets/images/levelrh.png";
-import levelinvoice from "../assets/images/levelinvoice.png";
-import navia from "../assets/images/navia.png";
-import going from "../assets/images/going_places.png";
-import angotrans from "../assets/images/angotrans.png";
-import animescmbd from "../assets/images/animescmbd.png";
-import ispaj from "../assets/images/ispaj.png";
-import angotrans_site from "../assets/images/angotrans_site.png";
-import sge from '../assets/images/sge.png'
+import levelrh from "../assets/images/levelrh.webp";
+import levelinvoice from "../assets/images/levelinvoice.webp";
+import navia from "../assets/images/navia.webp";
+import going from "../assets/images/going_places.webp";
+import angotrans from "../assets/images/angotrans.webp";
+import animescmbd from "../assets/images/animescmbd.webp";
+import ispaj from "../assets/images/ispaj.webp";
+import angotrans_site from "../assets/images/angotrans_site.webp";
+import sge from "../assets/images/sge.webp";
+import { Blurhash } from "react-blurhash";
 
 import {
   Select,
@@ -19,6 +20,28 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+
+
+const OptimizedImage = React.memo(({ src, alt }: { src: any; alt?: any }) => {
+  const [loaded, setLoaded] = useState(false);
+  
+  return(
+    <>
+    
+    {!loaded && (
+        <Blurhash hash={'L7QJfn_N000000-;M{ay00-;t7M{'} width="92%" height="92%" resolutionX={32} resolutionY={32} punch={1} />
+      )}
+      <img
+        src={src}
+        alt={alt}
+        style={{
+          display: loaded ? 'block' : 'none',
+          height: 'auto',
+        }}
+        onLoad={() => setLoaded(true)}
+      />
+    </>
+)});
 
 const Projects = () => {
   const [posts, setPosts] = useState([
@@ -38,7 +61,7 @@ const Projects = () => {
         "JWT",
       ],
       source: true,
-      highlight: 'Extensively tested and reliable for large-scale deployments'
+      highlight: "Extensively tested and reliable for large-scale deployments",
     },
     {
       title: "Level Invoice",
@@ -77,13 +100,13 @@ const Projects = () => {
     },
     {
       title: "GoingPlaces",
-      description:
-        "Car rental/sharing mobile application for IOS and Android",
+      description: "Car rental/sharing mobile application for IOS and Android",
       image: going,
       tags: [
         "React Native",
         "JavaScript",
-        "Django", "Python",
+        "Django",
+        "Python",
         "JWT",
         "PostgreSQL",
         "Firebase",
@@ -127,7 +150,7 @@ const Projects = () => {
         "JWT",
       ],
       source: true,
-      website: 'https://angotransexpress.ao/'
+      website: "https://angotransexpress.ao/",
     },
     {
       title: "AngoTrans Express",
@@ -153,7 +176,8 @@ const Projects = () => {
       tags: [
         "React Native",
         "JavaScript",
-        "Django", "Python",
+        "Django",
+        "Python",
         "JWT",
         "PostgreSQL",
         "Firebase",
@@ -216,6 +240,7 @@ const Projects = () => {
         })
     );
   }, [filter, search]);
+
   return (
     <div className="homeBodyContainer">
       <Header />
@@ -260,7 +285,7 @@ const Projects = () => {
               return (
                 <div className="project" key={index}>
                   <div className="imageContainer">
-                    <img loading="eager" src={i?.image} style={{}} />
+                    <OptimizedImage src={i?.image} alt={i?.title} />
                   </div>
                   <div className="projectInfo">
                     <div className="projectTitle">{i?.title}</div>
@@ -276,9 +301,12 @@ const Projects = () => {
                     </div>
                     <div className="projectLinks">
                       {i?.website && (
-                        <div className="projectLink" onClick={() => {
-                          window.open(i?.website)
-                        }}>
+                        <div
+                          className="projectLink"
+                          onClick={() => {
+                            window.open(i?.website);
+                          }}
+                        >
                           <i className="bi bi-globe"></i>
                           Website
                         </div>

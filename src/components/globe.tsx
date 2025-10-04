@@ -31,7 +31,6 @@ const Earth: React.FC<EarthProps> = ({
 
   useEffect(() => {
     const onResize = () => {
-        console.log('resizeddd')
       canvasRef.current && setWidth(canvasRef.current.offsetWidth);
     }
     window.addEventListener('resize', onResize, false);
