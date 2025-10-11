@@ -1,44 +1,42 @@
-import Footer from "@/components/footer";
-import "../../css/blogPost.css";
-import Header from "@/components/header";
-import { useNavigate } from "react-router-dom";
-  //@ts-ignore
-
-import levelinvoice from "../../assets/images/levelinvoice.png";
-import { format } from "date-fns";
-  //@ts-ignore
-import {
-  CopyBlock,
-  // a11yLight,
-  androidstudio,
-  // paraisoLight,
-  // solarizedLight,
-} from "react-code-blocks";
-import { useContext, useEffect } from "react";
-import { ScrollContext } from "@/store/context";
-import Earth from "@/components/globe";
-
-const Blog1 = () => {
-  const navigate = useNavigate();
-    //@ts-ignore
-
-  const { dark, setDark } = useContext(ScrollContext);
-
-  const info = {
+import { useContext, useEffect } from 'react'
+import '../../css/blogPost.css'
+import Footer from '@/components/footer'
+import { androidstudio, CopyBlock } from 'react-code-blocks'
+import Header from '@/components/header'
+import { useNavigate } from 'react-router-dom'
+import { ScrollContext } from '@/store/context'
+import Earth from '@/components/globe'
+import { format } from 'date-fns'
+import levelrh from "../../assets/images/levelrh.webp";
+const Project1 = () => {
+    const navigate = useNavigate()
+    const { dark } = useContext(ScrollContext)
+     const info = {
     title: "Hello World!",
     preDescription:
-      "This is my first post on my blog to test out how things look in markdown.",
+      "Highly tested and used complete human resource management system for employee tracking, payroll and much more",
     description:
       "This is my first post on my blog as I get everything set up and see how it all looks in Markdown. I’m using this as a little test to see how the formatting turns out. Overtime, I'll share more about my projects, insights on technology, helpful tips, and maybe even some personal stories along the way.",
     read: 1,
     date: "2025-03-03",
-    tags: ["Introduction", "Blog", "About me", "First post"],
+    tags: [
+        "AngularJS",
+        "JavaScript",
+        "Laravel/PHP",
+        "PostgreSQL",
+        "Google SMTP",
+        "Twilio SMS",
+        "Docker",
+        "JWT",
+      ],
+   
+      
   };
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-  return (
-    <div className="homeBodyContainer">
+    useEffect(() => {
+        window.scroll(0, 0)
+    }, [])
+    return (
+        <div className="homeBodyContainer">
       <Header />
       <div className="page" style={{ paddingTop: 40 }}>
         {/* <div className="greetings">contact me</div> */}
@@ -57,7 +55,7 @@ const Blog1 = () => {
         </div>
         <div id="featuredSection" className="blogPage">
           <div className="image">
-            <span
+            {/* <span
               style={{
                 background: dark && "#c4c4c4ff",
                 color: dark && "black",
@@ -66,27 +64,19 @@ const Blog1 = () => {
             >
               <i style={{ marginRight: 10 }} className="bi bi-image-fill"></i>
               {1} image
-            </span>
+            </span> */}
             <div
               className={`${dark ? "imageContainer-light" : "imageContainer"}`}
              style={{overflow: 'hidden', maxHeight: 500, position: 'relative', padding: 0}}>
               {" "}
               {/* <img loading="lazy" src={levelinvoice} /> */}
-              <Earth
-              
-                baseColor={[1, 1, 1]}
-                markerColor={[0, 0, 0]}
-                glowColor={[0.97, 0.97, 0.97]}
-                dark={0}
-                theta={0.8}
-                scale={1}
-              />
+              <img src={levelrh}/>
             </div>
           </div>
-          <div className="greetings">Hello World!</div>
+          <div className="greetings">Level RH!</div>
           <div className="preDescription">{info?.preDescription}</div>
           <div className="dateInfo">
-            <div
+            {/* <div
               className="date"
               style={{
                 borderRight: "1px solid #eeeeee",
@@ -95,8 +85,8 @@ const Blog1 = () => {
               }}
             >
               <i className="bi bi-calendar-event"></i>{" "}
-              {format(new Date(info?.date), "MMMM d, yyyy")}
-            </div>
+              {format(new Date(), "MMMM d, yyyy")}
+            </div> */}
 
             <div className="date">
               <i className="bi bi-hourglass-split"></i> {info?.read} min read
@@ -189,7 +179,6 @@ print("stay tuned for more meaningful content soon...")`}
         <Footer />
       </div>
     </div>
-  );
-};
-
-export default Blog1;
+    )
+}
+export default Project1

@@ -6,6 +6,18 @@
     gap: 15px;
 }
 
+@media screen and (max-width: 502px) {
+    .searchContainer {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .searchContainer .search {
+        width: 100%;
+    }
+    .searchContainer .inputContainer {
+        width: 100%;
+    }
+}
 .searchContainer .search {
     /* background-color: red; */
     flex: 1;

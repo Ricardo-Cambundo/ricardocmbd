@@ -23,6 +23,8 @@ const Header = () => {
   //   // return () => window.removeEventListener("scroll", handleScroll);
   // }, []);
 
+  //@ts-ignore
+
   const { scrolled, dark, setDark, chat, setChat } = useContext(ScrollContext);
   const [chatExpand, setChatExpand] = useState(false)
   useEffect(() => {
@@ -59,8 +61,8 @@ const Header = () => {
     <nav
       className="headerContainer"
       style={{
-        backgroundColor: scrolled ? (dark ? '#030712bb' : "#ffffffcb" ): "#ffffff00",
-        backdropFilter: scrolled ? "blur(5px)" : "none",
+        backgroundColor: true ? (dark ? '#030712bb' : "#ffffffcb" ): "#ffffff00",
+        backdropFilter: true ? "blur(5px)" : "none",
       }}
     >
       

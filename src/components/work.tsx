@@ -42,6 +42,8 @@ const Work = () => {
         : end.toLocaleString("default", { month: "short", year: "numeric" })
     } · ${yearStr}${months > 0 ? " " + monthStr : ""}`;
   }
+    //@ts-ignore
+
   function getDuration1(startDate: any, endDate: any = null) {
     const start = new Date(startDate);
     const end = endDate ? new Date(endDate) : new Date();
@@ -54,7 +56,11 @@ const Work = () => {
     const months = totalMonths % 12;
 
     // Format  and months
+      //@ts-ignore
+
     const yearStr = Math.abs(years) === 1 ? "1 yr": Math.abs(years) === 0 ? '' : `${Math.abs(years)} yrs`;
+      //@ts-ignore
+
     const monthStr =
       Math.abs(months) === 1 ? "1 mo" : `${Math.abs(months)} mos`;
 
@@ -167,6 +173,8 @@ const Work = () => {
       ],
     },
   ]);
+
+    //@ts-ignore
 
   const [education, setEducation] = useState([
     {

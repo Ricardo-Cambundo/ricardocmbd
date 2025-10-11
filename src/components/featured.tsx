@@ -8,7 +8,9 @@ import { useNavigate } from "react-router-dom";
 import { Blurhash } from "react-blurhash";
 
 const OptimizedImage = React.memo(({ src, alt }: {src: any, alt?: any}) => {
-  const [loaded, setLoaded] = useState(false);
+    //@ts-ignore
+
+  const [loaded, setLoaded] = useState(true);
 
   return(
     <>
@@ -16,19 +18,22 @@ const OptimizedImage = React.memo(({ src, alt }: {src: any, alt?: any}) => {
         <Blurhash hash={'L7QJfn_N000000-;M{ay00-;t7M{'} width="92%" height="92%" resolutionX={32} resolutionY={32} punch={1} />
       )}
       <img
+      loading="lazy"
         src={src}
         alt={alt}
         style={{
-          display: loaded ? 'block' : 'none',
+          // display: loaded ? 'block' : 'none',
           height: 'auto',
         }}
-        onLoad={() => setLoaded(true)}
+        // onLoad={() => setLoaded(true)}
       />
     </>
 )});
 
 const Featured = () => {
   const navigate = useNavigate()
+  //@ts-ignore
+
   const [posts, setPosts] = useState([
     {
       title: "Level RH",

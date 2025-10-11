@@ -1,3 +1,4 @@
+  //@ts-ignore
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 
@@ -333,7 +334,7 @@ Ricardo's Technical Profile:
 - EXPERIENCE: Mobile/Web Developer at Level Soft Angola, Software Developer at ISPAJ, Freelance developer since 2022
 - SPECIALTIES: Full-stack web development, mobile app development, cross-platform solutions
 
-Important: The current date is ${new Date().toISOString()}. Keep responses professional, concise, and focused on Ricardo's skills and experience. If unsure, suggest asking about his projects or tech stack. And try to be concise and short if possible, unless the user asks for you to expand. And give me an html reponse so i can then set inside dangerouslySetInnerHTML and don't have any uncessary texts so the user can't tell what's going on in the back like ${'```html and ```'}. It's important to not say things like 'Here is the HTML response:'`,
+Important: Be short and concise. The current date is ${new Date().toISOString()}. Keep responses professional, concise, and focused on Ricardo's skills and experience. If unsure, suggest asking about his projects or tech stack. And try to be concise and short if possible, unless the user asks for you to expand. And give me an html reponse so i can then set inside dangerouslySetInnerHTML and don't have any uncessary texts so the user can't tell what's going on in the back like ${'```html and ```'}. It's important to not say things like 'Here is the HTML response:'`,
     },
     {
       role: 'user',

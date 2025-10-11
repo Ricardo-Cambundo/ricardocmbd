@@ -3,13 +3,13 @@ import Footer from "../components/footer";
 import Header from "../components/header";
 import "../css/contact.css";
 
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+// import {
+//   Select,
+//   SelectContent,
+//   SelectItem,
+//   SelectTrigger,
+//   SelectValue,
+// } from "@/components/ui/select";
 import { useNavigate } from "react-router-dom";
 
 const Contact = () => {
@@ -88,8 +88,9 @@ const Contact = () => {
             </div>
             <div className="row">
               <ul className="errors">
+                
                 {errors.map((i: any, index: number) => {
-                  return <li>{i}</li>;
+                  return <li key={index}>{i}</li>;
                 })}
               </ul>
               {load && (

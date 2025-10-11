@@ -12,6 +12,8 @@ import ispaj from "../assets/images/ispaj.webp";
 import angotrans_site from "../assets/images/angotrans_site.webp";
 import sge from "../assets/images/sge.webp";
 import { Blurhash } from "react-blurhash";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+
 
 import {
   Select,
@@ -20,30 +22,96 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-
+import { useNavigate } from "react-router-dom";
 
 const OptimizedImage = React.memo(({ src, alt }: { src: any; alt?: any }) => {
-  const [loaded, setLoaded] = useState(false);
-  
-  return(
+    //@ts-ignore
+  const navigate = useNavigate()
+  const [loaded, setLoaded] = useState(true);
+
+  return (
     <>
-    
-    {!loaded && (
-        <Blurhash hash={'L7QJfn_N000000-;M{ay00-;t7M{'} width="92%" height="92%" resolutionX={32} resolutionY={32} punch={1} />
+      {!loaded && (
+        <Blurhash
+          hash={"L7QJfn_N000000-;M{ay00-;t7M{"}
+          width="92%"
+          height="92%"
+          resolutionX={32}
+          resolutionY={32}
+          punch={1}
+        />
       )}
-      <img
+      {/* <img
         src={src}
         alt={alt}
-        style={{
-          display: loaded ? 'block' : 'none',
-          height: 'auto',
-        }}
-        onLoad={() => setLoaded(true)}
+        loading="lazy"
+        style={
+          {
+            // display: loaded ? 'block' : 'none',
+            // height: 'auto',
+          }
+        }
+        // onLoad={() => setLoaded(true)}
+      /> */}
+      <LazyLoadImage 
+      src={src}
+      alt={alt}
+      // placeholderSrc="L7QJfn_N000000-;M{ay00-;t7M{"
       />
     </>
-)});
+  );
+});
+
+const ProjectItem = React.memo(({ i }: { i: any }) => {
+  const navigate = useNavigate()
+  return (
+    <div className="project">
+      <div className="imageContainer">
+        <OptimizedImage src={i?.image} alt={i?.title} />
+      </div>
+      <div className="projectInfo">
+        <div className="projectTitle">{i?.title}</div>
+        <div className="projectDescription">{i?.description}</div>
+        <div className="projectTags">
+          {[...(i?.tags || [])].map((tag: any, ind: number) => {
+            return (
+              <div className="projectTag" key={ind}>
+                {tag}
+              </div>
+            );
+          })}
+        </div>
+        <div className="projectLinks">
+          {i?.website && (
+            <div
+              className="projectLink"
+              onClick={() => {
+                window.open(i?.website);
+              }}
+            >
+              <i className="bi bi-globe"></i>
+              Website
+            </div>
+          )}
+          {i?.source && (
+            <div className="projectLink">
+              <i className="bi bi-github"></i> Source
+            </div>
+          )}
+          <div className="projectLink" onClick={() => {
+            navigate(`/projects/${i?.id}`)
+          }}>
+            <i className="bi bi-info-circle-fill"></i>Read more
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+});
 
 const Projects = () => {
+    //@ts-ignore
+
   const [posts, setPosts] = useState([
     {
       title: "Level RH",
@@ -62,6 +130,7 @@ const Projects = () => {
       ],
       source: true,
       highlight: "Extensively tested and reliable for large-scale deployments",
+      id: 1
     },
     {
       title: "Level Invoice",
@@ -282,47 +351,7 @@ const Projects = () => {
         <div id="featuredSection">
           <div className="projects">
             {filtered.map((i: any, index: number) => {
-              return (
-                <div className="project" key={index}>
-                  <div className="imageContainer">
-                    <OptimizedImage src={i?.image} alt={i?.title} />
-                  </div>
-                  <div className="projectInfo">
-                    <div className="projectTitle">{i?.title}</div>
-                    <div className="projectDescription">{i?.description}</div>
-                    <div className="projectTags">
-                      {[...(i?.tags || [])].map((tag: any, ind: number) => {
-                        return (
-                          <div className="projectTag" key={ind}>
-                            {tag}
-                          </div>
-                        );
-                      })}
-                    </div>
-                    <div className="projectLinks">
-                      {i?.website && (
-                        <div
-                          className="projectLink"
-                          onClick={() => {
-                            window.open(i?.website);
-                          }}
-                        >
-                          <i className="bi bi-globe"></i>
-                          Website
-                        </div>
-                      )}
-                      {i?.source && (
-                        <div className="projectLink">
-                          <i className="bi bi-github"></i> Source
-                        </div>
-                      )}
-                      <div className="projectLink">
-                        <i className="bi bi-info-circle-fill"></i>Read more
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
+              return <ProjectItem i={i} key={index} />;
             })}
           </div>
         </div>

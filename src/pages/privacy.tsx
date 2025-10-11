@@ -7,6 +7,8 @@ import { ScrollContext } from "@/store/context";
 
 const Privacy = () => {
   const navigate = useNavigate()
+    //@ts-ignore
+
   const {dark} = useContext(ScrollContext)
   return (
     <div className="homeBodyContainer">

@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 
 const Posts = () => {
   const navigate = useNavigate()
+    //@ts-ignore
+
   const [posts, setPosts] = useState([
     {
       id: 1,

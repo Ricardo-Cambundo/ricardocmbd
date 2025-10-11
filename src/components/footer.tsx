@@ -5,6 +5,8 @@ import { useContext } from "react";
 
 const Footer = () => {
   const navigate = useNavigate()
+  //@ts-ignore
+
   const { dark, setDark } = useContext(ScrollContext);
   
   return (

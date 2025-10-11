@@ -3,6 +3,8 @@ import "../css/hero.css";
 import { ScrollContext } from "@/store/context";
 
 const Hero = () => {
+  //@ts-ignore
+
   const { chat, setChat } = useContext(ScrollContext);
   
   

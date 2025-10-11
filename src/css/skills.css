@@ -49,8 +49,41 @@
   /* remove margin later on media queries */
   /* margin-left: -20px; */
 }
-@media screen and (max-width) {
-    
+@media screen and (max-width: 712px) {
+    .skillsContainer .skillsGrid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+@media screen and (max-width: 520px) {
+    .skillsContainer .skillsGrid {
+      grid-template-columns: repeat(4, 240px);
+      padding-bottom: 30px;
+      margin-bottom: -30px;
+      overflow-x: scroll;
+    scrollbar-width: auto; /* for Firefox */
+
+    }
+   
+    .skillsContainer .skill {
+      .skillsContainer .skill {
+      }
+    }
+  
+}
+@media screen and (max-width: 356px) {
+    .skillsContainer .skillsGrid {
+      grid-template-columns: repeat(4, 200px);
+      padding-bottom: 30px;
+      margin-bottom: -30px;
+      overflow-x: scroll;
+    }
+    .skillsContainer .skill {
+      .skillsContainer .skill {
+        min-width: 0.5vw;
+      }
+    }
+  
 }
 .skillsContainer .skill {
   display: flex;

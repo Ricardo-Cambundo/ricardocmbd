@@ -1,11 +1,13 @@
 #postsSection .posts {
   margin-top: 20px;
   background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
-    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  /* box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px; */
   /* padding-inline: 25px; */
   border-radius: 15px;
   overflow: hidden;
+    border: 1px solid #eeeeee;
+
 }
 
 #postsSection .post {
@@ -20,6 +22,17 @@
   &:hover {
     filter: brightness(0.96);
   }
+}
+@media screen and (max-width: 460px) {
+  #postsSection .post {
+    flex-direction: column-reverse;
+  }
+  #postsSection .right, .dateInfo {
+    flex-direction: row !important;
+    justify-content: space-between;
+  }
+  
+
 }
 #postsSection .post:not(:first-child) {
     /* background-color: red !important; */

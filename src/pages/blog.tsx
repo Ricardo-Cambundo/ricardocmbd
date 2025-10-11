@@ -15,6 +15,8 @@ import { useNavigate } from "react-router-dom";
 
 const Blog = () => {
   const navigate = useNavigate()
+    //@ts-ignore
+
   const [posts, setPosts] = useState([
   {
     id: 1,
@@ -101,8 +103,12 @@ const Blog = () => {
       posts.slice(0, 1)
         .sort((a: any, b: any) => {
           if (filter == "newest") {
+              //@ts-ignore
+
             return (new Date(b?.date) - new Date(a?.date));
           } else if (filter == "mobile") {
+              //@ts-ignore
+
             return (new Date(a?.date) - new Date(b?.date));
           } else {
             return a?.title?.toLowerCase().localeCompare(b?.title?.toLowerCase());

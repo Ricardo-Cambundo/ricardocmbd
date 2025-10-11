@@ -2,6 +2,8 @@ import { useState } from "react";
 import "../css/skills.css";
 
 const Skills = () => {
+    //@ts-ignore
+
   const [skills, setSkills] = useState([
     {
       title: "TypeScript",
