@@ -142,3 +142,15 @@
     list-style: circle;
     padding-left: 28px;
 }
+.blogPage .warning {
+  background-color: #FFF7E4;
+  margin-top: 20px;
+  margin-bottom: -5px;
+  padding: 15px 15px;
+  color: #D9AA40;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  font-size: 14.5px;
+
+  border-left: 4px solid #FFCC58;
+}

@@ -12,12 +12,13 @@ const Project1 = () => {
     const navigate = useNavigate()
     const { dark } = useContext(ScrollContext)
      const info = {
-    title: "Hello World!",
+    title: "Level RH",
     preDescription:
       "Highly tested and used complete human resource management system for employee tracking, payroll and much more",
     description:
       "This is my first post on my blog as I get everything set up and see how it all looks in Markdown. I’m using this as a little test to see how the formatting turns out. Overtime, I'll share more about my projects, insights on technology, helpful tips, and maybe even some personal stories along the way.",
-    read: 1,
+    read: 2,
+    warning: "The application is accessible only within organization's internal network, with no public-facing URL. Currently working on a live demo environment for demonstration purposes.",
     date: "2025-03-03",
     tags: [
         "AngularJS",
@@ -73,7 +74,7 @@ const Project1 = () => {
               <img src={levelrh}/>
             </div>
           </div>
-          <div className="greetings">Level RH!</div>
+          <div className="greetings">{info?.title}</div>
           <div className="preDescription">{info?.preDescription}</div>
           <div className="dateInfo">
             {/* <div
@@ -101,6 +102,8 @@ const Project1 = () => {
               );
             })}
           </div>
+
+          {info?.warning && <div className='warning'>{info?.warning}</div>}
 
           <div className="content" style={{ color: dark && "white" }}>
             <hr />
