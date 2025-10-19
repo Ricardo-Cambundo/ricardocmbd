@@ -5,9 +5,12 @@ import { androidstudio, CopyBlock } from 'react-code-blocks'
 import Header from '@/components/header'
 import { useNavigate } from 'react-router-dom'
 import { ScrollContext } from '@/store/context'
-import Earth from '@/components/globe'
 import { format } from 'date-fns'
 import levelrh from "../../assets/images/levelrh.webp";
+import levelrh1 from "../../assets/images/levelrh/levelrh2.webp";
+import levelrh2 from "../../assets/images/levelrh/levelrh1.webp";
+
+
 const Project1 = () => {
     const navigate = useNavigate()
     const { dark } = useContext(ScrollContext)
@@ -16,7 +19,7 @@ const Project1 = () => {
     preDescription:
       "Highly tested and used complete human resource management system for employee tracking, payroll and much more",
     description:
-      "This is my first post on my blog as I get everything set up and see how it all looks in Markdown. I’m using this as a little test to see how the formatting turns out. Overtime, I'll share more about my projects, insights on technology, helpful tips, and maybe even some personal stories along the way.",
+      "Designed and developed an intuitive and user-friendly interface that allows HR teams to easily access and analyze HR data. Dynamic dashboards and visual charts help visualize employee statistics, attendance, and payroll summaries. Integrated Google SMTP to send automated email notifications for payroll slips, alerts, and other HR communications. Utilized Twilio SMS API for real-time notifications and reminders directly to employees' mobile devices",
     read: 2,
     warning: "The application is accessible only within organization's internal network, with no public-facing URL. Currently working on a live demo environment for demonstration purposes.",
     date: "2025-03-03",
@@ -103,23 +106,44 @@ const Project1 = () => {
             })}
           </div>
 
-          {info?.warning && <div className='warning'>{info?.warning}</div>}
+          {info?.warning && <div className={dark ? 'warning1' : 'warning'}>{info?.warning}</div>}
 
           <div className="content" style={{ color: dark && "white" }}>
             <hr />
             <p>{info?.description}</p>
-            <h1>What's this about?</h1>
+            <h1>Core Functionalities</h1>
+            <ul>
+              <li>Management of employee personal details, employment contracts, and employment history</li>
+              <li>Handling salary advances, vacation scheduling, and generating customizable payroll slips for employees</li>
+              <li>Tax mapping and compliance automation to help organizations adhere to local regulations seamlessly</li>
+              <li>Attendance tracking with statistical reporting features, enabling quick insights into workforce presence</li>
+              <li>Automated work hour summarization and payroll processing to ensure accuracy and efficiency</li>
+            </ul>
             <p>
-              This blog will serve as a way for me to share my experiences,
-              projects, and random thoughts with the world. For now, I'm testing
-              the waters and making sure everything looks good. Stay tuned for
-              more meaningful content soon...
+              Let's see how some of these functionalities look like below.
             </p>
             <p>
-              I'm passionate about learning and exploring new ideas, and this
-              space will be my personal journal of growth and discovery. Some of
-              the topics I plan to cover include:
+              Management of employee personal details, employment contracts, and employment history:
             </p>
+            <div
+              className={`${dark ? "imageContainer-light" : "imageContainer"}`}
+             style={{overflow: 'hidden', maxHeight: 500, position: 'relative', padding: 0}}>
+              {" "}
+              {/* <img loading="lazy" src={levelinvoice} /> */}
+              <img src={levelrh1} className='2pc'/>
+            </div>
+
+            <p>
+              Supporting salary advances, vacation scheduling, and the generation of customizable payroll slips. Users can select parameters such as department, subsidies, awards, employment type, and hub. The system can then produce visually appealing, strategically formatted payroll PDFs and Excel reports, incorporating automated calculations, tax deductions, and benefits for accurate and compliant payroll documentation:
+            </p>
+            <div
+              className={`${dark ? "imageContainer-light" : "imageContainer"}`}
+             style={{overflow: 'hidden', maxHeight: 500, position: 'relative', padding: 0}}>
+              {" "}
+              {/* <img loading="lazy" src={levelinvoice} /> */}
+              <img src={levelrh1} className='2pc'/>
+            </div>
+            
             <ul>
               <li>Tech insights and tutorials</li>
               <li>Creative projects and design ideas</li>

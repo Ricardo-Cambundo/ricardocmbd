@@ -82,6 +82,9 @@
   border-radius: 10px;
   /* display: none; */
 }
+img[class="2pc"] {
+  transform: scale(1.15) !important;
+}
 .blogPage .preDescription {
   color: grey;
 }
@@ -153,4 +156,17 @@
   font-size: 14.5px;
 
   border-left: 4px solid #FFCC58;
+}
+.blogPage .warning1 {
+  background-color: #6c6279;
+  margin-top: 20px;
+  margin-bottom: -5px;
+  padding: 15px 15px;
+  color: #1f003b;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  font-size: 14.5px;
+  
+
+  border-left: 4px solid #6600c5;
 }
