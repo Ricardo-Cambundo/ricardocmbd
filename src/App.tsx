@@ -17,6 +17,7 @@ import Contact from "./pages/contact";
 import Blog1 from "./pages/blog/blog1";
 import NotFound from "./pages/404";
 import Project1 from "./pages/projects/project1(LevelRH)";
+import Project2 from "./pages/projects/project2(LevelInvoice)";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/1" element={<Blog1 />} />
         <Route path="/projects/1" element={<Project1 />} />
+        <Route path="/projects/2" element={<Project2 />} />
 
         <Route path="/contact" element={<Contact />} />
 

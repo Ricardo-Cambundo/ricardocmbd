@@ -562,7 +562,7 @@ Important: Be short and concise. The current date is ${new Date().toISOString()}
           <input
             onKeyDown={(e) => {
               if (e.key === "Enter") {
-                send();
+                chatText?.length > 0 && send();
               }
             }}
             type="text"
@@ -580,7 +580,7 @@ Important: Be short and concise. The current date is ${new Date().toISOString()}
               color: chatText.length > 0 ? "white" : "black",
             }}
             onClick={() => {
-              send();
+              chatText?.length > 0 && send();
             }}
             xmlns="http://www.w3.org/2000/svg"
             width="16"

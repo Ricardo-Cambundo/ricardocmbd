@@ -9,6 +9,9 @@ import { format } from 'date-fns'
 import levelrh from "../../assets/images/levelrh.webp";
 import levelrh1 from "../../assets/images/levelrh/levelrh2.webp";
 import levelrh2 from "../../assets/images/levelrh/levelrh1.webp";
+import levelrh3 from "../../assets/images/levelrh/levelrh3.png";
+import levelrh4 from "../../assets/images/levelrh/levelrh4.png";
+import levelrh5 from "../../assets/images/levelrh/levelrh5.png";
 
 
 const Project1 = () => {
@@ -19,7 +22,7 @@ const Project1 = () => {
     preDescription:
       "Highly tested and used complete human resource management system for employee tracking, payroll and much more",
     description:
-      "Designed and developed an intuitive and user-friendly interface that allows HR teams to easily access and analyze HR data. Dynamic dashboards and visual charts help visualize employee statistics, attendance, and payroll summaries. Integrated Google SMTP to send automated email notifications for payroll slips, alerts, and other HR communications. Utilized Twilio SMS API for real-time notifications and reminders directly to employees' mobile devices",
+      "Designed and developed an intuitive and user-friendly interface that allows HR teams to easily access and analyze HR data. Dynamic dashboards and visual charts help visualize employee statistics, attendance, and payroll summaries. Integrated Google SMTP to send automated email notifications for payroll slips, alerts, and other HR communications. Utilized Twilio SMS API for real-time notifications and reminders directly to employees' mobile devices.",
     read: 2,
     warning: "The application is accessible only within organization's internal network, with no public-facing URL. Currently working on a live demo environment for demonstration purposes.",
     date: "2025-03-03",
@@ -122,8 +125,11 @@ const Project1 = () => {
             <p>
               Let's see how some of these functionalities look like below.
             </p>
+            <h1>
+              1. Management of employee personal details, employment contracts, and employment history
+            </h1>
             <p>
-              Management of employee personal details, employment contracts, and employment history:
+              Management of employee personal details, including contact information, identification documents; administration of employment contracts, such as onboarding, renewals, and amendments; and maintenance of comprehensive employment history records, covering previous roles, performance evaluations, training, and career progression for accurate employee management and reporting:
             </p>
             <div
               className={`${dark ? "imageContainer-light" : "imageContainer"}`}
@@ -132,63 +138,58 @@ const Project1 = () => {
               {/* <img loading="lazy" src={levelinvoice} /> */}
               <img src={levelrh1} className='2pc'/>
             </div>
-
+            <h1>2. Supporting automated and customizable payroll slips</h1>
             <p>
-              Supporting salary advances, vacation scheduling, and the generation of customizable payroll slips. Users can select parameters such as department, subsidies, awards, employment type, and hub. The system can then produce visually appealing, strategically formatted payroll PDFs and Excel reports, incorporating automated calculations, tax deductions, and benefits for accurate and compliant payroll documentation:
+               Users can select parameters such as department, subsidies, awards, employment type, and hub. The system creates formatted payroll PDFs and Excel reports with automated calculations, deductions, and benefits for accurate, compliant payrolls:
             </p>
             <div
               className={`${dark ? "imageContainer-light" : "imageContainer"}`}
              style={{overflow: 'hidden', maxHeight: 500, position: 'relative', padding: 0}}>
               {" "}
               {/* <img loading="lazy" src={levelinvoice} /> */}
-              <img src={levelrh1} className='2pc'/>
+              <img src={levelrh3} className='2pc'/>
             </div>
             
-            <ul>
-              <li>Tech insights and tutorials</li>
-              <li>Creative projects and design ideas</li>
-              <li>Personal development and productivity tips</li>
-              <li>Book and resource recommendations</li>
-              <li>Random musings and reflections</li>
-            </ul>
+            <h1>3. Automated work hour summarization and statistical reports</h1>
             <p>
-              Feel free to leave comments or suggestions—I'd love to hear your
-              feedback! Thanks for stopping by, and I look forward to embarking
-              on this blogging journey with you. Keep an eye out for upcoming
-              posts that dive deeper into my projects and thoughts!
+              The system logs employee working hours accurately and provides statistical reports, facilitating quick analysis of workforce presence and attendance patterns for better operational insights:
             </p>
 
-            {/* New Section */}
-            <h1>Upcoming Topics</h1>
+            {/* <h1>Upcoming Topics</h1> */}
+            <div
+              className={`${dark ? "imageContainer-light" : "imageContainer"}`}
+             style={{overflow: 'hidden', maxHeight: 500, position: 'relative', padding: 0}}>
+              {" "}
+              {/* <img loading="lazy" src={levelinvoice} /> */}
+              <img src={levelrh4} className='2pc'/>
+            </div>
+
+            <h1>4. Handling salary advances, vacation scheduling</h1>
             <p>
-              In the coming weeks, I plan to explore a variety of interesting
-              topics, from new technology trends to personal growth strategies.
-              This section will keep you updated on what to expect and how you
-              can get involved in the conversation.
+              The system manages salary advances and vacation scheduling by automating request processing, tracking balances, and maintaining accurate records to streamline payroll and leave management processes.
             </p>
-            <h1>Code snippet</h1>
-            <CopyBlock
-              theme={androidstudio}
-              language="python"
-              text={`print("hello,world")
-print("stay tuned for more meaningful content soon...")`}
-              showLineNumbers={true}
-              wrapLongLines={true}
-              codeBlock
-            />
+            <div
+              className={`${dark ? "imageContainer-light" : "imageContainer"}`}
+             style={{overflow: 'hidden', maxHeight: 500, position: 'relative', padding: 0}}>
+              {" "}
+              {/* <img loading="lazy" src={levelinvoice} /> */}
+              <img src={levelrh5} className='2pc'/>
+            </div>
 
             <footer>
               <hr style={{ marginBottom: 20 }} />
               <p>
-                That's it for this test post! Check back soon for more updates,
-                and thanks for stopping by!
+                
+                This is a highly tested and proven software solution that is already in use. It includes many more screens and features to streamline HR management. Notably, several private, top-tier academic institutions in Angola are leveraging it to handle their HR needs. 
+
+                If you're interested in seeing more or would like a quick demo, feel free to email me, and I’ll be happy to walk you through it.
               </p>
             </footer>
           </div>
         </div>
         <div
           onClick={() => {
-            navigate("/blog");
+            navigate("/projects");
           }}
           className={`${dark ? "backHome-light" : "backHome"}`}
           style={{
@@ -198,10 +199,10 @@ print("stay tuned for more meaningful content soon...")`}
             textAlign: "right",
             alignSelf: "flex-end",
             marginLeft: "auto",
-            width: "100px",
+            width: "120px",
           }}
         >
-          more posts <i className="bi bi-arrow-right"></i>
+          more projects <i className="bi bi-arrow-right"></i>
         </div>
         <Footer />
       </div>

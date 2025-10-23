@@ -114,6 +114,7 @@ const Projects = () => {
 
   const [posts, setPosts] = useState([
     {
+      id: 1,
       title: "Level RH",
       description:
         "Highly tested and used complete human resource management system for employee tracking, payroll and much more",
@@ -130,9 +131,9 @@ const Projects = () => {
       ],
       source: true,
       highlight: "Extensively tested and reliable for large-scale deployments",
-      id: 1
     },
     {
+      id: 2,
       title: "Level Invoice",
       description:
         "Highly tested and used web-based platform for generating, tracking, and automating invoices",
