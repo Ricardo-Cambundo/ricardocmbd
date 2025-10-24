@@ -169,6 +169,7 @@ const Projects = () => {
       source: true,
     },
     {
+      id: 4,
       title: "GoingPlaces",
       description: "Car rental/sharing mobile application for IOS and Android",
       image: going,

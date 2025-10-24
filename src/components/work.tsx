@@ -180,7 +180,7 @@ const Work = () => {
     {
       company: "Lone Star College-CyFair",
       position: "AS of science in Computer Science",
-      duration: getDuration('2024-06-01'),
+      duration: getDuration('2025-06-01'),
       location: "Hybrid",
       type: "Full-time",
       logo: 'https://www.lonestar.edu/img/logo/LSC_Texas_Treatment_Circle_Logo.png',
