@@ -1,10 +1,14 @@
 import { useState } from "react";
 import logo from "../assets/images/logo-short-black.png";
+import lsc from "../assets/images/lsc.png";
+import levelsoft from "../assets/images/levelsoft.png";
+import ispajLogo from "../assets/images/ispajLogo.png";
+import pitruca from "../assets/images/pitruca.png";
 
 import "../css/work.css";
 
 const Work = () => {
-  const [tab, setTab] = useState("work");
+  const [tab, setTab] = useState("education");
   function getDuration(startDate: any, endDate: any = null) {
     const start = new Date(startDate);
     const end = endDate ? new Date(endDate) : new Date();
@@ -17,7 +21,12 @@ const Work = () => {
     const months = totalMonths % 12;
 
     // Format  and months
-    const yearStr = Math.abs(years) === 1 ? "1 yr": Math.abs(years) === 0 ? '' : `${Math.abs(years)} yrs`;
+    const yearStr =
+      Math.abs(years) === 1
+        ? "1 yr"
+        : Math.abs(years) === 0
+        ? ""
+        : `${Math.abs(years)} yrs`;
     const monthStr =
       Math.abs(months) === 1 ? "1 mo" : `${Math.abs(months)} mos`;
 
@@ -42,7 +51,7 @@ const Work = () => {
         : end.toLocaleString("default", { month: "short", year: "numeric" })
     } · ${yearStr}${months > 0 ? " " + monthStr : ""}`;
   }
-    //@ts-ignore
+  //@ts-ignore
 
   function getDuration1(startDate: any, endDate: any = null) {
     const start = new Date(startDate);
@@ -56,10 +65,15 @@ const Work = () => {
     const months = totalMonths % 12;
 
     // Format  and months
-      //@ts-ignore
+    //@ts-ignore
 
-    const yearStr = Math.abs(years) === 1 ? "1 yr": Math.abs(years) === 0 ? '' : `${Math.abs(years)} yrs`;
-      //@ts-ignore
+    const yearStr =
+      Math.abs(years) === 1
+        ? "1 yr"
+        : Math.abs(years) === 0
+        ? ""
+        : `${Math.abs(years)} yrs`;
+    //@ts-ignore
 
     const monthStr =
       Math.abs(months) === 1 ? "1 mo" : `${Math.abs(months)} mos`;
@@ -85,29 +99,29 @@ const Work = () => {
         : end.toLocaleString("default", { month: "short", year: "numeric" })
     }`;
   }
-  
+
   const [work, setWork] = useState([
     {
       company: "Level Soft - Angola",
       position: "Mobile/Web Application Developer",
-      duration: getDuration('2024-05-01'),
-      logo: "https://levelsoft.ao/images/logo-black.png",
+      duration: getDuration("2024-05-01"),
+      logo: levelsoft,
       expanded: true,
       nest: [
         {
           company: "Level Soft - Angola",
           position: "Mobile/Web Application Developer",
-          duration: getDuration('2024-05-01'),
+          duration: getDuration("2024-05-01"),
           location: "Hybrid",
           type: "Full-time",
           descriptions: [
-            "Designing and developing innovative mobile applications (for IOS and Android platforms) and web applications (some in the projects page)" ,
+            "Designing and developing innovative mobile applications (for IOS and Android platforms) and web applications (some in the projects page)",
           ],
         },
         {
           company: "Level Soft - Angola",
           position: "Network Technician and Web Developer Intern",
-          duration: getDuration('2024-01-01', '2024-05-01'),
+          duration: getDuration("2024-01-01", "2024-05-01"),
           location: "On-site",
           type: "Internship",
           descriptions: [
@@ -119,11 +133,11 @@ const Work = () => {
     {
       company: "ISPAJ Instituto Superior Politécnico Alvorecer da Juventude",
       position: "Software Developer",
-      duration: getDuration('2024-06-01'),
+      duration: getDuration("2024-06-01"),
       location: "Hybrid",
       type: "Full-time",
-      logo: "https://ispaj.co.ao/images/logotrans.png",
-      link: 'https://ispaj.co.ao/',
+      logo: ispajLogo,
+      link: "https://ispaj.co.ao/",
       descriptions: [
         "Designing, developing and maintaining innovative web-based management systems",
         "Creating solutions that respond to the specific needs of one of Angola's biggest private academic institutions",
@@ -144,14 +158,14 @@ const Work = () => {
     {
       company: "CMBD (My personal freelancing brand)",
       position: "Mobile Application Developer",
-      duration: getDuration('2022-11-01'),
+      duration: getDuration("2022-11-01"),
       logo: logo,
       expanded: false,
       nest: [
         {
           company: "CMBD",
           position: "Mobile Application Developer",
-          duration: getDuration('2022-11-01'),
+          duration: getDuration("2022-11-01"),
           location: "Remote",
           type: "Freelance",
           descriptions: [
@@ -162,7 +176,7 @@ const Work = () => {
         {
           company: "CMBD",
           position: "Web Developer",
-          duration: getDuration('2022-02-01'),
+          duration: getDuration("2022-02-01"),
           location: "Remote",
           type: "Freelance",
           descriptions: [
@@ -174,20 +188,17 @@ const Work = () => {
     },
   ]);
 
-    //@ts-ignore
+  //@ts-ignore
 
   const [education, setEducation] = useState([
     {
       company: "Lone Star College-CyFair",
       position: "AS of science in Computer Science",
-      duration: getDuration('2025-06-01'),
-      location: "Hybrid",
+      duration: getDuration("2025-06-01"),
       type: "Full-time",
-      logo: 'https://www.lonestar.edu/img/logo/LSC_Texas_Treatment_Circle_Logo.png',
+      logo: lsc,
       link: "https://www.lonestar.edu/",
-      descriptions: [
-        "Currently pursuing it so no highlights just yet haha.",
-      ],
+      descriptions: ["Currently pursuing it so no highlights just yet haha."],
       skills: [
         "AngularJS",
         "Web Development",
@@ -198,7 +209,28 @@ const Work = () => {
         "Problem Solving",
       ],
     },
-  ])
+    {
+      company: "Colégio Pitruca",
+      position: "Mid-level Computer Technician",
+      duration: getDuration("2020-02-02", "2024-08-28"),
+      location: "Hybrid",
+      type: "High School",
+      logo: pitruca,
+      link: "https://www.lonestar.edu/",
+      finalProject:
+        "https://drive.google.com/file/d/1t28_skw_09m2cW2bbH0ur4d4TPrtlZNk/view?usp=sharing",
+      descriptions: ["Graduated with a 4.0 GPA"],
+      skills: [
+        "AngularJS",
+        "Web Development",
+        "System Design",
+        "Database Management",
+        "API Development",
+        "Maintenance",
+        "Problem Solving",
+      ],
+    },
+  ]);
 
   return (
     <div className="skillsContainer" id="workSection">
@@ -226,9 +258,13 @@ const Work = () => {
             return (
               <div className="work" key={index}>
                 <div className="workLeft">
-                  <div style={{cursor: item?.link ? 'pointer': 'unset'}} className="imageContainer" onClick={() => {
-                        item?.link && window.open(item?.link)
-                      }}>
+                  <div
+                    style={{ cursor: item?.link ? "pointer" : "unset" }}
+                    className="imageContainer"
+                    onClick={() => {
+                      item?.link && window.open(item?.link);
+                    }}
+                  >
                     <img src={item?.logo} />
                   </div>
                 </div>
@@ -236,9 +272,15 @@ const Work = () => {
                   <div className="workHeader">
                     <div style={{ flex: 1 }}>
                       <div className="workDate">{item?.duration}</div>
-                      <div style={{cursor: item?.link ? 'pointer': 'unset'}} className="workTitle" onClick={() => {
-                        item?.link && window.open(item?.link)
-                      }}>{item?.company}</div>
+                      <div
+                        style={{ cursor: item?.link ? "pointer" : "unset" }}
+                        className="workTitle"
+                        onClick={() => {
+                          item?.link && window.open(item?.link);
+                        }}
+                      >
+                        {item?.company}
+                      </div>
                     </div>
                     {item?.nest && (
                       <div
@@ -332,9 +374,13 @@ const Work = () => {
             return (
               <div className="work" key={index}>
                 <div className="workLeft">
-                  <div style={{cursor: item?.link ? 'pointer': 'unset'}} className="imageContainer" onClick={() => {
-                        item?.link && window.open(item?.link)
-                      }}>
+                  <div
+                    style={{ cursor: item?.link ? "pointer" : "unset" }}
+                    className="imageContainer"
+                    onClick={() => {
+                      item?.link && window.open(item?.link);
+                    }}
+                  >
                     <img src={item?.logo} />
                   </div>
                 </div>
@@ -342,9 +388,15 @@ const Work = () => {
                   <div className="workHeader">
                     <div style={{ flex: 1 }}>
                       <div className="workDate">{item?.duration}</div>
-                      <div style={{cursor: item?.link ? 'pointer': 'unset'}} className="workTitle" onClick={() => {
-                        item?.link && window.open(item?.link)
-                      }}>{item?.company}</div>
+                      <div
+                        style={{ cursor: item?.link ? "pointer" : "unset" }}
+                        className="workTitle"
+                        onClick={() => {
+                          item?.link && window.open(item?.link);
+                        }}
+                      >
+                        {item?.company}
+                      </div>
                     </div>
                     {item?.nest && (
                       <div
@@ -377,8 +429,7 @@ const Work = () => {
                   </div>
                   {!item?.nest && (
                     <div className="workPosition">
-                      {item?.position}{" "}
-                      {!item?.nest && `(${item?.type} - ${item?.location})`}
+                      {item?.position} {!item?.nest && `(${item?.type})`}
                     </div>
                   )}
 
@@ -403,6 +454,8 @@ const Work = () => {
                                   ))}
                               </ul>
                             </div>
+                            
+                            
                           </div>
                         );
                       })}
@@ -425,6 +478,16 @@ const Work = () => {
                         ))}
                     </ul>
                   </div>
+                  {item?.finalProject && <div
+                              className="projectLink"
+                              style={{display: 'inline-flex', marginTop: 5, paddingBlock: 3, paddingInline: 15, fontSize: 12.5}}
+                              onClick={() => {
+                                window.open(item?.finalProject);
+                              }}
+                            >
+                              <i className="bi bi-globe"></i>
+                              Final Year Project (Portuguese)
+                            </div>}
                 </div>
               </div>
             );

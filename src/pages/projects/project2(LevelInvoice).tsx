@@ -22,7 +22,7 @@ const Project2 = () => {
       "Highly tested and used web-based platform for generating, tracking, and automating invoices",
     description:
       "Designed and developed a reliable and user-friendly web-based platform for generating, tracking, and automating invoices. The system features intuitive dashboards and visual analytics to monitor invoice status, payments, and outstanding balances. It integrates with email services to send automated invoice notifications and reminders, ensuring timely communication with clients. Additionally, it supports real-time alerts via SMS using Twilio API, helping businesses streamline their invoicing process and improve cash flow management.",
-    read: 2,
+    read: 4,
     highlight: 'This invoice program was validated by Angola’s Administração Geral Tributária (General Tax Administration) under validation number ---, ensuring compliance with official standards and legal acceptance.',
     warning:
       "The application is accessible only within organization's internal network, with no public-facing URL. Currently working on a live demo environment for demonstration purposes.",

@@ -23,7 +23,7 @@ const Project1 = () => {
       "Highly tested and used complete human resource management system for employee tracking, payroll and much more",
     description:
       "Designed and developed an intuitive and user-friendly interface that allows HR teams to easily access and analyze HR data. Dynamic dashboards and visual charts help visualize employee statistics, attendance, and payroll summaries. Integrated Google SMTP to send automated email notifications for payroll slips, alerts, and other HR communications. Utilized Twilio SMS API for real-time notifications and reminders directly to employees' mobile devices.",
-    read: 2,
+    read: 4,
     warning: "The application is accessible only within organization's internal network, with no public-facing URL. Currently working on a live demo environment for demonstration purposes.",
     date: "2025-03-03",
     tags: [

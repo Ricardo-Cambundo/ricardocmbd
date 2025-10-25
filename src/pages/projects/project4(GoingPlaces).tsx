@@ -11,31 +11,31 @@ import levelinvoice1 from "../../assets/images/levelinvoice/levelinvoice1.png";
 import levelinvoice2 from "../../assets/images/levelinvoice/levelinvoice2.png";
 import levelinvoice3 from "../../assets/images/levelinvoice/levelinvoice3.png";
 
-
-
 const Project4 = () => {
   const navigate = useNavigate();
   const { dark } = useContext(ScrollContext);
   const info = {
     title: "GoingPlaces",
-    preDescription:
-      "Highly tested and used web-based platform for generating, tracking, and automating invoices",
+    preDescription: "Car rental/sharing mobile application for IOS and Android",
+
     description:
-      "Designed and developed a reliable and user-friendly web-based platform for generating, tracking, and automating invoices. The system features intuitive dashboards and visual analytics to monitor invoice status, payments, and outstanding balances. It integrates with email services to send automated invoice notifications and reminders, ensuring timely communication with clients. Additionally, it supports real-time alerts via SMS using Twilio API, helping businesses streamline their invoicing process and improve cash flow management.",
+      "GoingPlaces is a user-friendly car rental/sharing app for iOS and Android, built with Python/Django and React Native. It offers real-time location-based search, secure authentication, personalized profiles, and a flexible booking process. Using PostgreSQL for scalable data management, the app features push notifications and geolocation integration to enhance user experience. Designed to streamline vehicle sharing and promote community-driven transportation, GoingPlaces makes renting and sharing cars easy and efficient.",
     read: 2,
-    highlight: 'This invoice program was validated by Angola’s Administração Geral Tributária (General Tax Administration) under validation number ---, ensuring compliance with official standards and legal acceptance.',
-    warning:
-      "The application is accessible only within organization's internal network, with no public-facing URL. Currently working on a live demo environment for demonstration purposes.",
-    date: "2025-03-03",
+    
+    // warning:
+    //   "The application is accessible only within organization's internal network, with no public-facing URL. Currently working on a live demo environment for demonstration purposes.",
+    // date: "2025-03-03",
     tags: [
-      "AngularJS",
+      "React Native",
       "JavaScript",
-      "Laravel/PHP",
-      "PostgreSQL",
-      "Google SMTP",
-      "Twilio SMS",
-      "Docker",
+      "Django",
+      "Python",
       "JWT",
+      "PostgreSQL",
+      "Firebase",
+      "Websockets",
+      "IOS",
+      "Android",
     ],
   };
   useEffect(() => {
@@ -80,7 +80,6 @@ const Project4 = () => {
                 padding: 0,
               }}
             >
-              
               {/* <img loading="lazy" src={levelinvoice} /> */}
               <img src={goingplaces} />
             </div>
@@ -115,7 +114,9 @@ const Project4 = () => {
           </div>
 
           {info?.highlight && (
-            <div className={dark ? "highlight1" : "highlight"}>{info?.highlight}</div>
+            <div className={dark ? "highlight1" : "highlight"}>
+              {info?.highlight}
+            </div>
           )}
           {info?.warning && (
             <div className={dark ? "warning1" : "warning"}>{info?.warning}</div>
@@ -127,37 +128,45 @@ const Project4 = () => {
             <h1>Core Functionalities</h1>
             <ul>
               <li>
-                Support for multiple invoice types and Credit Notes for
-                Cancellation and Correction
+                Secure user authentication and personalized profiles for
+                seamless access
               </li>
               <li>
-                SAF-T (Standard Audit File for Tax) file generation to ensure compliance with tax authorities
+                Real-time location-based search for available vehicles and
+                nearby sharing options
               </li>
               <li>
-                Flexible export options, including A4, A5, and thermal paper
-                formats for printing and digital distribution
+                Flexible booking system with options for hourly, daily, and
+                long-term rentals
               </li>
               <li>
-                Tracking and management of invoice statuses, payments, and
-                adjustments
+                Integration with geolocation APIs for accurate vehicle tracking
+                and navigation
               </li>
               <li>
-                Automated notifications via email and SMS for invoice issuance,
-                reminders, and updates
+                Push notifications for booking confirmations, reminders, and
+                updates
               </li>
               <li>
-                Verification of invoice authenticity
+                Management of vehicle availability, reservations, and user
+                reviews
               </li>
               <li>
-                Analytics on invoicing activity, revenue, and
-                outstanding balances
+                Data management with scalable PostgreSQL database for reliable
+                performance
+              </li>
+              <li>
+                Support for sharing and community engagement features to promote
+                resource utilization
               </li>
             </ul>
             <p>Let's see how some of these functionalities look like below.</p>
-            <h1>
-              1. Support for multiple invoice types
-            </h1>
-            <p>Support for multiple invoice types, including Standard Invoice, Receipt Invoice, Pro Forma Invoice, and Credit Notes for Cancellation and Correction, allowing businesses to handle various billing scenarios accurately and efficiently:
+            <h1>1. Support for multiple invoice types</h1>
+            <p>
+              Support for multiple invoice types, including Standard Invoice,
+              Receipt Invoice, Pro Forma Invoice, and Credit Notes for
+              Cancellation and Correction, allowing businesses to handle various
+              billing scenarios accurately and efficiently:
             </p>
             <div
               className={`${dark ? "imageContainer-light" : "imageContainer"}`}
@@ -168,13 +177,18 @@ const Project4 = () => {
                 padding: 0,
               }}
             >
-              
               {/* <img loading="lazy" src={levelinvoice} /> */}
               {/* <img src={levelinvoice} /> */}
             </div>
-            <h1>2. Analytics on invoicing activity, revenue, and outstanding balances</h1>
+            <h1>
+              2. Analytics on invoicing activity, revenue, and outstanding
+              balances
+            </h1>
             <p>
-              Comprehensive analytics on invoicing activity, including detailed insights into revenue generated, outstanding balances, payment trends, and overdue accounts, to help businesses make informed financial decisions and optimize cash flow management.
+              Comprehensive analytics on invoicing activity, including detailed
+              insights into revenue generated, outstanding balances, payment
+              trends, and overdue accounts, to help businesses make informed
+              financial decisions and optimize cash flow management.
             </p>
             <div
               className={`${dark ? "imageContainer-light" : "imageContainer"}`}
@@ -185,16 +199,17 @@ const Project4 = () => {
                 padding: 0,
               }}
             >
-              
               {/* <img loading="lazy" src={levelinvoice} /> */}
               <img src={levelinvoice1} />
             </div>
 
-            <h1>
-              3. SAF-T (Standard Audit File for Tax) file generation 
-            </h1>
+            <h1>3. SAF-T (Standard Audit File for Tax) file generation</h1>
             <p>
-              Generation of SAF-T (Standard Audit File for Tax) files to enable precise and secure reporting of financial and tax information, ensuring full compliance with local tax authority regulations, supporting audit procedures, and simplifying the tax filing process for businesses:
+              Generation of SAF-T (Standard Audit File for Tax) files to enable
+              precise and secure reporting of financial and tax information,
+              ensuring full compliance with local tax authority regulations,
+              supporting audit procedures, and simplifying the tax filing
+              process for businesses:
             </p>
 
             {/* <h1>Upcoming Topics</h1> */}
@@ -207,16 +222,17 @@ const Project4 = () => {
                 padding: 0,
               }}
             >
-              
               {/* <img loading="lazy" src={levelinvoice} /> */}
               <img src={levelinvoice2} />
             </div>
 
-            <h1>
-              4. Verification of invoice authenticity
-            </h1>
+            <h1>4. Verification of invoice authenticity</h1>
             <p>
-             The system's invoice verification feature allows you to quickly assess the authenticity of invoices by simply scanning a QR code. This streamlined process ensures invoices are legitimate and compliant, helping to prevent fraud, reduce errors, and accelerate approval workflows with minimal effort:
+              The system's invoice verification feature allows you to quickly
+              assess the authenticity of invoices by simply scanning a QR code.
+              This streamlined process ensures invoices are legitimate and
+              compliant, helping to prevent fraud, reduce errors, and accelerate
+              approval workflows with minimal effort:
             </p>
             <div
               className={`${dark ? "imageContainer-light" : "imageContainer"}`}
@@ -227,7 +243,6 @@ const Project4 = () => {
                 padding: 0,
               }}
             >
-              
               {/* <img loading="lazy" src={levelinvoice} /> */}
               <img src={levelinvoice3} />
             </div>
@@ -237,11 +252,11 @@ const Project4 = () => {
               <p>
                 This is a highly tested and proven software solution that is
                 already in use. It includes many more screens and features to
-                streamline invoice management. Notably, several private, top-tier
-                academic institutions in Angola are leveraging it to handle
-                their invoice needs. If you're interested in seeing more or would
-                like a quick demo, feel free to email me, and I’ll be happy to
-                walk you through it.
+                streamline invoice management. Notably, several private,
+                top-tier academic institutions in Angola are leveraging it to
+                handle their invoice needs. If you're interested in seeing more
+                or would like a quick demo, feel free to email me, and I’ll be
+                happy to walk you through it.
               </p>
             </footer>
           </div>
