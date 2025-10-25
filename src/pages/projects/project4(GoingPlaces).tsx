@@ -7,9 +7,11 @@ import { useNavigate } from "react-router-dom";
 import { ScrollContext } from "@/store/context";
 import { format } from "date-fns";
 import goingplaces from "../../assets/images/going_places.webp";
-import levelinvoice1 from "../../assets/images/levelinvoice/levelinvoice1.png";
-import levelinvoice2 from "../../assets/images/levelinvoice/levelinvoice2.png";
-import levelinvoice3 from "../../assets/images/levelinvoice/levelinvoice3.png";
+import goingplaces1 from "../../assets/images/goingplaces/goingplaces1.png";
+import goingplaces2 from "../../assets/images/goingplaces/goingplaces2.png";
+import goingplaces3 from "../../assets/images/goingplaces/goingplaces3.png";
+import goingplaces4 from "../../assets/images/goingplaces/goingplaces4.png";
+
 
 const Project4 = () => {
   const navigate = useNavigate();
@@ -144,7 +146,7 @@ const Project4 = () => {
                 and navigation
               </li>
               <li>
-                Push notifications for booking confirmations, reminders, and
+                Chatrooms and push notifications for booking confirmations, reminders, and
                 updates
               </li>
               <li>
@@ -161,12 +163,9 @@ const Project4 = () => {
               </li>
             </ul>
             <p>Let's see how some of these functionalities look like below.</p>
-            <h1>1. Support for multiple invoice types</h1>
+            <h1>1. Location-based search and advanced filters such as vehicle type and other criteria</h1>
             <p>
-              Support for multiple invoice types, including Standard Invoice,
-              Receipt Invoice, Pro Forma Invoice, and Credit Notes for
-              Cancellation and Correction, allowing businesses to handle various
-              billing scenarios accurately and efficiently:
+              The system offers map-based, location-aware search to quickly find available vehicles in real-time within the user’s vicinity. It includes advanced filters such as vehicle type and other criteria, along with nearby sharing options for seamless ride-sharing and access to shared vehicles:
             </p>
             <div
               className={`${dark ? "imageContainer-light" : "imageContainer"}`}
@@ -178,38 +177,12 @@ const Project4 = () => {
               }}
             >
               {/* <img loading="lazy" src={levelinvoice} /> */}
-              {/* <img src={levelinvoice} /> */}
-            </div>
-            <h1>
-              2. Analytics on invoicing activity, revenue, and outstanding
-              balances
-            </h1>
-            <p>
-              Comprehensive analytics on invoicing activity, including detailed
-              insights into revenue generated, outstanding balances, payment
-              trends, and overdue accounts, to help businesses make informed
-              financial decisions and optimize cash flow management.
-            </p>
-            <div
-              className={`${dark ? "imageContainer-light" : "imageContainer"}`}
-              style={{
-                overflow: "hidden",
-                maxHeight: 500,
-                position: "relative",
-                padding: 0,
-              }}
-            >
-              {/* <img loading="lazy" src={levelinvoice} /> */}
-              <img src={levelinvoice1} />
+              <img src={goingplaces1} />
             </div>
 
-            <h1>3. SAF-T (Standard Audit File for Tax) file generation</h1>
+            <h1>2. Detailed vehicle listings with key information</h1>
             <p>
-              Generation of SAF-T (Standard Audit File for Tax) files to enable
-              precise and secure reporting of financial and tax information,
-              ensuring full compliance with local tax authority regulations,
-              supporting audit procedures, and simplifying the tax filing
-              process for businesses:
+              The system provides detailed vehicle listings with key information such as make, model, year, registration, and condition. It also includes service history, ownership records, specifications, photos, and visual customer reviews. This comprehensive overview aids in better management, easier searching, and informed decision-making for fleet or inventory management:
             </p>
 
             {/* <h1>Upcoming Topics</h1> */}
@@ -223,16 +196,32 @@ const Project4 = () => {
               }}
             >
               {/* <img loading="lazy" src={levelinvoice} /> */}
-              <img src={levelinvoice2} />
+              <img src={goingplaces2} />
             </div>
 
-            <h1>4. Verification of invoice authenticity</h1>
+            <h1>
+              3. Real-time chatrooms and seamless booking tracking
+            </h1>
             <p>
-              The system's invoice verification feature allows you to quickly
-              assess the authenticity of invoices by simply scanning a QR code.
-              This streamlined process ensures invoices are legitimate and
-              compliant, helping to prevent fraud, reduce errors, and accelerate
-              approval workflows with minimal effort:
+              The system includes a chatroom feature powered by WebSockets, enabling real-time, instant communication among users and vehicle owners. It also offers damange report options and seamless booking tracking, allowing users to efficiently monitor and manage reservations or appointments within the platform:
+            </p>
+            <div
+              className={`${dark ? "imageContainer-light" : "imageContainer"}`}
+              style={{
+                overflow: "hidden",
+                maxHeight: 500,
+                position: "relative",
+                padding: 0,
+              }}
+            >
+              <img loading="lazy" src={goingplaces3} />
+              
+            </div>
+
+
+            <h1>4. Seamless checkout process</h1>
+            <p>
+              The system features a seamless checkout process that includes options for vehicle protection plans and additional services such as pre-paid gas filling. It supports multiple payment methods, providing users with convenient and flexible payment options to enhance their rental experience:
             </p>
             <div
               className={`${dark ? "imageContainer-light" : "imageContainer"}`}
@@ -244,19 +233,13 @@ const Project4 = () => {
               }}
             >
               {/* <img loading="lazy" src={levelinvoice} /> */}
-              <img src={levelinvoice3} />
+              <img src={goingplaces4} />
             </div>
 
             <footer>
               <hr style={{ marginBottom: 20 }} />
               <p>
-                This is a highly tested and proven software solution that is
-                already in use. It includes many more screens and features to
-                streamline invoice management. Notably, several private,
-                top-tier academic institutions in Angola are leveraging it to
-                handle their invoice needs. If you're interested in seeing more
-                or would like a quick demo, feel free to email me, and I’ll be
-                happy to walk you through it.
+                GoingPlaces is a robust car rental application. It offers a comprehensive suite of features all designed to enhance the user experience. It has many more screens. The app supports both Android and iOS platforms, ensuring accessibility for a wide range of users. If you're interested in exploring more or would like a quick demo, please feel free to contact me, and I’ll be happy to guide you through its capabilities.
               </p>
             </footer>
           </div>

@@ -216,7 +216,6 @@ const Work = () => {
       location: "Hybrid",
       type: "High School",
       logo: pitruca,
-      link: "https://www.lonestar.edu/",
       finalProject:
         "https://drive.google.com/file/d/1t28_skw_09m2cW2bbH0ur4d4TPrtlZNk/view?usp=sharing",
       descriptions: ["Graduated with a 4.0 GPA"],
@@ -480,7 +479,7 @@ const Work = () => {
                   </div>
                   {item?.finalProject && <div
                               className="projectLink"
-                              style={{display: 'inline-flex', marginTop: 5, paddingBlock: 3, paddingInline: 15, fontSize: 12.5}}
+                              style={{display: 'inline-flex', marginTop: 5,  paddingInline: 15, fontSize: 12.5}}
                               onClick={() => {
                                 window.open(item?.finalProject);
                               }}
