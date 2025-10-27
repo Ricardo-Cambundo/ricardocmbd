@@ -259,6 +259,7 @@ const Projects = () => {
       source: true,
     },
     {
+      id: 7,
       title: "Internship Management System",
       description:
         "Already in use, this is an enterprise platform for academic/medical internship coordination",

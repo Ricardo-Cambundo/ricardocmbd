@@ -8,7 +8,7 @@ import pitruca from "../assets/images/pitruca.png";
 import "../css/work.css";
 
 const Work = () => {
-  const [tab, setTab] = useState("education");
+  const [tab, setTab] = useState("work");
   function getDuration(startDate: any, endDate: any = null) {
     const start = new Date(startDate);
     const end = endDate ? new Date(endDate) : new Date();
