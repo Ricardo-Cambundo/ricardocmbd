@@ -20,6 +20,7 @@ import Project1 from "./pages/projects/project1(LevelRH)";
 import Project2 from "./pages/projects/project2(LevelInvoice)";
 import Project4 from "./pages/projects/project4(GoingPlaces)";
 import Project7 from "./pages/projects/project7(SGE)";
+import Project8 from "./pages/projects/project8(AnimesCMBD)";
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
         <Route path="/projects/2" element={<Project2 />} />
         <Route path="/projects/4" element={<Project4 />} />
         <Route path="/projects/7" element={<Project7 />} />
+        <Route path="/projects/8" element={<Project8 />} />
 
         <Route path="/contact" element={<Contact />} />
 

@@ -206,22 +206,21 @@ const Projects = () => {
       website: "https://ispaj.co.ao/",
     },
     {
-      title: "AngoTrans Express website",
+      id: 7,
+      title: "Internship Management System",
       description:
-        "Corporate website for a company specialized in road transport and cargo transportation solutions",
-      image: angotrans_site,
+        "Already in use, this is an enterprise platform for academic/medical internship coordination",
+      image: sge,
       tags: [
         "React",
         "JavaScript",
         "Laravel/PHP",
         "PostgreSQL",
         "Google SMTP",
-        "Twilio SMS",
         "Docker",
         "JWT",
       ],
       source: true,
-      website: "https://angotransexpress.ao/",
     },
     {
       title: "AngoTrans Express",
@@ -241,6 +240,7 @@ const Projects = () => {
       source: true,
     },
     {
+      id: 8,
       title: "AnimesCMBD",
       description: "Anime cataloging mobile app for IOS and Android",
       image: animescmbd,
@@ -252,29 +252,31 @@ const Projects = () => {
         "JWT",
         "PostgreSQL",
         "Firebase",
-        "Websockets",
         "IOS",
         "Android",
       ],
       source: true,
     },
     {
-      id: 7,
-      title: "Internship Management System",
+      id: 6,
+      title: "AngoTrans Express website",
       description:
-        "Already in use, this is an enterprise platform for academic/medical internship coordination",
-      image: sge,
+        "Corporate website for a company specialized in road transport and cargo transportation solutions",
+      image: angotrans_site,
       tags: [
         "React",
         "JavaScript",
         "Laravel/PHP",
         "PostgreSQL",
         "Google SMTP",
+        "Twilio SMS",
         "Docker",
         "JWT",
       ],
       source: true,
+      website: "https://angotransexpress.ao/",
     },
+    ,
   ]);
   const [filtered, setFiltered] = useState(posts);
 
