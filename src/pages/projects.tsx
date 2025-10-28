@@ -187,6 +187,24 @@ const Projects = () => {
       ],
       source: true,
     },
+    
+    {
+      id: 7,
+      title: "Internship Management System",
+      description:
+        "Already in use, this is an enterprise platform for academic/medical internship coordination",
+      image: sge,
+      tags: [
+        "React",
+        "JavaScript",
+        "Laravel/PHP",
+        "PostgreSQL",
+        "Google SMTP",
+        "Docker",
+        "JWT",
+      ],
+      source: true,
+    },
     {
       title: "ISPAJ",
       description:
@@ -206,23 +224,7 @@ const Projects = () => {
       website: "https://ispaj.co.ao/",
     },
     {
-      id: 7,
-      title: "Internship Management System",
-      description:
-        "Already in use, this is an enterprise platform for academic/medical internship coordination",
-      image: sge,
-      tags: [
-        "React",
-        "JavaScript",
-        "Laravel/PHP",
-        "PostgreSQL",
-        "Google SMTP",
-        "Docker",
-        "JWT",
-      ],
-      source: true,
-    },
-    {
+      id: 9,
       title: "AngoTrans Express",
       description: "Real-time bus tracking mobile app for IOS and Android",
       image: angotrans,

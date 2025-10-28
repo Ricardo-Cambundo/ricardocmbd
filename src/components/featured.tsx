@@ -36,6 +36,7 @@ const Featured = () => {
 
   const [posts, setPosts] = useState([
     {
+      id: 1,
       title: "Level RH",
       description:
         "Highly tested and used complete human resource management system for employee tracking, payroll and much more",
@@ -44,6 +45,7 @@ const Featured = () => {
       source: true,
     },
     {
+      id: 2,
       title: "Level Invoice",
       description:
         "Highly tested and used web-based platform for generating, tracking, automating invoices and much more",
@@ -53,6 +55,7 @@ const Featured = () => {
 
     },
     {
+      id: 3,
       title: "NaVia",
       description:
         "Cross-platform m-commerce app with courier logistics (IOS/Android)...",
@@ -61,6 +64,7 @@ const Featured = () => {
       source: true
     },
     {
+      id: 4,
       title: "GoingPlaces",
       description:
         "Car rental/sharing mobile application for IOS and Android...",
@@ -83,7 +87,9 @@ const Featured = () => {
       <div className="projects">
         {posts.map((i: any, index: number) => {
           return(
-            <div className="project" key={index}>
+            <div className="project" key={index} onClick={() => {
+            navigate(`/projects/${i?.id}`)
+          }}>
               <div className="imageContainer">
                 <OptimizedImage src={i?.image} alt={i?.title} />
                 

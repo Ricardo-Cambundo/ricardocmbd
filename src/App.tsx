@@ -21,6 +21,7 @@ import Project2 from "./pages/projects/project2(LevelInvoice)";
 import Project4 from "./pages/projects/project4(GoingPlaces)";
 import Project7 from "./pages/projects/project7(SGE)";
 import Project8 from "./pages/projects/project8(AnimesCMBD)";
+import Project9 from "./pages/projects/project9(AngoTransExpress)";
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
         <Route path="/projects/4" element={<Project4 />} />
         <Route path="/projects/7" element={<Project7 />} />
         <Route path="/projects/8" element={<Project8 />} />
+        <Route path="/projects/9" element={<Project9 />} />
 
         <Route path="/contact" element={<Contact />} />
 
