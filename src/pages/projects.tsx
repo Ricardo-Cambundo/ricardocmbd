@@ -151,6 +151,7 @@ const Projects = () => {
       source: true,
     },
     {
+      id: 3,
       title: "NaVia",
       description:
         "Cross-platform m-commerce app with courier logistics (IOS/Android)",
