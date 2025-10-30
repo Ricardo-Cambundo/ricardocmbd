@@ -21,7 +21,8 @@ const Chatbot = ({
   setHistory: any;
 }) => {
   const [thinking, setThinking] = useState(false);
-  const chave = "XfS78cJC6kbFUb4ow26RXT6EIk5yk6loDf8bHcXF";
+
+  const chave = import.meta.env.VITE_API_KEY;
 
   const portfolioData = {
     experience: [
@@ -398,7 +399,7 @@ Important: Be short and concise. The current date is ${new Date().toISOString()}
     let botResponse = await callHuggingFaceAPI(chatText);
     console.trace('bot response', botResponse)
     if (!botResponse || `${botResponse}`.trim() === "") {
-      botResponse = getFallbackResponse(chatText);
+      botResponse = "Having trouble in the backend. Please try again later :)";
     }
     setTimeout(() => {
       setThinking(false);

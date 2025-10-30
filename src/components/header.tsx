@@ -120,7 +120,7 @@ const Header = () => {
             }}
           >
             <svg
-            style={{color: chat ? '#004ac0': 'unset'}}
+            style={{color: chat ? '#004ac0': dark ? 'white' : 'unset'}}
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
@@ -148,7 +148,7 @@ const Header = () => {
                   y1="0"
                   x2="6"
                   y2="6"
-                  stroke="black" // or your desired color
+                  stroke={dark ? 'white': "black"} // or your desired color
                   strokeWidth="0.5"
                 />
               </svg>

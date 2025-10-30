@@ -8,8 +8,9 @@ import { ScrollContext } from "@/store/context";
 import { format } from "date-fns";
 import navia from "../../assets/images/navia.webp";
 import navia1 from "../../assets/images/navia/navia1.png";
-import goingplaces2 from "../../assets/images/goingplaces/goingplaces2.png";
-import goingplaces3 from "../../assets/images/goingplaces/goingplaces3.png";
+import navia2 from "../../assets/images/navia/navia2.png";
+import navia3 from "../../assets/images/navia/navia3.png";
+import navia4 from "../../assets/images/navia/navia4.png";
 import goingplaces4 from "../../assets/images/goingplaces/goingplaces4.png";
 
 const Project3 = () => {
@@ -86,9 +87,9 @@ const Project3 = () => {
               <img src={navia} />
             </div>
           </div>
-          <div className="greetings">{info?.title}</div>
-          <div className="preDescription">{info?.preDescription}</div>
-          <div className="dateInfo">
+          <div className="greetings" style={{color: dark && 'white'}}>{info?.title}</div>
+          <div className="preDescription" style={{color: dark && '#c9c9c9ff'}}>{info?.preDescription}</div>
+          <div className="dateInfo" style={{color: dark && '#c9c9c9ff'}}>
             {/* <div
               className="date"
               style={{
@@ -108,7 +109,7 @@ const Project3 = () => {
           <div className="postTags">
             {[...(info?.tags || [])].map((tag: any, ind: number) => {
               return (
-                <div key={ind} className="tag">
+                <div key={ind} className="tag" style={{background: dark && '#243044ff', color: dark && 'white'}}>
                   {tag}
                 </div>
               );
@@ -129,7 +130,6 @@ const Project3 = () => {
             <p>{info?.description}</p>
             <h1>Core Functionalities</h1>
             <ul>
-              
               <li>
                 Secure user authentication and personalized profiles for
                 seamless access
@@ -151,7 +151,13 @@ const Project3 = () => {
                 delivery alerts
               </li>
               <li>
-                 Beautiful, intuitive UI with engaging animations and micro-interactions
+                Courier services integration for real-time package pickup,
+                dispatch, and delivery management
+              </li>
+
+              <li>
+                Beautiful, intuitive UI with engaging animations and
+                micro-interactions
               </li>
               <li>
                 Product management features including bulk uploads, variants,
@@ -165,10 +171,14 @@ const Project3 = () => {
             <p>Let's see how some of these functionalities look like below.</p>
             <h1>
               1. Live package tracking with Google Maps for real-time delivery
-                updates
+              updates
             </h1>
             <p>
-              Live package tracking with Google Maps for real-time delivery updates, allowing users to monitor their shipments on an interactive map, view estimated delivery times, and receive instant notifications about the current status and location of their packages as they move through the delivery process:
+              Live package tracking with Google Maps for real-time delivery
+              updates, allowing users to monitor their shipments on an
+              interactive map, view estimated delivery times, and receive
+              instant notifications about the current status and location of
+              their packages as they move through the delivery process:
             </p>
             <div
               className={`${dark ? "imageContainer-light" : "imageContainer"}`}
@@ -183,9 +193,16 @@ const Project3 = () => {
               <img src={navia1} />
             </div>
 
-            <h1>2. Product management features including graphs, bulk uploads, variants, and dynamic pricing</h1>
+            <h1>
+              2. Product management features including graphs, bulk uploads,
+              variants, and dynamic pricing
+            </h1>
             <p>
-              Product management features including detailed analytics with interactive graphs, support for bulk uploads of multiple products, handling of product variants such as sizes and colors, and the ability to set and adjust dynamic pricing rules to optimize sales and inventory control:
+              Product management features including detailed analytics with
+              interactive graphs, support for bulk uploads of multiple products,
+              handling of product variants such as sizes and colors, and the
+              ability to set and adjust dynamic pricing rules to optimize sales
+              and inventory control:
             </p>
 
             {/* <h1>Upcoming Topics</h1> */}
@@ -199,12 +216,12 @@ const Project3 = () => {
               }}
             >
               {/* <img loading="lazy" src={levelinvoice} /> */}
-              <img src={navia1} />
+              <img src={navia2} />
             </div>
 
-            <h1>3.  Intuitive UI and delivery programming</h1>
+            <h1>3. Seamless checkout process with delivery scheduling and beautiful UI</h1>
             <p>
-              Beautiful, intuitive UI with engaging animations, smooth micro-interactions, high-quality image slides for products, and an easy checkout process that allows users to schedule deliveries for a later date, ensuring a seamless and flexible shopping experience:
+              An elegant and user-friendly interface featuring engaging animations, smooth micro-interactions, high-quality image slides for products, and an integrated delivery programming system that allows users to schedule deliveries for a later date, ensuring a flexible, convenient, and visually appealing shopping experience:
             </p>
             <div
               className={`${dark ? "imageContainer-light" : "imageContainer"}`}
@@ -215,16 +232,12 @@ const Project3 = () => {
                 padding: 0,
               }}
             >
-              <img loading="lazy" src={goingplaces3} />
+              <img loading="lazy" src={navia3} />
             </div>
 
-            <h1>4. Seamless checkout process</h1>
+            <h1>4. Courier services integration</h1>
             <p>
-              The system features a seamless checkout process that includes
-              options for vehicle protection plans and additional services such
-              as pre-paid gas filling. It supports multiple payment methods,
-              providing users with convenient and flexible payment options to
-              enhance their rental experience:
+              Comprehensive courier services integration that enables real-time scheduling of package pickups, seamless dispatch management, live tracking of deliveries through GPS, optimized routing for faster delivery times, automation of delivery assignments, and efficient management of courier workflows to ensure reliable and timely service for customers:
             </p>
             <div
               className={`${dark ? "imageContainer-light" : "imageContainer"}`}
@@ -236,13 +249,13 @@ const Project3 = () => {
               }}
             >
               {/* <img loading="lazy" src={levelinvoice} /> */}
-              <img src={goingplaces4} />
+              <img src={navia4} />
             </div>
 
             <footer>
               <hr style={{ marginBottom: 20 }} />
               <p>
-                GoingPlaces is a robust car rental application. It offers a
+                NaVia is a robust m-commerce application. It offers a
                 comprehensive suite of features all designed to enhance the user
                 experience. It has many more screens. The app supports both
                 Android and iOS platforms, ensuring accessibility for a wide

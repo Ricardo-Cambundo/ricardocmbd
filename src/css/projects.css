@@ -28,7 +28,7 @@
     font-size: 14.5px;
     
 }
-.searchContainer .inputContainer {
+.searchContainer .inputContainer, .searchContainer .inputContainer1 {
     display: flex;
     flex: 1;
     flex-direction: row;
@@ -40,7 +40,10 @@
     overflow: hidden;
 }
 
-.searchContainer .inputContainer span {
+.searchContainer .inputContainer1 {
+    color: white !important;
+}
+.searchContainer .inputContainer span, .searchContainer .inputContainer1 span {
     padding-inline: 10px;
     border-left: 1px solid #d6d6d6;
     height: 100%;

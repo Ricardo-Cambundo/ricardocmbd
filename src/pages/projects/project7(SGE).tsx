@@ -83,9 +83,9 @@ const Project7 = () => {
               <img src={sge} />
             </div>
           </div>
-          <div className="greetings">{info?.title}</div>
-          <div className="preDescription">{info?.preDescription}</div>
-          <div className="dateInfo">
+          <div className="greetings" >{info?.title}</div>
+          <div className="preDescription" style={{color: dark && '#c9c9c9ff'}}>{info?.preDescription}</div>
+          <div className="dateInfo" style={{color: dark && '#c9c9c9ff'}}>
             {/* <div
               className="date"
               style={{
@@ -105,7 +105,7 @@ const Project7 = () => {
           <div className="postTags">
             {[...(info?.tags || [])].map((tag: any, ind: number) => {
               return (
-                <div key={ind} className="tag">
+                <div key={ind} className="tag" style={{background: dark && '#243044ff', color: dark && 'white'}}>
                   {tag}
                 </div>
               );

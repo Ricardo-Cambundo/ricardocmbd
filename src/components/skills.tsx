@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "../css/skills.css";
+import { ScrollContext } from "@/store/context";
 
 const Skills = () => {
     //@ts-ignore
+    const {dark} = useContext(ScrollContext)
 
   const [skills, setSkills] = useState([
     {
@@ -80,8 +82,8 @@ const Skills = () => {
   ]);
   return (
     <div className="skillsContainer">
-      <div className="sectionTitle">current technologies</div>
-      <div className="sectionDescription">
+      <div className="sectionTitle" style={{color: dark && 'white' }}>current technologies</div>
+      <div className="sectionDescription" style={{color: dark && '#e3e3e3' }}>
         I'm proficient in a range of modern technologies. Here are the ones I'm
         currently using.
       </div>

@@ -6,10 +6,11 @@ const Hero = () => {
   //@ts-ignore
 
   const { chat, setChat } = useContext(ScrollContext);
-  
+  const { dark, setDark } = useContext(ScrollContext);
+
   
   return (
-    <div className="heroSection">
+    <div className="heroSection" style={{color: dark && 'white' }}>
       <div className="left">
         <div className="greetings">hey there! my name's<br/> ricardo cambundo</div>
         <div className="description">
@@ -22,7 +23,7 @@ const Hero = () => {
           </span>{" "}
           student
         </div>
-        <div className="stat">
+        <div className="stat" style={{color: dark && '#c9c9c9ff'}}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -36,7 +37,7 @@ const Hero = () => {
           </svg>{" "}
           Huntsville, TX, USA
         </div>
-        <div className="description" style={{ color: "grey" }}>
+        <div  className="description" style={{ color: "grey", color: dark && '#c9c9c9ff' }}>
           Driven by curiosity and code.<br></br> Join me as I contribute to the
           digital world
         </div>
@@ -65,7 +66,7 @@ const Hero = () => {
         </div>
 
         <div className="contacts">
-            <div className="resume" onClick={() => {
+            <div style={{color: dark && 'white'}} className="resume" onClick={() => {
                 window.open('https://drive.google.com/file/d/1eIsH-NYiKXEGzGKJF-Z49Lqs0uPWappY/view?usp=sharing')
             }}>
                 Resume <i className="bi bi-file-earmark-text"></i>

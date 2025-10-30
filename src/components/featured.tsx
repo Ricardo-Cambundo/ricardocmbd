@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "../css/featured.css";
 import levelrh from '../assets/images/levelrh.webp'
 import levelinvoice from '../assets/images/levelinvoice.webp'
@@ -6,6 +6,7 @@ import navia from '../assets/images/navia.webp'
 import going from '../assets/images/going_places.webp'
 import { useNavigate } from "react-router-dom";
 import { Blurhash } from "react-blurhash";
+import { ScrollContext } from "@/store/context";
 
 const OptimizedImage = React.memo(({ src, alt }: {src: any, alt?: any}) => {
     //@ts-ignore
@@ -32,6 +33,7 @@ const OptimizedImage = React.memo(({ src, alt }: {src: any, alt?: any}) => {
 
 const Featured = () => {
   const navigate = useNavigate()
+  const { dark } = useContext(ScrollContext)
   //@ts-ignore
 
   const [posts, setPosts] = useState([
@@ -76,11 +78,11 @@ const Featured = () => {
   ]);
   return (
     <div className="skillsContainer" id="featuredSection">
-      <div className="sectionTitle">
+      <div className="sectionTitle" style={{color: dark && 'white' }}>
         featured projects{" "}
         <span onClick={() => {
           navigate('/projects')
-        }}>
+        }} style={{color: dark && '#e3e3e3' }}>
           view more <i className="bi bi-arrow-right-short"></i>
         </span>
       </div>
@@ -89,26 +91,26 @@ const Featured = () => {
           return(
             <div className="project" key={index} onClick={() => {
             navigate(`/projects/${i?.id}`)
-          }}>
+          }} style={{borderColor: dark && '#243044ff'}}>
               <div className="imageContainer">
                 <OptimizedImage src={i?.image} alt={i?.title} />
                 
               </div>
               <div className="projectInfo">
-                <div className="projectTitle">{i?.title}</div>
-                <div className="projectDescription">{i?.description}</div>
+                <div className="projectTitle" style={{color: dark && 'white'}}>{i?.title}</div>
+                <div className="projectDescription" style={{color: dark && '#c9c9c9ff'}}>{i?.description}</div>
                 <div className="projectTags">
                   {[...i?.tags||[]].map((tag: any, ind: number) => {
                     return (
-                      <div className="projectTag" key={ind}>
+                      <div className="projectTag" key={ind} style={{background: dark && '#243044ff', color: dark && 'white'}}>
                         {tag}
                       </div>
                     )
                   })}
                 </div>
                 <div className="projectLinks">
-                  {i?.source && <div className="projectLink"><i className="bi bi-github"></i> Source</div>}
-                  <div className="projectLink"><i className="bi bi-info-circle-fill"></i>Read more</div>
+                  {i?.source && <div style={{background: dark && '#eeeeee', color: dark && 'black' }} className="projectLink"><i className="bi bi-github"></i> Source</div>}
+                  <div className="projectLink" style={{background: dark && '#eeeeee', color: dark && 'black' }} ><i className="bi bi-info-circle-fill"></i>Read more</div>
                 </div>
               </div>
 

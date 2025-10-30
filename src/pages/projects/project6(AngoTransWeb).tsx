@@ -6,29 +6,27 @@ import Header from "@/components/header";
 import { useNavigate } from "react-router-dom";
 import { ScrollContext } from "@/store/context";
 import { format } from "date-fns";
-import levelinvoice from "../../assets/images/levelinvoice.webp";
-import levelinvoice1 from "../../assets/images/levelinvoice/levelinvoice1.png";
-import levelinvoice2 from "../../assets/images/levelinvoice/levelinvoice2.png";
-import levelinvoice3 from "../../assets/images/levelinvoice/levelinvoice3.png";
+import angotrans from "../../assets/images/angotrans_site.webp";
+import angotrans4 from "../../assets/images/angotransexpress/angotrans4.png";
+import angotrans5 from "../../assets/images/angotransexpress/angotrans5.png";
+import angotrans6 from "../../assets/images/angotransexpress/angotrans6.png";
+import angotrans7 from "../../assets/images/angotransexpress/angotrans7.png";
 
-
-
-const Project2 = () => {
+const Project6 = () => {
   const navigate = useNavigate();
   const { dark } = useContext(ScrollContext);
   const info = {
-    title: "Level Invoice",
+    title: "AngoTrans Express website",
     preDescription:
-      "Highly tested and used web-based platform for generating, tracking, and automating invoices",
+      "Corporate website for a company specialized in road transport and cargo transportation solutions",
+     warning:
+      "This website is still in the works, but I thought I could just share some the features it currently has.",
     description:
-      "Designed and developed a reliable and user-friendly web-based platform for generating, tracking, and automating invoices. The system features intuitive dashboards and visual analytics to monitor invoice status, payments, and outstanding balances. It integrates with email services to send automated invoice notifications and reminders, ensuring timely communication with clients. Additionally, it supports real-time alerts via SMS using Twilio API, helping businesses streamline their invoicing process and improve cash flow management.",
+      "This corporate website serves as a comprehensive information hub for a company specializing in road transport and cargo transportation solutions. It features detailed sections on services, fleet information, and the company's history, providing visitors with an in-depth understanding of offerings. The platform also includes a news portal to foster ongoing engagement. Additionally, an integrated admin dashboard enables staff to perform real-time content updates through a user-friendly interface, ensuring efficient management and dynamic content delivery.",
     read: 4,
-    highlight: 'This invoice program was validated by Angola’s Administração Geral Tributária (General Tax Administration) under validation number ---, ensuring compliance with official standards and legal acceptance.',
-    warning:
-      "The application is accessible only within organization's internal network, with no public-facing URL. Currently working on a live demo environment for demonstration purposes.",
     date: "2025-03-03",
     tags: [
-      "AngularJS",
+      "React",
       "JavaScript",
       "Laravel/PHP",
       "PostgreSQL",
@@ -80,9 +78,9 @@ const Project2 = () => {
                 padding: 0,
               }}
             >
-              
+              {" "}
               {/* <img loading="lazy" src={levelinvoice} /> */}
-              <img src={levelinvoice} />
+              <img src={angotrans} />
             </div>
           </div>
           <div className="greetings" style={{color: dark && 'white'}}>{info?.title}</div>
@@ -96,7 +94,7 @@ const Project2 = () => {
                 marginRight: 8,
               }}
             >
-              <i className="bi bi-calendar-event"></i>
+              <i className="bi bi-calendar-event"></i>{" "}
               {format(new Date(), "MMMM d, yyyy")}
             </div> */}
 
@@ -114,9 +112,6 @@ const Project2 = () => {
             })}
           </div>
 
-          {info?.highlight && (
-            <div className={dark ? "highlight1" : "highlight"}>{info?.highlight}</div>
-          )}
           {info?.warning && (
             <div className={dark ? "warning1" : "warning"}>{info?.warning}</div>
           )}
@@ -127,54 +122,68 @@ const Project2 = () => {
             <h1>Core Functionalities</h1>
             <ul>
               <li>
-                Support for multiple invoice types and Credit Notes for
-                Cancellation and Correction
+                User-friendly corporate interface presenting detailed
+                information about services, fleet, and company history to
+                visitors.
               </li>
               <li>
-                SAF-T (Standard Audit File for Tax) file generation to ensure compliance with tax authorities
+                Responsive design ensuring optimal viewing experience across
+                devices, enhancing user engagement and accessibility.
               </li>
               <li>
-                Flexible export options, including A4, A5, and thermal paper
-                formats for printing and digital distribution
+                Admin dashboard with no-code content management tools, allowing
+                staff to easily update website content, news, and service
+                information in real-time.
               </li>
               <li>
-                Tracking and management of invoice statuses, payments, and
-                adjustments
+                Secure login and role-based access controls for administrative
+                staff to manage sensitive content and maintain website
+                integrity.
               </li>
+                <li>Integrated news portal for publishing updates, company announcements, industry news, and engaging content for visitors.</li>
               <li>
-                Automated notifications via email and SMS for invoice issuance,
-                reminders, and updates
-              </li>
-              <li>
-                Verification of invoice authenticity
-              </li>
-              <li>
-                Analytics on invoicing activity, revenue, and
-                outstanding balances
+                Analytics and tracking tools embedded within the platform to
+                monitor visitor interactions and optimize content strategy.
               </li>
             </ul>
             <p>Let's see how some of these functionalities look like below.</p>
             <h1>
-              1. Support for multiple invoice types
+              1. User-friendly corporate interface presenting detailed information
             </h1>
-            <p>Support for multiple invoice types, including Standard Invoice, Receipt Invoice, Pro Forma Invoice, and Credit Notes for Cancellation and Correction, allowing businesses to handle various billing scenarios accurately and efficiently:
-            </p>
-            <div
-              className={`${dark ? "imageContainer-light" : "imageContainer"}`}
-              style={{
-                overflow: "hidden",
-                maxHeight: 500,
-                position: "relative",
-                padding: 0,
-              }}
-            >
-              
-              {/* <img loading="lazy" src={levelinvoice} /> */}
-              <img src={levelinvoice} />
-            </div>
-            <h1>2. Analytics on invoicing activity, revenue, and outstanding balances</h1>
             <p>
-              Comprehensive analytics on invoicing activity, including detailed insights into revenue generated, outstanding balances, payment trends, and overdue accounts, to help businesses make informed financial decisions and optimize cash flow management.
+              A user-friendly corporate interface designed to provide visitors with comprehensive and easily accessible information about the company's range of services, the extensive fleet of assets and background of the company, ensuring an engaging and informative experience for all users:
+            </p>
+            <div className={`${dark ? "imageContainer-light" : "imageContainer"}`} style={{display: 'flex', flexDirection: 'column', gap: 20, padding: 0}}>
+                <div
+                  className={`${dark ? "imageContainer-light" : "imageContainer"}`}
+                  style={{
+                    overflow: "hidden",
+                    maxHeight: 500,
+                    position: "relative",
+                    padding: 0,
+                  }}
+                >
+                  {" "}
+                  {/* <img loading="lazy" src={levelinvoice} /> */}
+                  <img src={angotrans4} className="2pc" />
+                </div>
+                <div
+                  className={`${dark ? "imageContainer-light" : "imageContainer"}`}
+                  style={{
+                    overflow: "hidden",
+                    maxHeight: 500,
+                    position: "relative",
+                    padding: 0,
+                  }}
+                >
+                  {" "}
+                  {/* <img loading="lazy" src={levelinvoice} /> */}
+                  <img src={angotrans5} className="2pc" />
+                </div>
+            </div>
+            <h1>2. Admin dashboard </h1>
+            <p>
+              An advanced admin dashboard equipped with no-code content management tools, enabling staff members to effortlessly update and maintain website content, news, and service information in real-time without requiring technical expertise. Additionally, the platform includes integrated analytics and tracking tools that allow administrators to monitor visitor interactions, engagement metrics, and user behavior. These insights help optimize content strategies, improve user experience, and ensure the website remains dynamic, relevant, and aligned with organizational goals:
             </p>
             <div
               className={`${dark ? "imageContainer-light" : "imageContainer"}`}
@@ -185,16 +194,16 @@ const Project2 = () => {
                 padding: 0,
               }}
             >
-              
+              {" "}
               {/* <img loading="lazy" src={levelinvoice} /> */}
-              <img src={levelinvoice1} />
+              <img src={angotrans7} className="2pc" />
             </div>
 
             <h1>
-              3. SAF-T (Standard Audit File for Tax) file generation 
+              3. Integrated news portal
             </h1>
             <p>
-              Generation of SAF-T (Standard Audit File for Tax) files to enable precise and secure reporting of financial and tax information, ensuring full compliance with local tax authority regulations, supporting audit procedures, and simplifying the tax filing process for businesses:
+             An integrated news portal designed to seamlessly publish and showcase a wide range of updates, including company announcements, industry news, and engaging content tailored for visitors. This platform enables the organization to communicate important information effectively, keep stakeholders informed, and foster ongoing engagement by providing timely and relevant news in a centralized, easily accessible format:
             </p>
 
             {/* <h1>Upcoming Topics</h1> */}
@@ -207,39 +216,17 @@ const Project2 = () => {
                 padding: 0,
               }}
             >
-              
+              {" "}
               {/* <img loading="lazy" src={levelinvoice} /> */}
-              <img src={levelinvoice2} />
-            </div>
-
-            <h1>
-              4. Verification of invoice authenticity
-            </h1>
-            <p>
-             The system's invoice verification feature allows you to quickly assess the authenticity of invoices by simply scanning a QR code. This streamlined process ensures invoices are legitimate and compliant, helping to prevent fraud, reduce errors, and accelerate approval workflows with minimal effort:
-            </p>
-            <div
-              className={`${dark ? "imageContainer-light" : "imageContainer"}`}
-              style={{
-                overflow: "hidden",
-                maxHeight: 500,
-                position: "relative",
-                padding: 0,
-              }}
-            >
-              
-              {/* <img loading="lazy" src={levelinvoice} /> */}
-              <img src={levelinvoice3} />
+              <img src={angotrans6} className="2pc" />
             </div>
 
             <footer>
               <hr style={{ marginBottom: 20 }} />
               <p>
-                This is a highly tested and proven software solution that is
+                This software solution is
                 already in use. It includes many more screens and features to
-                streamline invoice management. Notably, several private, top-tier
-                academic institutions in Angola are leveraging it to handle
-                their invoice needs. If you're interested in seeing more or would
+                serves as a comprehensive information hub for a company. If you're interested in seeing more or would
                 like a quick demo, feel free to email me, and I’ll be happy to
                 walk you through it.
               </p>
@@ -268,4 +255,4 @@ const Project2 = () => {
     </div>
   );
 };
-export default Project2;
+export default Project6;

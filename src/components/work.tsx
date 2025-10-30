@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import logo from "../assets/images/logo-short-black.png";
 import lsc from "../assets/images/lsc.png";
 import levelsoft from "../assets/images/levelsoft.png";
@@ -6,9 +6,12 @@ import ispajLogo from "../assets/images/ispajLogo.png";
 import pitruca from "../assets/images/pitruca.png";
 
 import "../css/work.css";
+import { ScrollContext } from "@/store/context";
 
 const Work = () => {
   const [tab, setTab] = useState("work");
+  const { dark, setDark } = useContext(ScrollContext);
+
   function getDuration(startDate: any, endDate: any = null) {
     const start = new Date(startDate);
     const end = endDate ? new Date(endDate) : new Date();
@@ -252,7 +255,7 @@ const Work = () => {
         </div>
       </div>
       {tab == "work" && (
-        <div className="workList">
+        <div className="workList" style={{color: dark && '#e3e3e3', borderColor: dark && '#243044ff' }} >
           {work.map((item: any, index: number) => {
             return (
               <div className="work" key={index}>
@@ -345,7 +348,7 @@ const Work = () => {
                   ) : (
                     <div>
                       {[...(item?.nest || [])]?.length > 1 && item?.nest && (
-                        <div className="tag2">
+                        <div className="tag2" style={{background: dark && '#243044ff' , color: dark && 'white'}}>
                           +{[...(item?.nest || [])]?.length}
                         </div>
                       )}
@@ -368,7 +371,7 @@ const Work = () => {
       )}
 
       {tab == "education" && (
-        <div className="workList">
+        <div className="workList" style={{color: dark && '#e3e3e3', borderColor: dark && '#243044ff' }}>
           {education.map((item: any, index: number) => {
             return (
               <div className="work" key={index}>
@@ -399,6 +402,7 @@ const Work = () => {
                     </div>
                     {item?.nest && (
                       <div
+                      
                         className={
                           item?.expanded ? "workButton1" : "workButton"
                         }
@@ -417,7 +421,7 @@ const Work = () => {
                             })
                           );
                         }}
-                      >
+                       style={{background: dark && '#243044ff', color: dark && 'white'}}>
                         {item?.expanded ? (
                           <i className="bi bi-arrows-collapse"></i>
                         ) : (
@@ -462,7 +466,7 @@ const Work = () => {
                   ) : (
                     <div>
                       {[...(item?.nest || [])]?.length > 1 && item?.nest && (
-                        <div className="tag2">
+                        <div className="tag2" style={{background: dark && '#243044ff' , color: dark && 'white'}}>
                           +{[...(item?.nest || [])]?.length}
                         </div>
                       )}
@@ -479,7 +483,8 @@ const Work = () => {
                   </div>
                   {item?.finalProject && <div
                               className="projectLink"
-                              style={{display: 'inline-flex', marginTop: 5,  paddingInline: 15, fontSize: 12.5}}
+                              
+                              style={{display: 'inline-flex', marginTop: 5,  paddingInline: 15, fontSize: 12.5, background: dark && '#eeeeee', color: dark && 'black' }}
                               onClick={() => {
                                 window.open(item?.finalProject);
                               }}

@@ -23,6 +23,7 @@ import Project7 from "./pages/projects/project7(SGE)";
 import Project8 from "./pages/projects/project8(AnimesCMBD)";
 import Project9 from "./pages/projects/project9(AngoTransExpress)";
 import Project3 from "./pages/projects/project3(NaVia)";
+import Project6 from "./pages/projects/project6(AngoTransWeb)";
 
 function App() {
   return (
@@ -55,6 +56,7 @@ function App() {
         <Route path="/projects/8" element={<Project8 />} />
         <Route path="/projects/9" element={<Project9 />} />
         <Route path="/projects/3" element={<Project3 />} />
+        <Route path="/projects/6" element={<Project6 />} />
         <Route path="/contact" element={<Contact />} />
 
         <Route path='*' element={<NotFound/>}/>

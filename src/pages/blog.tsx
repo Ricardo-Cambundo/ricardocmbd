@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Footer from "../components/footer";
 import Header from "../components/header";
 import "../css/blog.css";
@@ -12,9 +12,11 @@ import {
 } from "@/components/ui/select";
 import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
+import { ScrollContext } from "@/store/context";
 
 const Blog = () => {
   const navigate = useNavigate()
+  const { dark } = useContext(ScrollContext)
     //@ts-ignore
 
   const [posts, setPosts] = useState([
@@ -135,9 +137,9 @@ const Blog = () => {
     <div className="homeBodyContainer">
       <Header />
       <div className="page">
-        <div className="greetings">my blog</div>
+        <div className="greetings" style={{color: dark && 'white' }}>my blog</div>
         <div className="searchContainer">
-          <div className="inputContainer">
+          <div className={dark ? "inputContainer1" : "inputContainer"} style={{borderColor: dark && '#243044ff' }}>
             <input
               type="text"
               className="search"
@@ -149,18 +151,19 @@ const Blog = () => {
               onClick={() => {
                 setSearch("");
               }}
-            >
+            style={{background: dark && '#030712', color: dark && '#b9b9b9ff', borderColor: dark && '#243044ff'  }}>
               <i className="bi bi-backspace"></i>
             </span>
           </div>
           <Select
+          
             onValueChange={(e) => {
               setFilter(e);
             }}
             value={filter}
           >
-            <SelectTrigger style={{ outline: "none" }} className="w-[180px]">
-              <SelectValue style={{ outline: "none" }} defaultValue={filter} />
+            <SelectTrigger style={{ outline: "none",borderColor: dark && '#243044ff', color: dark && 'white'  }} className="w-[180px]">
+              <SelectValue style={{ outline: "none", color: dark && 'white' }} defaultValue={filter} />
             </SelectTrigger>
             <SelectContent style={{ outline: "none" }}>
               <SelectItem value="newest">Newest</SelectItem>
@@ -170,37 +173,36 @@ const Blog = () => {
           </Select>
         </div>
         <div id="postsSection">
-          <div className="posts">
-                  {filtered.map((i: any, index: number) => {
+          <div className="posts" style={{borderColor: dark && '#243044ff'}}>
+        {filtered.map((i: any, index: number) => {
+          return (
+            <div className="post" key={index} onClick={() => {
+              navigate(`/blog/${i?.id}`)
+            }} style={{borderColor: dark && '#243044ff'}}>
+              <div className="left">
+                <div className="postTitle" style={{color: dark && 'white'}}>{i?.title}</div>
+                <div className="postDescription" style={{color: dark && '#c9c9c9ff'}}>{i?.description}{i?.description}{i?.description}{i?.description}</div>
+                <div className="postTags">
+                  {[...i?.tags||[]].slice(0, 3).map((tag: any, ind: number) => {
                     return (
-                      <div className="post" key={index} onClick={() => {
-                        navigate(`/blog/${i?.id}`)
-
-                      }}>
-                        <div className="left">
-                          <div className="postTitle">{i?.title}</div>
-                          <div className="postDescription">{i?.description}{i?.description}{i?.description}{i?.description}</div>
-                          <div className="postTags">
-                            {[...i?.tags||[]].slice(0, 3).map((tag: any, ind: number) => {
-                              return (
-                                <div key={ind} className="tag">{tag}</div>
-                              )
-                            })}
-                            {
-                              [...i?.tags||[]]?.length > 3 && <div className="tag2">+{[...i?.tags||[]]?.length - 3}</div>
-                            }
-          
-                          </div>
-                        </div>
-                        <div className="right">
-                          <div className="date"><i className="bi bi-calendar-event"></i> {format(new Date(i?.date), 'MMMM d, yyyy')}</div>
-          
-                          <div className="date"><i className="bi bi-hourglass-split"></i> {i?.read} min read</div>
-                        </div>
-                      </div>
+                      <div key={ind} className="tag" style={{background: dark && '#243044ff', color: dark && 'white'}}>{tag}</div>
                     )
                   })}
+                  {
+                    [...i?.tags||[]]?.length > 3 && <div className="tag2" style={{background: dark && '#243044ff' , color: dark && 'white'}}>+{[...i?.tags||[]]?.length - 3}</div>
+                  }
+
                 </div>
+              </div>
+              <div className="right" style={{color: dark && '#c9c9c9ff' }}>
+                <div className="date" ><i className="bi bi-calendar-event"></i> {format(new Date(i?.date), 'MMMM d, yyyy')}</div>
+
+                <div className="date"><i className="bi bi-hourglass-split"></i> {i?.read} min read</div>
+              </div>
+            </div>
+          )
+        })}
+      </div>
         </div>
         <Footer />
       </div>

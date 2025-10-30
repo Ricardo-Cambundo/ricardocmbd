@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Footer from "../components/footer";
 import Header from "../components/header";
 import "../css/projects.css";
@@ -23,6 +23,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useNavigate } from "react-router-dom";
+import { ScrollContext } from "@/store/context";
 
 const OptimizedImage = React.memo(({ src, alt }: { src: any; alt?: any }) => {
     //@ts-ignore
@@ -64,24 +65,26 @@ const OptimizedImage = React.memo(({ src, alt }: { src: any; alt?: any }) => {
 
 const ProjectItem = React.memo(({ i }: { i: any }) => {
   const navigate = useNavigate()
+  const {dark} = useContext(ScrollContext)
   return (
-    <div className="project">
+    <div className="project" style={{borderColor: dark && '#243044ff' }}>
       <div className="imageContainer">
         <OptimizedImage src={i?.image} alt={i?.title} />
       </div>
       <div className="projectInfo">
-        <div className="projectTitle">{i?.title}</div>
-        <div className="projectDescription">{i?.description}</div>
-        <div className="projectTags">
+        <div className="projectTitle" style={{color: dark && 'white'}}>{i?.title}</div>
+        <div className="projectDescription" style={{color: dark && '#c9c9c9ff'}}>{i?.description}</div>
+        <div className="projectTags" >
           {[...(i?.tags || [])].map((tag: any, ind: number) => {
             return (
-              <div className="projectTag" key={ind}>
+              <div className="projectTag" key={ind} style={{background: dark && '#243044ff', color: dark && 'white'}}>
                 {tag}
               </div>
             );
           })}
         </div>
         <div className="projectLinks">
+          
           {i?.website && (
             <div
               className="projectLink"
@@ -94,11 +97,11 @@ const ProjectItem = React.memo(({ i }: { i: any }) => {
             </div>
           )}
           {i?.source && (
-            <div className="projectLink">
+            <div className="projectLink" style={{background: dark && '#eeeeee', color: dark && 'black' }}>
               <i className="bi bi-github"></i> Source
             </div>
           )}
-          <div className="projectLink" onClick={() => {
+          <div className="projectLink" style={{background: dark && '#eeeeee', color: dark && 'black' }} onClick={() => {
             navigate(`/projects/${i?.id}`)
           }}>
             <i className="bi bi-info-circle-fill"></i>Read more
@@ -282,6 +285,7 @@ const Projects = () => {
     ,
   ]);
   const [filtered, setFiltered] = useState(posts);
+  const { dark } = useContext(ScrollContext)
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -322,9 +326,9 @@ const Projects = () => {
     <div className="homeBodyContainer">
       <Header />
       <div className="page">
-        <div className="greetings">my projects</div>
+        <div className="greetings" style={{color: dark && 'white' }}>my projects</div>
         <div className="searchContainer">
-          <div className="inputContainer">
+          <div className={dark ? "inputContainer1" : "inputContainer"} style={{borderColor: dark && '#243044ff' }}>
             <input
               type="text"
               className="search"
@@ -336,7 +340,7 @@ const Projects = () => {
               onClick={() => {
                 setSearch("");
               }}
-            >
+            style={{background: dark && '#030712', color: dark && '#b9b9b9ff', borderColor: dark && '#243044ff'  }}>
               <i className="bi bi-backspace"></i>
             </span>
           </div>
@@ -346,8 +350,8 @@ const Projects = () => {
             }}
             value={filter}
           >
-            <SelectTrigger style={{ outline: "none" }} className="w-[180px]">
-              <SelectValue style={{ outline: "none" }} defaultValue={filter} />
+            <SelectTrigger style={{ outline: "none", borderColor: dark && '#243044ff', color: dark && 'white'  }} className="w-[180px]">
+              <SelectValue style={{ outline: "none", color: dark && 'white'  }} defaultValue={filter} />
             </SelectTrigger>
             <SelectContent style={{ outline: "none" }}>
               <SelectItem value="all">All</SelectItem>
