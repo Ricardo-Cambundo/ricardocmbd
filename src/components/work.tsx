@@ -236,9 +236,9 @@ const Work = () => {
 
   return (
     <div className="skillsContainer" id="workSection">
-      <div className="tabHeaders">
+      <div className={dark ? "tabHeadersDark" : "tabHeaders"}>
         <div
-          className={tab == "work" ? "tab1" : "tab"}
+          className={tab == "work" ? (dark ? "darkTab1" : "tab1") : (dark ? "darkTab" : "tab")}
           onClick={() => {
             tab != "work" && setTab("work");
           }}
@@ -246,7 +246,7 @@ const Work = () => {
           Work
         </div>
         <div
-          className={tab == "education" ? "tab1" : "tab"}
+          className={tab == "education" ? (dark ? "darkTab1" : "tab1") : (dark ? "darkTab" : "tab")}
           onClick={() => {
             tab != "education" && setTab("education");
           }}
@@ -276,7 +276,7 @@ const Work = () => {
                       <div className="workDate">{item?.duration}</div>
                       <div
                         style={{ cursor: item?.link ? "pointer" : "unset" }}
-                        className="workTitle"
+                        className={dark ? "workTitleDark" : "workTitle"}
                         onClick={() => {
                           item?.link && window.open(item?.link);
                         }}
@@ -326,7 +326,7 @@ const Work = () => {
                       {[...(item?.nest || [])].map((i: any, ind: number) => {
                         return (
                           <div className="work1" key={ind}>
-                            <div className="workTitle1">{i?.position}</div>
+                            <div className={dark ? "workTitleDark1" : "workTitle1"}>{i?.position}</div>
                             <div className="workDate">
                               {i?.type} - {i?.location}
                             </div>
@@ -392,7 +392,7 @@ const Work = () => {
                       <div className="workDate">{item?.duration}</div>
                       <div
                         style={{ cursor: item?.link ? "pointer" : "unset" }}
-                        className="workTitle"
+                        className={dark ? "workTitleDark" : "workTitle"}
                         onClick={() => {
                           item?.link && window.open(item?.link);
                         }}
@@ -442,7 +442,7 @@ const Work = () => {
                       {[...(item?.nest || [])].map((i: any, ind: number) => {
                         return (
                           <div className="work1" key={ind}>
-                            <div className="workTitle1">{i?.position}</div>
+                            <div className={dark ? "workTitleDark1" : "workTitle1"}>{i?.position}</div>
                             <div className="workDate">
                               {i?.type} - {i?.location}
                             </div>

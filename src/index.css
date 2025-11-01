@@ -130,3 +130,10 @@
     @apply bg-background text-foreground;
   }
 }
+
+.light-theme input::placeholder {
+  color: #999;
+}
+.dark-theme input::placeholder {
+  color: #ccc;
+}

@@ -1,6 +1,7 @@
   //@ts-ignore
+import { ScrollContext } from "@/store/context";
 import axios from "axios";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 
 // const chatPipeline = await pipeline("conversational", "microsoft/DialoGPT-medium");
 
@@ -21,93 +22,15 @@ const Chatbot = ({
   setHistory: any;
 }) => {
   const [thinking, setThinking] = useState(false);
+  const {dark} = useContext(ScrollContext)
 
   const chave = import.meta.env.VITE_API_KEY;
+  const api = import.meta.env.VITE_API_ROUTE;
+  const model = import.meta.env.VITE_API_MODEL;
+  const messageContent1 = import.meta.env.VITE_MESSAGECONTENT1;
+  const messageContent2 = import.meta.env.VITE_MESSAGECONTENT2;
 
-  const portfolioData = {
-    experience: [
-      {
-        company: "Level Soft - Angola",
-        position: "Mobile/Web Application Developer",
-        duration: "May 2024 - Present · 1 yr 5 mos",
-        location: "Luanda Province, Angola · On-site",
-        type: "Full-time",
-        descriptions: [
-          "Designing and developing innovative mobile applications for iOS and Android platforms",
-          "Creating responsive web applications that meet client-specific needs",
-          "Collaborating with clients to understand their requirements and deliver tailored solutions",
-          "Implementing modern UI/UX designs for enhanced user experience",
-          "Working with technologies like React.js, React Native, and JavaScript/TypeScript",
-        ],
-      },
-      {
-        company: "ISPAJ Instituto Superior Politécnico Alvorecer da Juventude",
-        position: "Software Developer",
-        duration: "May 2024 - Present · 1 yr 5 mos",
-        location: "Hybrid",
-        type: "Full-time",
-        descriptions: [
-          "Designing, developing and maintaining innovative web-based management systems",
-          "Creating solutions for one of Angola's biggest private academic institutions",
-          "Working with AngularJS for frontend development and system design",
-        ],
-      },
-      {
-        company: "Freelance",
-        position: "Mobile Application Developer",
-        duration: "Nov 2022 - Present · 2 yrs 11 mos",
-        location: "Remote",
-        type: "Freelance",
-        descriptions: [
-          "Developing mobile applications for various clients across different industries",
-          "Creating cross-platform solutions using React Native",
-          "Managing project timelines and client communications",
-        ],
-      },
-      {
-        company: "Freelance",
-        position: "Web Developer",
-        duration: "Feb 2022 - Present · 3 yrs 8 mos",
-        location: "Remote",
-        type: "Freelance",
-        descriptions: [
-          "Creating websites and web applications for diverse clients and projects",
-          "Developing responsive designs that work across different devices",
-          "Using React.js and modern web technologies",
-        ],
-      },
-    ],
-
-    skills: {
-      languages: ["TypeScript", "JavaScript", "Python", "PHP"],
-      frameworks: ["React", "React Native", "Angular", "Django", "Laravel"],
-      tools: ["Git", "Docker", "PostgreSQL", "Postman"],
-      concepts: [
-        "Version Control",
-        "Containerization",
-        "API Development",
-        "Full-Stack Development",
-      ],
-    },
-
-    education: {
-      institution: "Lone Star College-CyFair",
-      degree: "AS of Science in Computer Science",
-      duration: "May 2024 - Present · 1 yr 4 mos",
-      location: "Montgomery, Texas · Hybrid",
-      status: "Currently pursuing - Full-time student",
-      highlights:
-        "Currently building foundation in computer science principles and programming fundamentals",
-    },
-
-    currentFocus: [
-      "Full-stack web and mobile development",
-      "Advanced TypeScript and React ecosystems",
-      "Database design with PostgreSQL",
-      "Containerization with Docker",
-      "API development and integration",
-    ],
-  };
+  const portfolioData = JSON.parse(import.meta.env.VITE_PORTFOLIO_DATA);
   const getFallbackResponse = (question: any) => {
     const lowerQ = question.toLowerCase();
 
@@ -187,155 +110,12 @@ He specializes in full-stack and mobile development.`;
       return "I'd be happy to tell you about Ricardo's experience and skills! He works with TypeScript, React, React Native, Angular, Python, and full-stack technologies. What specific area interests you?";
     }
   };
-  const callHuggingFaceAPI = async (question: any) => {
+  const callAPI = async (question: any) => {
     const messages = [
     {
       role: 'system',
-      content: `You are Ricardo Cambundo's portfolio assistant called CMBD support. 
-      Ricardo was born in March 3rd 2004, so do calculations if they ask for age or something. This is my linkedin about section: 'What does it take to truly get acquainted with someone? I could share my passion for delving deeply into the intricacies of software engineering and the complexities of computer science problems, subjects, and ventures. I'm so enamored with these topics, in fact, that I've decided to fashion a career out of it.
-
-Or perhaps I could outline my history to demonstrate my genuine enthusiasm for this stuff. For instance, my fascination with programming dates back to as far as my memory can reach. As a little boy i would study game dev concepts out of curiosity about how my favorite games were made.
-
-Is that all there is to it? What about how I translate those insights into action? I'm actively engaged in creating software and putting it to use, not just studying it. So, what's my underlying motive?
-
-In essence, it's my modest attempt to contribute to the digital realm step by step, serving as a guide for those who follow in my footsteps. 
-I also enjoy drawing/painting, playing basketball, reading/writing, boxing and lifting some weights.
-
-One of my most notable aptitudes is the capacity to rapidly and effectively learn and acquire new skills, without abandoning them when faced with challenges.
-
-That's me in a nutshell :).
-Also I’m currently in Huntsville, Tx, but I'm working as Mobile App Developer at Level Soft - an Angolan software house, that in short creates and implements technological solutions, whether that’s creating websites or mobile apps, responding to the specific needs of each client.'. Ricardo is fluent in English and Portuguese. Although I'm currently working, I am looking for better opportunities as of now. Ricardo is currently in Huntsville, Texas, United States. My email is ricardocmbd@gmail.com and my number is +1 (713) 962-6214. Social media links: linkedin (https://www.linkedin.com/in/ricardo-cambundo-bab2a0210/), instagram (https://www.instagram.com/ricardocmbd/), github (https://github.com/Ricardo-Cambundo). Ricardo was born in Angola. Ricardo is a software developer from Angola currently studying Computer Science in Texas. Answer questions about his professional background professionally. Some of my projects are 
-Level RH
-Highly tested and used complete human resource management system for employee tracking, payroll and much more
-AngularJS
-JavaScript
-Laravel/PHP
-PostgreSQL
-Google SMTP
-Twilio SMS
-Docker
-JWT
-Source
-Read more
-
-Level Invoice
-Highly tested and used web-based platform for generating, tracking, and automating invoices
-AngularJS
-JavaScript
-Laravel/PHP
-PostgreSQL
-Google SMTP
-Twilio SMS
-Docker
-JWT
-Source
-Read more
-
-NaVia
-Cross-platform m-commerce app with courier logistics (IOS/Android)
-React Native
-TypeScript
-JWT
-PostgreSQL
-Laravel/PHP
-Firebase
-Websockets
-IOS
-Android
-Source
-Read more
-
-GoingPlaces
-Car rental/sharing mobile application for IOS and Android
-React Native
-JavaScript
-Django
-Python
-JWT
-PostgreSQL
-Firebase
-Websockets
-IOS
-Android
-Source
-Read more
-
-ISPAJ
-Official website for one of Angola's biggest Higher Polytechnic Institute with 10k+ monthly visitors
-React
-JavaScript
-Laravel/PHP
-PostgreSQL
-Google SMTP
-RestAPIs
-JWT
-10k+ visitors/month
-Website
-Source
-Read more
-
-AngoTrans Express website
-Corporate website for a company specialized in road transport and cargo transportation solutions
-React
-JavaScript
-Laravel/PHP
-PostgreSQL
-Google SMTP
-Twilio SMS
-Docker
-JWT
-Website
-Source
-Read more
-
-AngoTrans Express
-Real-time bus tracking mobile app for IOS and Android
-React Native
-JavaScript
-JWT
-PostgreSQL
-Laravel/PHP
-Firebase
-Websockets
-IOS
-Android
-Source
-Read more
-
-AnimesCMBD
-Anime cataloging mobile app for IOS and Android
-React Native
-JavaScript
-Django
-Python
-JWT
-PostgreSQL
-Firebase
-Websockets
-IOS
-Android
-Source
-Read more
-
-Internship Management System
-Already in use, this is an enterprise platform for academic/medical internship coordination
-React
-JavaScript
-Laravel/PHP
-PostgreSQL
-Google SMTP
-Docker
-JWT
-Source
-Read more. To see more, one could just visite the projects section of this website.
-
-Ricardo's Technical Profile:
-- CURRENT TECHNOLOGIES: TypeScript, JavaScript, React, Angular, React Native, Python, Django, PHP, Laravel, Git, Docker, PostgreSQL, Postman
-- CURRENT EDUCATION: Pursuing AS in Computer Science at Lone Star College-CyFair (May 2024-Present)
-- EXPERIENCE: Mobile/Web Developer at Level Soft Angola, Software Developer at ISPAJ, Freelance developer since 2022
-- SPECIALTIES: Full-stack web development, mobile app development, cross-platform solutions
-
-Important: Be short and concise. The current date is ${new Date().toISOString()}. Keep responses professional, concise, and focused on Ricardo's skills and experience. If unsure, suggest asking about his projects or tech stack. And try to be concise and short if possible, unless the user asks for you to expand. And give me an html reponse so i can then set inside dangerouslySetInnerHTML and don't have any uncessary texts so the user can't tell what's going on in the back like ${'```html and ```'}. It's important to not say things like 'Here is the HTML response:'`,
+      content: `${messageContent1}` + `
+Important: The current date is ${new Date().toISOString()}. ` + ` ${messageContent2}`,
     },
     {
       role: 'user',
@@ -346,7 +126,7 @@ Important: Be short and concise. The current date is ${new Date().toISOString()}
   console.log('Sending messages:', messages); // debug
 
   try {
-    const response = await fetch("https://api.cohere.com/v2/chat", {
+    const response = await fetch(api, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${chave}`,
@@ -355,7 +135,7 @@ Important: Be short and concise. The current date is ${new Date().toISOString()}
       body: JSON.stringify({
         "stream": false,
 
-        model: "command-a-03-2025", // or your model
+        model: model,
         messages: messages,
         // max_tokens: 200,
         // temperature: 0.7,
@@ -365,7 +145,7 @@ Important: Be short and concise. The current date is ${new Date().toISOString()}
 
     if (!response.ok) {
       const errText = await response.text();
-      console.error("Cohere API error:", errText);
+      console.error("API error:", errText);
       return '';
     }
     const data = await response.json();
@@ -396,7 +176,7 @@ Important: Be short and concise. The current date is ${new Date().toISOString()}
 
     setThinking(true);
     scrollToBottom();
-    let botResponse = await callHuggingFaceAPI(chatText);
+    let botResponse = await callAPI(chatText);
     console.trace('bot response', botResponse)
     if (!botResponse || `${botResponse}`.trim() === "") {
       botResponse = "Having trouble in the backend. Please try again later :)";
@@ -418,7 +198,7 @@ Important: Be short and concise. The current date is ${new Date().toISOString()}
   }, [thinking]);
 
   return (
-    <div className="chatbox">
+    <div className="chatbox" style={{backgroundColor: dark && '#030712', color: dark && "white", borderColor: dark && '#283346ff'  }}>
       <div
         className="chatHeader"
         onClick={() => {
@@ -454,8 +234,8 @@ Important: Be short and concise. The current date is ${new Date().toISOString()}
           <i className="bi bi-chevron-down"></i>
         )}
       </div>
-      {chatExpand && <hr></hr>}
-      <div className="chatContainer" style={{ height: chatExpand ? 350 : 0 }}>
+      {chatExpand && <hr style={{borderColor: dark && '#283346ff'}}></hr>}
+      <div className="chatContainer" style={{ height: chatExpand ? 350 : 0, backgroundColor: dark && '#030712', color: dark && "white", borderColor: dark && '#455a7eff !important' }} >
         <div className="chatDialog">
           {history?.length == 0 ? (
             <div
@@ -484,7 +264,7 @@ Important: Be short and concise. The current date is ${new Date().toISOString()}
               <div style={{ fontSize: 14, fontWeight: "600" }}>
                 Send a message to start the chat!
               </div>
-              <div style={{ fontSize: 12.5, color: "grey" }}>
+              <div style={{ fontSize: 12.5, color: dark ? "#c9c9c9ff" : "grey",}} >
                 You can ask the bot anything about me and it will help to find
                 the relevant information!
               </div>
@@ -494,13 +274,13 @@ Important: Be short and concise. The current date is ${new Date().toISOString()}
               {history.map((item: any, index: number) => {
                 if (!item?.bot) {
                   return (
-                    <div className="meMessage" key={index}>
+                    <div style={{borderColor: dark && '#455a7eff' }} className="meMessage" key={index}>
                       {item?.message}
                     </div>
                   );
                 } else {
                   return (
-                    <div className="botMessage" key={index}>
+                    <div style={{borderColor: dark && '#455a7eff' }} className="botMessage" key={index}>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="13"
@@ -518,7 +298,7 @@ Important: Be short and concise. The current date is ${new Date().toISOString()}
                 }
               })}
               {thinking && (
-                <div className="botMessage">
+                <div className="botMessage" style={{borderColor: dark && '#455a7eff' }}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="13"
@@ -543,8 +323,8 @@ Important: Be short and concise. The current date is ${new Date().toISOString()}
           )}
         </div>
 
-        <div className="chatFooter">
-          <svg
+        <div className="chatFooter" style={{borderColor: dark && '#455a7eff' }}>
+          <svg 
             onClick={() => {
               setHistory([])
             }}
@@ -554,7 +334,7 @@ Important: Be short and concise. The current date is ${new Date().toISOString()}
             fill="currentColor"
             className="bi bi-trash"
             viewBox="0 0 16 16"
-            style={{cursor: 'pointer'}}
+            style={{cursor: 'pointer', borderColor: dark && '#455a7eff' }}
           >
             <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
             <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
@@ -566,6 +346,7 @@ Important: Be short and concise. The current date is ${new Date().toISOString()}
                 chatText?.length > 0 && send();
               }
             }}
+            key={dark ? 'dark' : 'light'}
             type="text"
             value={chatText}
             onChange={(e) => {
@@ -575,10 +356,13 @@ Important: Be short and concise. The current date is ${new Date().toISOString()}
           />
 
           <svg
+           
             style={{
               cursor: "pointer",
-              background: chatText.length > 0 ? "black" : "white",
-              color: chatText.length > 0 ? "white" : "black",
+              background: chatText.length > 0 ? (dark ? "white" : "black") : (dark ? "black" : "white"),
+              color: chatText.length > 0 ? (dark ? "black" : "white") : (dark ? "white": "black"),
+              filter: dark && 'brightness(0.8)',
+              borderColor: dark && '#455a7eff'
             }}
             onClick={() => {
               chatText?.length > 0 && send();

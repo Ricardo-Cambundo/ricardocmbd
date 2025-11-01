@@ -7,8 +7,16 @@
   gap: 10px;
 }
 
+#workSection .tabHeadersDark {
+  background-color: #1F2937;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  gap: 10px;
+}
 #workSection .tab,
-#workSection .tab1 {
+#workSection .tab1, #workSection .darkTab1, #workSection .darkTab {
   flex: 1;
   border-radius: 5px;
   text-align: center;
@@ -22,6 +30,16 @@
   background-color: white;
   box-shadow: 0px 0.1px 1px rgba(0, 0, 0, 0.281);
   color: black;
+}
+#workSection .darkTab {
+  background-color: #1F2937;
+  box-shadow: 0px 0.1px 1px rgba(0, 0, 0, 0.281);
+  color: white;
+}
+#workSection .darkTab1 {
+  background-color: #030712;
+  box-shadow: 0px 0.1px 1px rgba(0, 0, 0, 0.281);
+  color: white;
 }
 #workSection .workHeader {
   display: flex;
@@ -104,7 +122,9 @@
   font-size: 13px;
 }
 #workSection .workTitle,
-#workSection .workTitle1 {
+#workSection .workTitleDark
+#workSection .workTitle1,
+#workSection .workTitleDark1{
   font-weight: 600;
   font-size: 15px;
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -119,6 +139,16 @@
   position: absolute;
   left: -54px;
   border: 10px solid #ffffff;
+}
+#workSection .workTitleDark1::before {
+  content: "";
+  background-color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 20px;
+  position: absolute;
+  left: -54px;
+  border: 10px solid #030712;
 }
 #workSection .workPosition {
   color: #797979;

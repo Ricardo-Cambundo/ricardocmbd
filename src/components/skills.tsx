@@ -65,7 +65,7 @@ const Skills = () => {
       title: "Docker",
       description: "Containerization",
       icon: "devicon-docker-plain colored",
-      color: "#00406d29",
+      color: "#102c3fef",
     },
     {
       title: "PostgreSQL",

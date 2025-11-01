@@ -141,6 +141,7 @@ const Blog = () => {
         <div className="searchContainer">
           <div className={dark ? "inputContainer1" : "inputContainer"} style={{borderColor: dark && '#243044ff' }}>
             <input
+                key={dark ? 'dark' : 'light'}
               type="text"
               className="search"
               placeholder="Search something..."

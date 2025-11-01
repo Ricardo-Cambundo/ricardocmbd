@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Footer from "../components/footer";
 import Header from "../components/header";
 import "../css/contact.css";
@@ -11,6 +11,7 @@ import "../css/contact.css";
 //   SelectValue,
 // } from "@/components/ui/select";
 import { useNavigate } from "react-router-dom";
+import { ScrollContext } from "@/store/context";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -18,6 +19,7 @@ const Contact = () => {
   const [body, setBody] = useState("");
   const [load, setLoad] = useState(false);
   const [done, setDone] = useState(false);
+  const {dark} = useContext(ScrollContext)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -46,14 +48,16 @@ const Contact = () => {
     <div className="homeBodyContainer">
       <Header />
       <div className="page">
-        <div className="greetings">contact me</div>
+        <div className="greetings" style={{color: dark && 'white'}}>contact me</div>
 
-        <div id="featuredSection" className="contactSection">
+        <div id="featuredSection" className="contactSection" style={{color: dark && 'white'}}>
           <form>
             <div className="row">
               <div className="col">
                 <label>Name</label>
                 <input
+                    key={dark ? 'dark' : 'light'} 
+
                   value={name}
                   onChange={(e) => {
                     setName(e.target.value);
@@ -64,6 +68,8 @@ const Contact = () => {
               <div className="col">
                 <label>Email</label>
                 <input
+                  key={dark ? 'dark' : 'light'}
+
                   value={email}
                   onChange={(e) => {
                     setEmail(e.target.value);
@@ -77,6 +83,8 @@ const Contact = () => {
               <div className="col">
                 <label>What's up</label>
                 <textarea
+                    key={dark ? 'dark' : 'light'}
+
                   rows={5}
                   value={body}
                   onChange={(e) => {
@@ -122,6 +130,8 @@ const Contact = () => {
                 className="submitButton"
                 style={{
                   opacity: load || done ? 0.5 : 1,
+                  background: dark && "#eeeeee",
+                  color: dark && "black"
                 }}
                 onClick={() => {
                   setErrors([]);
@@ -136,9 +146,9 @@ const Contact = () => {
               </div>
               
             </div>
-            <div style={{marginTop: 15, fontSize: 14, color: 'grey'}}>
+            <div style={{marginTop: 15, fontSize: 14, color: dark ? "#c9c9c9ff" : 'grey'}}>
                 By submitting this form, I agree to the{" "}
-                <strong style={{color: 'black', cursor: 'pointer'}}
+                <strong style={{color: dark ? "white": 'black', cursor: 'pointer'}}
                   onClick={() => {
                     location.pathname != "/privacy" && navigate("/privacy");
                   }}

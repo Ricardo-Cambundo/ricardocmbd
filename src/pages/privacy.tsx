@@ -17,7 +17,7 @@ const Privacy = () => {
     <div className={dark ? "greetings1":"greetings"}>Privacy Policy</div>
 
     <div id="privacySection" style={{color: dark && 'white'}}>
-      <div className="date">Last Updated: September 2024</div>
+      <div className="date" style={{color: dark && "#c9c9c9ff" }}>Last Updated: September 2024</div>
       <div className={dark ? "sectionTitle1" : "sectionTitle"}>Welcome!</div>
       Thanks for visiting! This <strong>Privacy Policy</strong> explains how your information is handled here. My website primarily showcases my projects, and I prioritize respecting your privacy.
       
@@ -26,11 +26,11 @@ const Privacy = () => {
       
       <ol type="1">
         <li>
-          <div>Chatbot Interactions</div>
+          <div style={{color: dark && "white" }}>Chatbot Interactions</div>
           If you communicate with the chatbot, your messages might be stored temporarily for caching or training. Please avoid sharing sensitive or confidential info here.
         </li>
         <li>
-          <div>Contact Details</div>
+          <div style={{color: dark && "white" }}>Contact Details</div>
           Any information you provide via email or contact form is entirely voluntary. I only use it to respond and communicate—no other use.
         </li>
       </ol>
