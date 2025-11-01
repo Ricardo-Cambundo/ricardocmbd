@@ -11,7 +11,7 @@ import animescmbd from "../assets/images/animescmbd.webp";
 import ispaj from "../assets/images/ispaj.webp";
 import angotrans_site from "../assets/images/angotrans_site.webp";
 import sge from "../assets/images/sge.webp";
-import { Blurhash } from "react-blurhash";
+//@ts-ignore
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 
@@ -28,19 +28,13 @@ import { ScrollContext } from "@/store/context";
 const OptimizedImage = React.memo(({ src, alt }: { src: any; alt?: any }) => {
     //@ts-ignore
   const navigate = useNavigate()
+  //@ts-ignore
   const [loaded, setLoaded] = useState(true);
 
   return (
     <>
       {!loaded && (
-        <Blurhash
-          hash={"L7QJfn_N000000-;M{ay00-;t7M{"}
-          width="92%"
-          height="92%"
-          resolutionX={32}
-          resolutionY={32}
-          punch={1}
-        />
+       <></>
       )}
       {/* <img
         src={src}
@@ -65,6 +59,7 @@ const OptimizedImage = React.memo(({ src, alt }: { src: any; alt?: any }) => {
 
 const ProjectItem = React.memo(({ i }: { i: any }) => {
   const navigate = useNavigate()
+  //@ts-ignore
   const {dark} = useContext(ScrollContext)
   return (
     <div className="project" style={{borderColor: dark && '#243044ff' }}>
@@ -285,6 +280,7 @@ const Projects = () => {
     ,
   ]);
   const [filtered, setFiltered] = useState(posts);
+  //@ts-ignore
   const { dark } = useContext(ScrollContext)
 
   useEffect(() => {

@@ -6,6 +6,7 @@ const Hero = () => {
   //@ts-ignore
 
   const { chat, setChat } = useContext(ScrollContext);
+  //@ts-ignore
   const { dark, setDark } = useContext(ScrollContext);
 
   
@@ -37,7 +38,7 @@ const Hero = () => {
           </svg>{" "}
           Huntsville, TX, USA
         </div>
-        <div  className="description" style={{ color: "grey", color: dark && '#c9c9c9ff' }}>
+        <div  className="description" style={{ color: dark ? '#c9c9c9ff' : 'grey' }}>
           Driven by curiosity and code.<br></br> Join me as I contribute to the
           digital world
         </div>

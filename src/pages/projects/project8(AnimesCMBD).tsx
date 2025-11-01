@@ -1,11 +1,9 @@
 import { useContext, useEffect } from "react";
 import "../../css/blogPost.css";
 import Footer from "@/components/footer";
-import { androidstudio, CopyBlock } from "react-code-blocks";
 import Header from "@/components/header";
 import { useNavigate } from "react-router-dom";
 import { ScrollContext } from "@/store/context";
-import { format } from "date-fns";
 import animescmbd from "../../assets/images/animescmbd.webp";
 import animescmbd1 from "../../assets/images/animescmbd/animescmbd1.png";
 import animescmbd2 from "../../assets/images/animescmbd/animescmbd2.png";
@@ -13,12 +11,15 @@ import animescmbd3 from "../../assets/images/animescmbd/animescmbd3.png";
 
 const Project8 = () => {
   const navigate = useNavigate();
+    //@ts-ignore
+
   const { dark } = useContext(ScrollContext);
   const info = {
     title: "AnimesCMBD",
     preDescription: "Anime cataloging mobile app for IOS and Android",
     highlight:
       "This is my first mobile application and the one I'm most proud of haha. I had a lot of fun building this one.",
+    warning: null,
     description:
       "AnimesCMBD is a user-friendly mobile app for iOS and Android designed for anime enthusiasts. Built with Python/Django and React Native, it offers a comprehensive cataloging experience with features like personalized collections, advanced search filters, user reviews and ratings, and tailored recommendations. The app integrates external APIs to enrich anime metadata, ensuring users have access to detailed information about their favorite series. With secure authentication, seamless cross-platform performance, and a clean, intuitive interface, AnimeCollector makes managing and discovering anime a fun and engaging experience.",
     read: 2,

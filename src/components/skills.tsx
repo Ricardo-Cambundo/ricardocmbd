@@ -6,6 +6,7 @@ const Skills = () => {
     //@ts-ignore
     const {dark} = useContext(ScrollContext)
 
+    //@ts-ignore
   const [skills, setSkills] = useState([
     {
       title: "TypeScript",

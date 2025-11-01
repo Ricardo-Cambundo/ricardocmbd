@@ -1,11 +1,9 @@
 import { useContext, useEffect } from "react";
 import "../../css/blogPost.css";
 import Footer from "@/components/footer";
-import { androidstudio, CopyBlock } from "react-code-blocks";
 import Header from "@/components/header";
 import { useNavigate } from "react-router-dom";
 import { ScrollContext } from "@/store/context";
-import { format } from "date-fns";
 import angotrans from "../../assets/images/angotrans_site.webp";
 import angotrans4 from "../../assets/images/angotransexpress/angotrans4.png";
 import angotrans5 from "../../assets/images/angotransexpress/angotrans5.png";
@@ -14,6 +12,8 @@ import angotrans7 from "../../assets/images/angotransexpress/angotrans7.png";
 
 const Project6 = () => {
   const navigate = useNavigate();
+    //@ts-ignore
+
   const { dark } = useContext(ScrollContext);
   const info = {
     title: "AngoTrans Express website",

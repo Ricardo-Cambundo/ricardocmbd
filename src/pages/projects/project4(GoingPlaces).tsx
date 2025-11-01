@@ -1,11 +1,9 @@
 import { useContext, useEffect } from "react";
 import "../../css/blogPost.css";
 import Footer from "@/components/footer";
-import { androidstudio, CopyBlock } from "react-code-blocks";
 import Header from "@/components/header";
 import { useNavigate } from "react-router-dom";
 import { ScrollContext } from "@/store/context";
-import { format } from "date-fns";
 import goingplaces from "../../assets/images/going_places.webp";
 import goingplaces1 from "../../assets/images/goingplaces/goingplaces1.png";
 import goingplaces2 from "../../assets/images/goingplaces/goingplaces2.png";
@@ -15,11 +13,14 @@ import goingplaces4 from "../../assets/images/goingplaces/goingplaces4.png";
 
 const Project4 = () => {
   const navigate = useNavigate();
+    //@ts-ignore
+
   const { dark } = useContext(ScrollContext);
   const info = {
     title: "GoingPlaces",
     preDescription: "Car rental/sharing mobile application for IOS and Android",
-
+highlight: null,
+    warning: null,
     description:
       "GoingPlaces is a user-friendly car rental/sharing app for iOS and Android, built with Python/Django and React Native. It offers real-time location-based search, secure authentication, personalized profiles, and a flexible booking process. Using PostgreSQL for scalable data management, the app features push notifications and geolocation integration to enhance user experience. Designed to streamline vehicle sharing and promote community-driven transportation, GoingPlaces makes renting and sharing cars easy and efficient.",
     read: 2,

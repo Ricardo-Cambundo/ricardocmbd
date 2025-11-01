@@ -1,11 +1,9 @@
 import { useContext, useEffect } from "react";
 import "../../css/blogPost.css";
 import Footer from "@/components/footer";
-import { androidstudio, CopyBlock } from "react-code-blocks";
 import Header from "@/components/header";
 import { useNavigate } from "react-router-dom";
 import { ScrollContext } from "@/store/context";
-import { format } from "date-fns";
 import levelinvoice from "../../assets/images/levelinvoice.webp";
 import levelinvoice1 from "../../assets/images/levelinvoice/levelinvoice1.png";
 import levelinvoice2 from "../../assets/images/levelinvoice/levelinvoice2.png";
@@ -15,6 +13,8 @@ import levelinvoice3 from "../../assets/images/levelinvoice/levelinvoice3.png";
 
 const Project2 = () => {
   const navigate = useNavigate();
+    //@ts-ignore
+
   const { dark } = useContext(ScrollContext);
   const info = {
     title: "Level Invoice",

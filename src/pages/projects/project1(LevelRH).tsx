@@ -1,14 +1,11 @@
 import { useContext, useEffect } from 'react'
 import '../../css/blogPost.css'
 import Footer from '@/components/footer'
-import { androidstudio, CopyBlock } from 'react-code-blocks'
 import Header from '@/components/header'
 import { useNavigate } from 'react-router-dom'
 import { ScrollContext } from '@/store/context'
-import { format } from 'date-fns'
 import levelrh from "../../assets/images/levelrh.webp";
 import levelrh1 from "../../assets/images/levelrh/levelrh2.webp";
-import levelrh2 from "../../assets/images/levelrh/levelrh1.webp";
 import levelrh3 from "../../assets/images/levelrh/levelrh3.png";
 import levelrh4 from "../../assets/images/levelrh/levelrh4.png";
 import levelrh5 from "../../assets/images/levelrh/levelrh5.png";
@@ -16,6 +13,8 @@ import levelrh5 from "../../assets/images/levelrh/levelrh5.png";
 
 const Project1 = () => {
     const navigate = useNavigate()
+      //@ts-ignore
+
     const { dark } = useContext(ScrollContext)
      const info = {
     title: "Level RH",

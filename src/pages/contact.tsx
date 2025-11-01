@@ -19,6 +19,7 @@ const Contact = () => {
   const [body, setBody] = useState("");
   const [load, setLoad] = useState(false);
   const [done, setDone] = useState(false);
+  //@ts-ignore
   const {dark} = useContext(ScrollContext)
   const navigate = useNavigate()
 

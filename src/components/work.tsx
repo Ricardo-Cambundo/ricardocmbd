@@ -10,6 +10,7 @@ import { ScrollContext } from "@/store/context";
 
 const Work = () => {
   const [tab, setTab] = useState("work");
+  //@ts-ignore
   const { dark, setDark } = useContext(ScrollContext);
 
   function getDuration(startDate: any, endDate: any = null) {

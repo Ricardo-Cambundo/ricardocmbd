@@ -5,7 +5,6 @@ import levelinvoice from '../assets/images/levelinvoice.webp'
 import navia from '../assets/images/navia.webp'
 import going from '../assets/images/going_places.webp'
 import { useNavigate } from "react-router-dom";
-import { Blurhash } from "react-blurhash";
 import { ScrollContext } from "@/store/context";
 
 const OptimizedImage = React.memo(({ src, alt }: {src: any, alt?: any}) => {
@@ -16,7 +15,7 @@ const OptimizedImage = React.memo(({ src, alt }: {src: any, alt?: any}) => {
   return(
     <>
     {!loaded && (
-        <Blurhash hash={'L7QJfn_N000000-;M{ay00-;t7M{'} width="92%" height="92%" resolutionX={32} resolutionY={32} punch={1} />
+        <></>
       )}
       <img
       loading="lazy"
@@ -33,6 +32,7 @@ const OptimizedImage = React.memo(({ src, alt }: {src: any, alt?: any}) => {
 
 const Featured = () => {
   const navigate = useNavigate()
+  //@ts-ignore
   const { dark } = useContext(ScrollContext)
   //@ts-ignore
 

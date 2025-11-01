@@ -1,11 +1,9 @@
 import { useContext, useEffect } from "react";
 import "../../css/blogPost.css";
 import Footer from "@/components/footer";
-import { androidstudio, CopyBlock } from "react-code-blocks";
 import Header from "@/components/header";
 import { useNavigate } from "react-router-dom";
 import { ScrollContext } from "@/store/context";
-import { format } from "date-fns";
 import sge from "../../assets/images/sge.webp";
 import sge1 from "../../assets/images/sge/sge1.png";
 import sge2 from "../../assets/images/sge/sge2.png";
@@ -14,6 +12,8 @@ import sge4 from "../../assets/images/sge/sge4.png";
 
 const Project7 = () => {
   const navigate = useNavigate();
+    //@ts-ignore
+
   const { dark } = useContext(ScrollContext);
   const info = {
     title: "SGE - Internship Management System",

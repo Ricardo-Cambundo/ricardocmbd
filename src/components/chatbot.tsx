@@ -1,5 +1,6 @@
   //@ts-ignore
 import { ScrollContext } from "@/store/context";
+//@ts-ignore
 import axios from "axios";
 import { useContext, useEffect, useRef, useState } from "react";
 
@@ -22,6 +23,7 @@ const Chatbot = ({
   setHistory: any;
 }) => {
   const [thinking, setThinking] = useState(false);
+  //@ts-ignore
   const {dark} = useContext(ScrollContext)
 
   const chave = import.meta.env.VITE_API_KEY;
@@ -31,6 +33,7 @@ const Chatbot = ({
   const messageContent2 = import.meta.env.VITE_MESSAGECONTENT2;
 
   const portfolioData = JSON.parse(import.meta.env.VITE_PORTFOLIO_DATA);
+  //@ts-ignore
   const getFallbackResponse = (question: any) => {
     const lowerQ = question.toLowerCase();
 
@@ -152,7 +155,7 @@ Important: The current date is ${new Date().toISOString()}. ` + ` ${messageConte
     console.trace('response', data)
     return data.message?.content?.[0]?.text || '';
   } catch (error) {
-    console.error("Error calling Cohere:", error);
+    console.error("Error:", error);
     return '';
   }
   };

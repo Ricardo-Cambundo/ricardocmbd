@@ -6,6 +6,7 @@ import { ScrollContext } from "@/store/context";
 
 const Posts = () => {
   const navigate = useNavigate()
+  //@ts-ignore
   const {dark} = useContext(ScrollContext)
     //@ts-ignore
 

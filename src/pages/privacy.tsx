@@ -17,7 +17,7 @@ const Privacy = () => {
     <div className={dark ? "greetings1":"greetings"}>Privacy Policy</div>
 
     <div id="privacySection" style={{color: dark && 'white'}}>
-      <div className="date" style={{color: dark && "#c9c9c9ff" }}>Last Updated: September 2024</div>
+      <div className="date" style={{color: dark && "#c9c9c9ff" }}>Last Updated: September 2025</div>
       <div className={dark ? "sectionTitle1" : "sectionTitle"}>Welcome!</div>
       Thanks for visiting! This <strong>Privacy Policy</strong> explains how your information is handled here. My website primarily showcases my projects, and I prioritize respecting your privacy.
       

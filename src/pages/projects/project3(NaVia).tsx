@@ -1,26 +1,26 @@
 import { useContext, useEffect } from "react";
 import "../../css/blogPost.css";
 import Footer from "@/components/footer";
-import { androidstudio, CopyBlock } from "react-code-blocks";
 import Header from "@/components/header";
 import { useNavigate } from "react-router-dom";
 import { ScrollContext } from "@/store/context";
-import { format } from "date-fns";
 import navia from "../../assets/images/navia.webp";
 import navia1 from "../../assets/images/navia/navia1.png";
 import navia2 from "../../assets/images/navia/navia2.png";
 import navia3 from "../../assets/images/navia/navia3.png";
 import navia4 from "../../assets/images/navia/navia4.png";
-import goingplaces4 from "../../assets/images/goingplaces/goingplaces4.png";
 
 const Project3 = () => {
   const navigate = useNavigate();
+    //@ts-ignore
+
   const { dark } = useContext(ScrollContext);
   const info = {
     title: "NaVia",
     preDescription:
       "Cross-platform m-commerce app with courier logistics (IOS/Android)",
-
+    highlight: null,
+    warning: null,
     description:
       "NaVia is a powerful cross-platform m-commerce app with integrated courier logistics for iOS and Android, built with React Native and Laravel. It offers live package tracking with Google Maps, providing real-time delivery status updates. The app features order management, seller analytics, inventory tools, and dynamic pricing. With push notifications via Twilio and Firebase, users stay informed about orders and deliveries. Its intuitive UI and engaging animations deliver a seamless, efficient experience, simplifying logistics and commerce in one unified platform.",
     read: 2,
