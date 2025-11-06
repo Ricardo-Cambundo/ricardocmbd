@@ -4,10 +4,10 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 import { useNavigate } from "react-router-dom";
 import { ScrollContext } from "@/store/context";
-import levelinvoice from "../../assets/images/levelinvoice.webp";
-import levelinvoice1 from "../../assets/images/levelinvoice/levelinvoice1.png";
-import levelinvoice2 from "../../assets/images/levelinvoice/levelinvoice2.png";
-import levelinvoice3 from "../../assets/images/levelinvoice/levelinvoice3.png";
+import levelinvoice from "../../assets/images/levelinvoice 1.svg";
+import levelinvoice1 from "../../assets/images/levelinvoice/levelinvoice1.svg";
+import levelinvoice2 from "../../assets/images/levelinvoice/levelinvoice2.svg";
+import levelinvoice3 from "../../assets/images/levelinvoice/levelinvoice3.svg";
 
 
 

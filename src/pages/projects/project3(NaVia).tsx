@@ -4,11 +4,11 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 import { useNavigate } from "react-router-dom";
 import { ScrollContext } from "@/store/context";
-import navia from "../../assets/images/navia.webp";
-import navia1 from "../../assets/images/navia/navia1.png";
-import navia2 from "../../assets/images/navia/navia2.png";
-import navia3 from "../../assets/images/navia/navia3.png";
-import navia4 from "../../assets/images/navia/navia4.png";
+import navia from "../../assets/images/navia 1.svg";
+import navia1 from "../../assets/images/navia/navia1.svg";
+import navia2 from "../../assets/images/navia/navia2.svg";
+import navia3 from "../../assets/images/navia/navia3.svg";
+import navia4 from "../../assets/images/navia/navia4.svg";
 
 const Project3 = () => {
   const navigate = useNavigate();

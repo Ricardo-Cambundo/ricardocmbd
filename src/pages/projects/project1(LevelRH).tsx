@@ -4,11 +4,11 @@ import Footer from '@/components/footer'
 import Header from '@/components/header'
 import { useNavigate } from 'react-router-dom'
 import { ScrollContext } from '@/store/context'
-import levelrh from "../../assets/images/levelrh.webp";
-import levelrh1 from "../../assets/images/levelrh/levelrh2.webp";
-import levelrh3 from "../../assets/images/levelrh/levelrh3.png";
-import levelrh4 from "../../assets/images/levelrh/levelrh4.png";
-import levelrh5 from "../../assets/images/levelrh/levelrh5.png";
+import levelrh from "../../assets/images/levelrh 1.svg";
+import levelrh1 from "../../assets/images/levelrh/levelrh2.svg";
+import levelrh3 from "../../assets/images/levelrh/levelrh3.svg";
+import levelrh4 from "../../assets/images/levelrh/levelrh4.svg";
+import levelrh5 from "../../assets/images/levelrh/levelrh5.svg";
 
 
 const Project1 = () => {

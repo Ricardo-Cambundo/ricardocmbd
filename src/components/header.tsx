@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import "../css/header.css";
-import logo from "../assets/images/logo-long-black.webp";
-import logoLight from "../assets/images/logo-long-white.png";
+import logo from "../assets/images/logo-long-black.svg";
+import logoLight from "../assets/images/logo-long-white.svg";
 import { useNavigate } from "react-router-dom";
 import { ScrollContext } from "@/store/context";
 import Chatbot from "./chatbot";
@@ -9,12 +9,8 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuPortal,
   DropdownMenuSeparator,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
+  
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 

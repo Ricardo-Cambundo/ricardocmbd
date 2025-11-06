@@ -4,11 +4,11 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 import { useNavigate } from "react-router-dom";
 import { ScrollContext } from "@/store/context";
-import goingplaces from "../../assets/images/going_places.webp";
-import goingplaces1 from "../../assets/images/goingplaces/goingplaces1.png";
-import goingplaces2 from "../../assets/images/goingplaces/goingplaces2.png";
-import goingplaces3 from "../../assets/images/goingplaces/goingplaces3.png";
-import goingplaces4 from "../../assets/images/goingplaces/goingplaces4.png";
+import goingplaces from "../../assets/images/going_places 1.svg";
+import goingplaces1 from "../../assets/images/goingplaces/goingplaces1.svg";
+import goingplaces2 from "../../assets/images/goingplaces/goingplaces2.svg";
+import goingplaces3 from "../../assets/images/goingplaces/goingplaces3.svg";
+import goingplaces4 from "../../assets/images/goingplaces/goingplaces4.svg";
 
 
 const Project4 = () => {

@@ -4,10 +4,10 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 import { useNavigate } from "react-router-dom";
 import { ScrollContext } from "@/store/context";
-import animescmbd from "../../assets/images/animescmbd.webp";
-import animescmbd1 from "../../assets/images/animescmbd/animescmbd1.png";
-import animescmbd2 from "../../assets/images/animescmbd/animescmbd2.png";
-import animescmbd3 from "../../assets/images/animescmbd/animescmbd3.png";
+import animescmbd from "../../assets/images/animescmbd 1.svg";
+import animescmbd1 from "../../assets/images/animescmbd/animescmbd1.svg";
+import animescmbd2 from "../../assets/images/animescmbd/animescmbd2.svg";
+import animescmbd3 from "../../assets/images/animescmbd/animescmbd3.svg";
 
 const Project8 = () => {
   const navigate = useNavigate();

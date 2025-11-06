@@ -4,11 +4,11 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 import { useNavigate } from "react-router-dom";
 import { ScrollContext } from "@/store/context";
-import sge from "../../assets/images/sge.webp";
-import sge1 from "../../assets/images/sge/sge1.png";
-import sge2 from "../../assets/images/sge/sge2.png";
-import sge3 from "../../assets/images/sge/sge3.png";
-import sge4 from "../../assets/images/sge/sge4.png";
+import sge from "../../assets/images/sge 1.svg";
+import sge1 from "../../assets/images/sge/sge1.svg";
+import sge2 from "../../assets/images/sge/sge2.svg";
+import sge3 from "../../assets/images/sge/sge3.svg";
+import sge4 from "../../assets/images/sge/sge4.svg";
 
 const Project7 = () => {
   const navigate = useNavigate();

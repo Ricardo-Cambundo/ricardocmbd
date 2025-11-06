@@ -4,11 +4,11 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 import { useNavigate } from "react-router-dom";
 import { ScrollContext } from "@/store/context";
-import angotrans from "../../assets/images/angotrans_site.webp";
-import angotrans4 from "../../assets/images/angotransexpress/angotrans4.png";
-import angotrans5 from "../../assets/images/angotransexpress/angotrans5.png";
-import angotrans6 from "../../assets/images/angotransexpress/angotrans6.png";
-import angotrans7 from "../../assets/images/angotransexpress/angotrans7.png";
+import angotrans from "../../assets/images/angotrans_site 1.svg";
+import angotrans4 from "../../assets/images/angotransexpress/angotrans4.svg";
+import angotrans5 from "../../assets/images/angotransexpress/angotrans5.svg";
+import angotrans6 from "../../assets/images/angotransexpress/angotrans6.svg";
+import angotrans7 from "../../assets/images/angotransexpress/angotrans7.svg";
 
 const Project6 = () => {
   const navigate = useNavigate();

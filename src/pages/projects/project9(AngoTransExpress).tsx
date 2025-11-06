@@ -4,10 +4,10 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 import { useNavigate } from "react-router-dom";
 import { ScrollContext } from "@/store/context";
-import angotrans from "../../assets/images/angotrans.webp";
-import angotrans1 from "../../assets/images/angotransexpress/angotrans1.png";
-import angotrans2 from "../../assets/images/angotransexpress/angotrans2.png";
-import angotrans3 from "../../assets/images/angotransexpress/angotrans3.png";
+import angotrans from "../../assets/images/angotrans 1.svg";
+import angotrans1 from "../../assets/images/angotransexpress/angotrans1.svg";
+import angotrans2 from "../../assets/images/angotransexpress/angotrans2.svg";
+import angotrans3 from "../../assets/images/angotransexpress/angotrans3.svg";
 
 const Project9 = () => {
   const navigate = useNavigate();
