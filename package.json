@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.15",
+    "@radix-ui/react-dropdown-menu": "^2.1.16",
     "@radix-ui/react-select": "^2.2.6",
     "@tailwindcss/vite": "^4.1.13",
     "axios": "^1.12.2",
@@ -19,9 +21,11 @@
     "cobe": "^0.6.5",
     "date-fns": "^4.1.0",
     "dotenv": "^17.2.2",
+    "lottie-react": "^2.4.1",
     "lucide-react": "^0.544.0",
     "motion": "^12.23.22",
     "react": "^19.1.1",
+    "react-blurhash": "^0.3.0",
     "react-code-blocks": "^0.1.6",
     "react-dom": "^19.1.1",
     "react-lazy-load-image-component": "^1.6.3",

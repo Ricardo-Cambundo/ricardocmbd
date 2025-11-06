@@ -199,14 +199,18 @@ Important: The current date is ${new Date().toISOString()}. ` + ` ${messageConte
   useEffect(() => {
     scrollToBottom();
   }, [thinking]);
-
+  const inputRef = useRef<any>(null)
+  useEffect(() => {
+    chatExpand && inputRef?.current.focus()
+  }, [chatExpand])
   return (
-    <div className="chatbox" style={{backgroundColor: dark && '#030712', color: dark && "white", borderColor: dark && '#283346ff'  }}>
+    <div className="chatbox" style={{backgroundColor: dark && '#030712', borderColor: dark && '#283346ff'  }}>
       <div
         className="chatHeader"
         onClick={() => {
           setChatExpand(!chatExpand);
         }}
+        style={{color: dark && "white"}}
       >
         <div className="left">
           <span>Chat with</span>
@@ -238,8 +242,8 @@ Important: The current date is ${new Date().toISOString()}. ` + ` ${messageConte
         )}
       </div>
       {chatExpand && <hr style={{borderColor: dark && '#283346ff'}}></hr>}
-      <div className="chatContainer" style={{ height: chatExpand ? 350 : 0, backgroundColor: dark && '#030712', color: dark && "white", borderColor: dark && '#455a7eff !important' }} >
-        <div className="chatDialog">
+      <div className="chatContainer" style={{ height: chatExpand ? 350 : 0, backgroundColor: dark && '#030712', borderColor: dark && '#455a7eff !important' }} >
+        <div className="chatDialog" style={{color: dark && "white"}}>
           {history?.length == 0 ? (
             <div
               style={{
@@ -344,11 +348,13 @@ Important: The current date is ${new Date().toISOString()}. ` + ` ${messageConte
           </svg>
 
           <input
+          style={{cursor: 'pointer', borderColor: dark && '#455a7eff', color: dark && "white"}}
             onKeyDown={(e) => {
               if (e.key === "Enter") {
                 chatText?.length > 0 && send();
               }
             }}
+            ref={inputRef}
             key={dark ? 'dark' : 'light'}
             type="text"
             value={chatText}

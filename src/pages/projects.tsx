@@ -2,18 +2,27 @@ import React, { useContext, useEffect, useState } from "react";
 import Footer from "../components/footer";
 import Header from "../components/header";
 import "../css/projects.css";
-import levelrh from "../assets/images/levelrh.webp";
-import levelinvoice from "../assets/images/levelinvoice.webp";
-import navia from "../assets/images/navia.webp";
-import going from "../assets/images/going_places.webp";
-import angotrans from "../assets/images/angotrans.webp";
-import animescmbd from "../assets/images/animescmbd.webp";
-import ispaj from "../assets/images/ispaj.webp";
-import angotrans_site from "../assets/images/angotrans_site.webp";
-import sge from "../assets/images/sge.webp";
-//@ts-ignore
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import levelrh from "../assets/images/levelrh 1.svg";
+import levelinvoice from "../assets/images/levelinvoice 1.svg";
+import navia from "../assets/images/navia 1.svg";
+import going from "../assets/images/going_places 1.svg";
+import angotrans from "../assets/images/angotrans 1.svg";
+import animescmbd from "../assets/images/animescmbd 1.svg";
+import ispaj from "../assets/images/ispaj 1.svg";
+import { Blurhash } from "react-blurhash";
 
+import angotrans_site from "../assets/images/angotrans_site 1.svg";
+import sge from "../assets/images/sge 1.svg";
+//@ts-ignore
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+  DialogClose,
+} from "@/components/ui/dialog";
+import Lottie from "lottie-react";
+import lottie from "../components/loading6.json";
 
 import {
   Select,
@@ -26,16 +35,14 @@ import { useNavigate } from "react-router-dom";
 import { ScrollContext } from "@/store/context";
 
 const OptimizedImage = React.memo(({ src, alt }: { src: any; alt?: any }) => {
-    //@ts-ignore
-  const navigate = useNavigate()
+  //@ts-ignore
+  const navigate = useNavigate();
   //@ts-ignore
   const [loaded, setLoaded] = useState(true);
 
   return (
     <>
-      {!loaded && (
-       <></>
-      )}
+      {!loaded && <></>}
       {/* <img
         src={src}
         alt={alt}
@@ -48,57 +55,203 @@ const OptimizedImage = React.memo(({ src, alt }: { src: any; alt?: any }) => {
         }
         // onLoad={() => setLoaded(true)}
       /> */}
-      <LazyLoadImage 
-      src={src}
-      alt={alt}
-      // placeholderSrc="L7QJfn_N000000-;M{ay00-;t7M{"
+      <LazyLoadImage
+        src={src}
+        alt={alt}
+        // placeholderSrc="L7QJfn_N000000-;M{ay00-;t7M{"
       />
     </>
   );
 });
 
 const ProjectItem = React.memo(({ i }: { i: any }) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   //@ts-ignore
-  const {dark} = useContext(ScrollContext)
+  const { dark } = useContext(ScrollContext);
+  const [dialogOpen, setDialogOpen] = useState(false);
   return (
-    <div className="project" style={{borderColor: dark && '#243044ff' }}>
+    <div className="project" style={{ borderColor: dark && "#243044ff" }}>
+      <Dialog
+        open={dialogOpen}
+        onOpenChange={(e) => {
+          setDialogOpen(e);
+        }}
+      >
+        <DialogTrigger style={{ display: "none" }}></DialogTrigger>
+        <DialogContent
+          style={{
+            width: "100%",
+            maxWidth: 500,
+            display: "flex",
+            flexDirection: "column",
+            backgroundColor: dark && "#030712",
+            borderColor: dark && "#283346ff",
+          }}
+          showCloseButton={false}
+        >
+          <DialogClose
+            style={{
+              position: "absolute",
+              top: "6px",
+              right: "16.5px",
+              cursor: "pointer",
+              color: dark ? "white" : "black",
+              fontSize: "25px",
+              background: "none",
+              outline: "none",
+              border: "none",
+              zindex: 9999,
+            }}
+          >
+            &times; {/* or your icon */}
+          </DialogClose>
+          
+
+          <div
+            style={{
+              textAlign: "center",
+              fontSize: 20,
+              marginTop: 0,
+              fontWeight: "600",
+              color: dark && "white",
+            }}
+          >
+            Private and restricted access
+          </div>
+          <div
+            style={{
+              textAlign: "center",
+              color: "grey",
+              fontSize: 14,
+              color: dark && "white",
+            }}
+          >
+            This repository is private and has restricted access. It cannot be
+            displayed publicly unfortunately. If you'd like to see how my code
+            works,{" "}
+            <strong
+              style={{
+                cursor: "pointer",
+                textDecoration: "underline",
+                color: !dark ? "#003796ff" : "#81adf8ff",
+              }}
+              onClick={() => {
+                location.pathname != "/contact" && navigate("/contact");
+              }}
+            >
+              please reach out
+            </strong>{" "}
+            and I'll be happy to go through it with you.
+          </div>
+          <div
+            style={{
+              paddingTop: 20,
+              width: "100%",
+              borderTop: "2px solid #e6e6e6",
+              borderColor: dark && "#283346ff",
+            }}
+          ></div>
+<Lottie
+            rendererSettings={{
+              preserveAspectRatio: "xMidYMid slice",
+            }}
+            autoplay
+            loop
+            animationData={lottie}
+            style={{
+              width: "100%",
+              aspectRatio: "4/2",
+              alignSelf: "center",
+              marginBlock: 10,
+            }}
+            className="lottieItem"
+          />
+          <div
+            style={{
+              paddingTop: 20,
+              width: "100%",
+              borderTop: "2px solid #e6e6e6",
+              borderColor: dark && "#283346ff",
+            }}
+          ></div>
+
+          <div
+            style={{
+              textAlign: "center",
+              fontSize: 13,
+              marginTop: -20,
+              color: dark && "white",
+              paddingBottom: 20
+            }}
+          >
+            You're probably wondering,{" "}
+            <strong>"Why show the GitHub button?"</strong>
+            <strong> First</strong>, it indicates the project is in a Git repo (good practice).
+            <strong>Second</strong>, I'm working on a demo with a new, public repo and URL to
+            showcase key features, so stay tuned for that.
+          </div>
+        </DialogContent>
+      </Dialog>
       <div className="imageContainer">
         <OptimizedImage src={i?.image} alt={i?.title} />
       </div>
       <div className="projectInfo">
-        <div className="projectTitle" style={{color: dark && 'white'}}>{i?.title}</div>
-        <div className="projectDescription" style={{color: dark && '#c9c9c9ff'}}>{i?.description}</div>
-        <div className="projectTags" >
+        <div className="projectTitle" style={{ color: dark && "white" }}>
+          {i?.title}
+        </div>
+        <div
+          className="projectDescription"
+          style={{ color: dark && "#c9c9c9ff" }}
+        >
+          {i?.description}
+        </div>
+        <div className="projectTags">
           {[...(i?.tags || [])].map((tag: any, ind: number) => {
             return (
-              <div className="projectTag" key={ind} style={{background: dark && '#243044ff', color: dark && 'white'}}>
+              <div
+                className="projectTag"
+                key={ind}
+                style={{
+                  background: dark && "#243044ff",
+                  color: dark && "white",
+                }}
+              >
                 {tag}
               </div>
             );
           })}
         </div>
         <div className="projectLinks">
-          
           {i?.website && (
             <div
               className="projectLink"
               onClick={() => {
                 window.open(i?.website);
               }}
+              style={{ background: dark && "#eeeeee", color: dark && "black" }}
             >
               <i className="bi bi-globe"></i>
               Website
             </div>
           )}
-          {i?.source && (
-            <div className="projectLink" style={{background: dark && '#eeeeee', color: dark && 'black' }}>
+          {true && (
+            <div
+              className="projectLink"
+              style={{ background: dark && "#eeeeee", color: dark && "black" }}
+              onClick={() => {
+                !i?.source && setDialogOpen(true);
+              }}
+            >
               <i className="bi bi-github"></i> Source
             </div>
           )}
-          <div className="projectLink" style={{background: dark && '#eeeeee', color: dark && 'black' }} onClick={() => {
-            navigate(`/projects/${i?.id}`)
-          }}>
+          <div
+            className="projectLink"
+            style={{ background: dark && "#eeeeee", color: dark && "black" }}
+            onClick={() => {
+              navigate(`/projects/${i?.id}`);
+            }}
+          >
             <i className="bi bi-info-circle-fill"></i>Read more
           </div>
         </div>
@@ -108,7 +261,7 @@ const ProjectItem = React.memo(({ i }: { i: any }) => {
 });
 
 const Projects = () => {
-    //@ts-ignore
+  //@ts-ignore
 
   const [posts, setPosts] = useState([
     {
@@ -127,7 +280,7 @@ const Projects = () => {
         "Docker",
         "JWT",
       ],
-      source: true,
+      source: false,
       highlight: "Extensively tested and reliable for large-scale deployments",
     },
     {
@@ -146,7 +299,7 @@ const Projects = () => {
         "Docker",
         "JWT",
       ],
-      source: true,
+      source: false,
     },
     {
       id: 3,
@@ -186,7 +339,7 @@ const Projects = () => {
       ],
       source: true,
     },
-    
+
     {
       id: 7,
       title: "Internship Management System",
@@ -281,7 +434,7 @@ const Projects = () => {
   ]);
   const [filtered, setFiltered] = useState(posts);
   //@ts-ignore
-  const { dark } = useContext(ScrollContext)
+  const { dark } = useContext(ScrollContext);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -322,12 +475,16 @@ const Projects = () => {
     <div className="homeBodyContainer">
       <Header />
       <div className="page">
-        <div className="greetings" style={{color: dark && 'white' }}>my projects</div>
+        <div className="greetings" style={{ color: dark && "white" }}>
+          my projects
+        </div>
         <div className="searchContainer">
-          <div className={dark ? "inputContainer1" : "inputContainer"} style={{borderColor: dark && '#243044ff' }}>
+          <div
+            className={dark ? "inputContainer1" : "inputContainer"}
+            style={{ borderColor: dark && "#243044ff" }}
+          >
             <input
-                key={dark ? 'dark' : 'light'}
-
+              key={dark ? "dark" : "light"}
               type="text"
               className="search"
               placeholder="Search something..."
@@ -338,7 +495,12 @@ const Projects = () => {
               onClick={() => {
                 setSearch("");
               }}
-            style={{background: dark && '#030712', color: dark && '#b9b9b9ff', borderColor: dark && '#243044ff'  }}>
+              style={{
+                background: dark && "#030712",
+                color: dark && "#b9b9b9ff",
+                borderColor: dark && "#243044ff",
+              }}
+            >
               <i className="bi bi-backspace"></i>
             </span>
           </div>
@@ -348,8 +510,18 @@ const Projects = () => {
             }}
             value={filter}
           >
-            <SelectTrigger style={{ outline: "none", borderColor: dark && '#243044ff', color: dark && 'white'  }} className="w-[180px]">
-              <SelectValue style={{ outline: "none", color: dark && 'white'  }} defaultValue={filter} />
+            <SelectTrigger
+              style={{
+                outline: "none",
+                borderColor: dark && "#243044ff",
+                color: dark && "white",
+              }}
+              className="w-[180px]"
+            >
+              <SelectValue
+                style={{ outline: "none", color: dark && "white" }}
+                defaultValue={filter}
+              />
             </SelectTrigger>
             <SelectContent style={{ outline: "none" }}>
               <SelectItem value="all">All</SelectItem>
