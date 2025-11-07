@@ -1,14 +1,47 @@
 import { useContext } from "react";
 import "../css/hero.css";
 import { ScrollContext } from "@/store/context";
-
+import motherboard from '../assets/images/motherboard.svg'
+import ricardo from '../assets/images/ricardo.svg'
+import space from '../assets/images/space.svg'
+import chloe from '../assets/images/chloe.svg'
 const Hero = () => {
   //@ts-ignore
 
-  const { chat, setChat } = useContext(ScrollContext);
+  const { chat, setChat, setChatExpand } = useContext(ScrollContext);
   //@ts-ignore
   const { dark, setDark } = useContext(ScrollContext);
+const items = [
+  {
+    id: '1',
+    url: ricardo,
+    title: "It's your boy",
+    description: 'Ricardo',
+    tags: ['Twilight', 'Peaks', 'Silhouette', 'Evening Sky', 'Peaceful'],
+  },
 
+  {
+    id: '2',
+    url: motherboard,
+    title: 'I love',
+    description: 'Computers',
+    tags: ['Floral', 'Highlands', 'Wildflowers', 'Colorful', 'Resilience'],
+  },
+  {
+    id: '3',
+    url: space,
+    title: 'I love',
+    description: 'Space & Physics',
+    tags: ['Rocky', 'Ridges', 'Contrast', 'Adventure', 'Clouds'],
+  },
+  {
+    id: '4',
+    url: chloe,
+    title: 'And Chloe says',
+    description: 'Hi',
+    tags: ['Rocky', 'Ridges', 'Contrast', 'Adventure', 'Clouds'],
+  },
+];
   
   return (
     <div className="heroSection" style={{color: dark && 'white' }}>
@@ -45,6 +78,7 @@ const Hero = () => {
 
         <div className="stat1" style={{cursor: 'pointer'}} onClick={() => {
           setChat(true)
+          setChatExpand(true)
         }}>
           For Q&A, start a chat with CMBD support
           <svg
@@ -83,7 +117,34 @@ const Hero = () => {
             }} className="bi bi-envelope" style={{color: '#bebebe', cursor: 'pointer'}}></i>
         </div>
       </div>
-      <div className="right"></div>
+      <div className="right">
+         <div className='group flex justify-center gap-2 w-[100%] mx-auto mb-10 mt-3'>
+  {items.map((item, i: number) => {
+    return (
+      <article className='group/article relative w-full rounded-xl overflow-hidden not-[&:hover]:group-hover:w-[20%] [&:not(:focus-within):not(:hover)]:group-focus-within:w-[20%] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.15)] before:absolute before:inset-x-0 before:bottom-0 before:h-1/3 before:bg-linear-to-t before:from-black/50 before:transition-opacity before:opacity-0 hover:before:opacity-100 focus-within:before:opacity-100 after:opacity-0 not-[&:hover]:group-hover:after:opacity-100 [&:not(:focus-within):not(:hover)]:group-focus-within:after:opacity-100 after:absolute after:inset-0 after:bg-white/30 after:backdrop-blur-sm after:rounded-lg after:transition-all focus-within:ring-3 focus-within:ring-indigo-300'>
+        <a
+          className='absolute inset-0 text-white z-10 p-3 flex flex-col justify-end'
+          href='#0'
+        >
+          <h1 style={{fontSize: 18}} className='text-xl font-medium whitespace-nowrap truncate opacity-0 group-hover/article:opacity-100 group-focus-within/article:opacity-100 translate-y-2 group-hover/article:translate-y-0 group-focus-within/article:translate-y-0 transition duration-200 ease-[cubic-bezier(.5,.85,.25,1.8)] group-hover/article:delay-300 group-focus-within/article:delay-300'>
+            {item?.title}
+          </h1>
+          <span style={{fontSize: 20, fontWeight: '700'}} className='text-3xl font-medium whitespace-nowrap truncate opacity-0 group-hover/article:opacity-100 group-focus-within/article:opacity-100 translate-y-2 group-hover/article:translate-y-0 group-focus-within/article:translate-y-0 transition duration-200 ease-[cubic-bezier(.5,.85,.25,1.8)] group-hover/article:delay-500 group-focus-within/article:delay-500'>
+            {item?.description}
+          </span>
+        </a>
+        <img
+          className='object-cover h-78 w-full'
+          src={item?.url}
+          width='960'
+          height='480'
+          alt='Image 01'
+        />
+      </article>
+    );
+  })}
+</div>
+      </div>
     </div>
   );
 };

@@ -35,8 +35,7 @@ const Header = () => {
 
   //@ts-ignore
 
-  const { scrolled, dark, setDark, chat, setChat } = useContext(ScrollContext);
-  const [chatExpand, setChatExpand] = useState(false)
+  const { scrolled, dark, setDark, chat, setChat, chatExpand, setChatExpand } = useContext(ScrollContext);
   useEffect(() => {
     if (dark) {
       // dark background color
@@ -65,6 +64,7 @@ const Header = () => {
     // }
   ])
   const [chatText, setChatText] = useState('')
+  
   return (
     <>
     {chat && <Chatbot chatText={chatText} setChatText={setChatText} chatExpand={chatExpand} setChatExpand={setChatExpand} history={history} setHistory={setHistory}/>}

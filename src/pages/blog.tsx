@@ -27,7 +27,7 @@ const Blog = () => {
     description:
       "This is my first post on my blog as I get everything set up and see how it all looks in Markdown. I’m using this as a little test to see how the formatting turns out. Overtime, I'll share more about my projects, insights on technology, helpful tips, and maybe even some personal stories along the way.",
     read: 1,
-    date: "2025-03-03",
+    date: "2025-11-03",
     tags: ["Introduction", "Blog", "About me", "First post"],
   },
   {

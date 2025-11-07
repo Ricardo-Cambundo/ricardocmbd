@@ -95,7 +95,7 @@ const Featured = () => {
         "Firebase",
         "Websockets",
       ],
-      source: true,
+      source: "https://github.com/Ricardo-Cambundo/navia_frontend.git",
     },
     {
       id: 4,
@@ -113,7 +113,7 @@ const Featured = () => {
         "Firebase",
         "Websockets",
       ],
-      source: true,
+      source: "https://github.com/Ricardo-Cambundo/GoingPlacesFront",
     },
   ]);
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -304,6 +304,8 @@ const Featured = () => {
                       className="projectLink"
                       onClick={() => {
                           !(i?.source) && setDialogOpen(true);
+                          i?.source && window.open(i?.source);
+
                         }}
                     >
                       <i

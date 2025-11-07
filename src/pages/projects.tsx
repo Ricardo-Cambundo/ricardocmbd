@@ -70,7 +70,7 @@ const ProjectItem = React.memo(({ i }: { i: any }) => {
   const { dark } = useContext(ScrollContext);
   const [dialogOpen, setDialogOpen] = useState(false);
   return (
-    <div className="project" style={{ borderColor: dark && "#243044ff" }}>
+    <div className="project" style={{ borderColor: dark && "#243044ff" }} >
       <Dialog
         open={dialogOpen}
         onOpenChange={(e) => {
@@ -196,7 +196,10 @@ const ProjectItem = React.memo(({ i }: { i: any }) => {
         <OptimizedImage src={i?.image} alt={i?.title} />
       </div>
       <div className="projectInfo">
-        <div className="projectTitle" style={{ color: dark && "white" }}>
+        <div className="projectTitle" style={{ color: dark && "white" }}
+         onClick={() => {
+          navigate(`/projects/${i?.id}`);
+        }}>
           {i?.title}
         </div>
         <div
@@ -240,6 +243,7 @@ const ProjectItem = React.memo(({ i }: { i: any }) => {
               style={{ background: dark && "#eeeeee", color: dark && "black" }}
               onClick={() => {
                 !i?.source && setDialogOpen(true);
+                i?.source && window.open(i?.source);
               }}
             >
               <i className="bi bi-github"></i> Source
@@ -318,7 +322,7 @@ const Projects = () => {
         "IOS",
         "Android",
       ],
-      source: true,
+      source: "https://github.com/Ricardo-Cambundo/navia_frontend.git",
     },
     {
       id: 4,
@@ -337,7 +341,7 @@ const Projects = () => {
         "IOS",
         "Android",
       ],
-      source: true,
+      source: "https://github.com/Ricardo-Cambundo/GoingPlacesFront",
     },
 
     {
@@ -355,7 +359,7 @@ const Projects = () => {
         "Docker",
         "JWT",
       ],
-      source: true,
+      source: false,
     },
     {
       title: "ISPAJ",
@@ -372,7 +376,7 @@ const Projects = () => {
         "JWT",
         "10k+ visitors/month",
       ],
-      source: true,
+      source: false,
       website: "https://ispaj.co.ao/",
     },
     {
@@ -391,7 +395,7 @@ const Projects = () => {
         "IOS",
         "Android",
       ],
-      source: true,
+      source: false,
     },
     {
       id: 8,
@@ -427,7 +431,7 @@ const Projects = () => {
         "Docker",
         "JWT",
       ],
-      source: true,
+      source: false,
       website: "https://angotransexpress.ao/",
     },
     ,

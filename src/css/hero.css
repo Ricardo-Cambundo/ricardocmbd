@@ -1,5 +1,26 @@
 .heroSection {
     /* margin-top: 130px; */
+    display: flex;
+    max-height: 330px;
+    overflow: hidden;
+    gap: 20px
+
+}
+@media screen and (max-width: 720px) {
+    .heroSection {
+        flex-direction: column;
+        max-height: unset ;
+        overflow: unset;
+    }
+}
+.heroSection .left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.heroSection .right {
+    flex: 1;
 }
 .greetings, .greetings1 {
     font-weight: 800;
