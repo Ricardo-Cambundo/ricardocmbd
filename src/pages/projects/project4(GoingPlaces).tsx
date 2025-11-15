@@ -20,7 +20,7 @@ const Project4 = () => {
     title: "GoingPlaces",
     preDescription: "Car rental/sharing mobile application for IOS and Android",
 highlight: null,
-    warning: null,
+    warning: "Fun fact: This was my high school final year project haha.",
     description:
       "GoingPlaces is a user-friendly car rental/sharing app for iOS and Android, built with Python/Django and React Native. It offers real-time location-based search, secure authentication, personalized profiles, and a flexible booking process. Using PostgreSQL for scalable data management, the app features push notifications and geolocation integration to enhance user experience. Designed to streamline vehicle sharing and promote community-driven transportation, GoingPlaces makes renting and sharing cars easy and efficient.",
     read: 2,

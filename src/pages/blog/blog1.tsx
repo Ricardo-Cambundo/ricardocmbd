@@ -4,7 +4,6 @@ import Header from "@/components/header";
 import { useNavigate } from "react-router-dom";
   //@ts-ignore
 
-import levelinvoice from "../../assets/images/levelinvoice.png";
 import { format } from "date-fns";
   //@ts-ignore
 import {

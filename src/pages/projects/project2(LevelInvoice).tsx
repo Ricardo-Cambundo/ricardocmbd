@@ -146,7 +146,7 @@ const Project2 = () => {
                 reminders, and updates
               </li>
               <li>
-                Verification of invoice authenticity
+                Verification of invoice authenticity (through included QR codes)
               </li>
               <li>
                 Analytics on invoicing activity, revenue, and

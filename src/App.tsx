@@ -24,7 +24,7 @@ const Work = lazy(() => import('./components/work'));
 import { Route, Routes } from "react-router-dom";
 import "./index.css";
 import { ScrollProvider } from "./store/context";
-const Projects = lazy(() => import('./pages/projects'));
+import Projects from './pages/projects';
 const Privacy = lazy(() => import('./pages/privacy'));
 const Blog = lazy(() => import('./pages/blog'));
 const Contact = lazy(() => import('./pages/contact'));
