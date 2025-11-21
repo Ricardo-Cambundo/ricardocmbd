@@ -12,8 +12,7 @@ import {
   DialogTrigger,
   DialogClose,
 } from "@/components/ui/dialog";
-import Lottie from "lottie-react";
-import lottie from "../components/loading6.json";
+import lottie from "../components/loading6.svg";
 
 const OptimizedImage = React.memo(({ src, alt }: { src: any; alt?: any }) => {
   //@ts-ignore
@@ -198,21 +197,15 @@ const Featured = () => {
               borderColor: dark && "#283346ff",
             }}
           ></div>
-          <Lottie
-            rendererSettings={{
-              preserveAspectRatio: "xMidYMid slice",
-            }}
-            autoplay
-            loop
-            animationData={lottie}
-            style={{
-              width: "100%",
-              aspectRatio: "4/2",
-              alignSelf: "center",
-              marginBlock: 10,
-            }}
-            className="lottieItem"
-          />
+         <img src={lottie}
+                 style={{
+                       width: "100%",
+                       aspectRatio: "4/2",
+                       alignSelf: "center",
+                       marginBlock: 10,
+                       marginTop: -10
+                     }}
+                     className="lottieItem"/>
           <div
             style={{
               paddingTop: 20,
