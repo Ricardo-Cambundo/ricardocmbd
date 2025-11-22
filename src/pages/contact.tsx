@@ -64,7 +64,11 @@ const Contact = () => {
                     setName(e.target.value);
                   }}
                   placeholder="Name..."
+                  style={{
+                     borderColor: dark && "#283346ff",
+                  }}
                 />
+                
               </div>
               <div className="col">
                 <label>Email</label>
@@ -76,6 +80,9 @@ const Contact = () => {
                     setEmail(e.target.value);
                   }}
                   placeholder="Email..."
+                  style={{
+                     borderColor: dark && "#283346ff",
+                  }}
                 />
               </div>
             </div>
@@ -92,6 +99,9 @@ const Contact = () => {
                     setBody(e.target.value);
                   }}
                   placeholder="Leave feedback about the site, career opportunities or just to say hello etc..."
+                  style={{
+                     borderColor: dark && "#283346ff",
+                  }}
                 ></textarea>
               </div>
             </div>
