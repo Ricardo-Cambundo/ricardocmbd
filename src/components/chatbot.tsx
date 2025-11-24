@@ -1,4 +1,5 @@
   //@ts-ignore
+import { baseURL } from "@/api/api";
 import { ScrollContext } from "@/store/context";
 //@ts-ignore
 import axios from "axios";
@@ -26,11 +27,6 @@ const Chatbot = ({
   //@ts-ignore
   const {dark} = useContext(ScrollContext)
 
-  const chave = import.meta.env.VITE_API_KEY;
-  const api = import.meta.env.VITE_API_ROUTE;
-  const model = import.meta.env.VITE_API_MODEL;
-  const messageContent1 = import.meta.env.VITE_MESSAGECONTENT1;
-  const messageContent2 = import.meta.env.VITE_MESSAGECONTENT2;
 
   const portfolioData = JSON.parse(import.meta.env.VITE_PORTFOLIO_DATA);
   //@ts-ignore
@@ -114,35 +110,18 @@ He specializes in full-stack and mobile development.`;
     }
   };
   const callAPI = async (question: any) => {
-    const messages = [
-    {
-      role: 'system',
-      content: `${messageContent1}` + `
-Important: The current date is ${new Date().toISOString()}. ` + ` ${messageContent2}`,
-    },
-    {
-      role: 'user',
-      content: question,
-    },
-  ];
 
-  console.log('Sending messages:', messages); // debug
 
   try {
-    const response = await fetch(api, {
+    const response = await fetch(`${baseURL}/api/handleChat`, {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${chave}`,
+        // Authorization: `Bearer ${chave}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        "stream": false,
-
-        model: model,
-        messages: messages,
-        // max_tokens: 200,
-        // temperature: 0.7,
-        // other params
+        stream: false,
+        question: question,
       }),
     });
 

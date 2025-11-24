@@ -12,6 +12,8 @@ import "../css/contact.css";
 // } from "@/components/ui/select";
 import { useNavigate } from "react-router-dom";
 import { ScrollContext } from "@/store/context";
+import axios from "axios";
+import { baseURL } from "@/api/api";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -38,10 +40,36 @@ const Contact = () => {
       setErrors([...errors, "Invalid email entered!"]);
     } else {
       setLoad(true);
-      setTimeout(() => {
-        setLoad(false);
-        setDone(true);
-      }, 3000);
+      axios.post(`${baseURL}/api/send-email`, {
+          name: `Nome: ${name}; Email: ${email};`,
+          email: 'ricardocmbd@gmail.com',
+          title: 'CMBD Website',
+          pw: 'true',
+          body: `${body}`,
+          fromEmail: email
+      })
+      .then(() => {
+          setName('')
+          setEmail('')
+          setBody('')
+          // setAssunto('')
+          // setMensagem('')
+          // toast("Mensagem enviada com sucesso!")
+          setLoad(false)
+          setDone(true)
+
+
+      })
+      .catch(err => {
+        console.trace('ricardo', err)
+        setErrors([err?.response?.data?.message||"Backend trouble. Please Try again. If error persists, try again later."])
+          setLoad(false)
+
+      })
+      // setTimeout(() => {
+      //   setLoad(false);
+      //   setDone(true);
+      // }, 3000);
     }
   };
 
