@@ -1,4 +1,4 @@
-import { lazy } from 'react';
+import { lazy, useEffect } from 'react';
 
 import "./App.css";
 import './css/blogPost.css'
@@ -25,6 +25,8 @@ import { Route, Routes } from "react-router-dom";
 import "./index.css";
 import { ScrollProvider } from "./store/context";
 import Projects from './pages/projects';
+import axios from 'axios';
+import { baseURL } from './api/api';
 const Privacy = lazy(() => import('./pages/privacy'));
 const Blog = lazy(() => import('./pages/blog'));
 const Contact = lazy(() => import('./pages/contact'));
@@ -38,8 +40,33 @@ const Project8 = lazy(() => import('./pages/projects/project8(AnimesCMBD)'));
 const Project9 = lazy(() => import('./pages/projects/project9(AngoTransExpress)'));
 const Project3 = lazy(() => import('./pages/projects/project3(NaVia)'));
 const Project6 = lazy(() => import('./pages/projects/project6(AngoTransWeb)'));
+const Login = lazy(() => import('./pages/login'));
+const Admin = lazy(() => import('./pages/admin'));
+
 
 function App() {
+  const updateVisits = () => {
+
+      const visitedOnce = (sessionStorage.getItem('visitedOnce')) || false
+        if (!visitedOnce){
+          axios.post(`${baseURL}/api/addMonthlyView1`, {
+            dateAdded: new Date()
+          })
+          .then(() => {
+            sessionStorage.setItem('visitedOnce', 'true')
+          })
+          .catch(() => {
+            //('visitedError', err)
+            // sessionStorage.setItem('visitedOnce', true)
+          })
+          sessionStorage.setItem('visitedOnce', 'true')
+
+        }
+}
+  
+  useEffect(() => {
+      updateVisits()
+  }, [])
   return (
     <ScrollProvider>
       <Routes>
@@ -72,6 +99,8 @@ function App() {
         <Route path="/projects/3" element={<Project3 />} />
         <Route path="/projects/6" element={<Project6 />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/admin" element={<Admin />} />
 
         <Route path='*' element={<NotFound/>}/>
       </Routes>
