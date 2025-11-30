@@ -15,17 +15,17 @@ const Posts = () => {
       id: 1,
       title: 'Hello World!',
       description: "This is my first post on my blog as I get everything set up and see how it all looks in Markdown. I’m using this as a little test to see how the formatting turns out. Overtime, I'll share more about my projects, insights on technology, helpful tips, and maybe even some personal stories along the way.",
-      read: 1,
+      read: 2,
     date: "2025-11-03",
       tags: ['Introduction', "Blog", "About me", "First post"]
-    }
+    },
   ])
   return (
     <div className="skillsContainer" id="postsSection">
       <div className="sectionTitle" style={{color: dark && 'white' }}>
         recent posts{" "}
         <span onClick={() => {
-          navigate('/projects')
+          navigate('/blog')
         }}style={{color: dark && '#e3e3e3' }} >
           view more <i className="bi bi-arrow-right-short"></i>
         </span>

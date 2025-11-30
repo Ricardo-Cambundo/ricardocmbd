@@ -153,7 +153,7 @@ const Project6 = () => {
             <p>
               A user-friendly corporate interface designed to provide visitors with comprehensive and easily accessible information about the company's range of services, the extensive fleet of assets and background of the company, ensuring an engaging and informative experience for all users:
             </p>
-            <div className={`${dark ? "imageContainer-light" : "imageContainer"}`} style={{display: 'flex', flexDirection: 'column', gap: 20, padding: 0}}>
+            <div className={`${dark ? "imageContainer-light" : "imageContainer"}`} style={{display: 'flex', flexDirection: 'column', gap: 5, padding: 0}}>
                 <div
                   className={`${dark ? "imageContainer-light" : "imageContainer"}`}
                   style={{

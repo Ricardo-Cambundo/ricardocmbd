@@ -2,11 +2,14 @@ import { useNavigate } from "react-router-dom";
 import Footer from "../components/footer";
 import Header from "../components/header";
 import "../css/privacy.css";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { ScrollContext } from "@/store/context";
 
 const Privacy = () => {
   const navigate = useNavigate()
+  useEffect(() => {
+    window.scroll(0, 0)
+  }, [])
     //@ts-ignore
 
   const {dark} = useContext(ScrollContext)
