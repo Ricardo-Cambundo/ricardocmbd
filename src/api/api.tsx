@@ -1,7 +1,5 @@
 // https://ispaj.co.ao/back/storage/images/image_1744720970.jpeg
 
-import axios from "axios";
-
 // const baseIp = "ispaj.co.ao/back";
 // export const baseURL = `https://${baseIp}`;
 // export const baseIp = "160.242.26.156:9000"

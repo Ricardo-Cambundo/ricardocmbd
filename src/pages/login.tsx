@@ -6,6 +6,7 @@ import { baseURL } from "../api/api"
 
 
 const Login = () => {
+    //@ts-ignore
     const location = useLocation()
     const navigate = useNavigate()
     const [email, setEmail] = useState('')

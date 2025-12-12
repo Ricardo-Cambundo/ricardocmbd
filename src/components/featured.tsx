@@ -147,7 +147,7 @@ const Featured = () => {
               background: "none",
               outline: "none",
               border: "none",
-              zindex: 9999,
+              // zIndex: 9999,
             }}
           >
             &times; {/* or your icon */}
@@ -167,9 +167,9 @@ const Featured = () => {
           <div
             style={{
               textAlign: "center",
-              color: "grey",
+              // color: "grey",
               fontSize: 14,
-              color: dark && "white",
+              color: dark ? "white" : "grey",
             }}
           >
             This repository is private and has restricted access. It cannot be

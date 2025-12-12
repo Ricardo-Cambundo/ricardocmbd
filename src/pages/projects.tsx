@@ -9,7 +9,7 @@ import going from "../assets/images/going_places 1.svg";
 import angotrans from "../assets/images/angotrans 1.svg";
 import animescmbd from "../assets/images/animescmbd 1.svg";
 import ispaj from "../assets/images/ispaj 1.svg";
-import { Blurhash } from "react-blurhash";
+// import { Blurhash } from "react-blurhash";
 
 import angotrans_site from "../assets/images/angotrans_site 1.svg";
 import sge from "../assets/images/sge 1.svg";
@@ -99,7 +99,7 @@ const ProjectItem = React.memo(({ i }: { i: any }) => {
               background: "none",
               outline: "none",
               border: "none",
-              zindex: 9999,
+              // zindex: 9999,
             }}
           >
             &times; {/* or your icon */}
@@ -120,9 +120,9 @@ const ProjectItem = React.memo(({ i }: { i: any }) => {
           <div
             style={{
               textAlign: "center",
-              color: "grey",
+              // color: "grey",
               fontSize: 14,
-              color: dark && "white",
+              color: dark ? "white" : "grey",
             }}
           >
             This repository is private and has restricted access. It cannot be

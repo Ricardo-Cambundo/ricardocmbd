@@ -23,6 +23,7 @@ const Project5 = () => {
       "Official website for one of Angola's biggest Higher Polytechnic Institute with 10k+ monthly visitors",
     highlight:
       "ISPAJ is one of Angola's biggest private superior academic institutions. Fun fact: I worked there for a while as a software developer and network technician.",
+    warning: null,
     description:
       "The official website for Instituto Superior Politécnico Alvorecer da Juventude (ISPAJ), one of Angola’s leading Higher Polytechnic Institutes with over 10,000 monthly visitors, is built using React.js and Laravel to deliver a fast, reliable, and scalable platform with 99.9% uptime. It features a custom CMS for managing news, academic programs, events, and documents, with role-based access control and automated reminders to keep users engaged and informed. The admin panel provides real-time traffic analytics, geographic and demographic insights, and granular user permissions through JWT authentication, enabling efficient content management and data-driven decision-making. Performance has been optimized through query enhancements and lazy-loading techniques, ensuring a seamless and responsive experience for students, faculty, and visitors",
     read: 4,
@@ -133,6 +134,7 @@ const Project5 = () => {
               {info?.highlight}
             </div>
           )}
+
           {info?.warning && (
             <div className={dark ? "warning1" : "warning"}>{info?.warning}</div>
           )}
