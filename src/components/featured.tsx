@@ -250,7 +250,7 @@ const Featured = () => {
             <div
               className="project"
               key={index}
-              style={{ borderColor: dark && "#243044ff" }}
+              style={{ borderColor: dark && "#243044ff",  backgroundColor: dark ? "#030712" : "white" }}
             >
               <div className="imageContainer">
                 <OptimizedImage src={i?.image} alt={i?.title} />

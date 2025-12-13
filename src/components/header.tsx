@@ -13,6 +13,7 @@ import {
   
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
+import { ChatContext } from "@/store/chatContext";
 
 const Header = () => {
   // const [scrolled, setScrolled] = useState(false);
@@ -35,7 +36,8 @@ const Header = () => {
 
   //@ts-ignore
 
-  const { dark, setDark, chat, setChat, chatExpand, setChatExpand } = useContext(ScrollContext);
+  const { dark, setDark, chat, setChat } = useContext(ScrollContext);
+  const { chatExpand, setChatExpand } = useContext(ChatContext);
   useEffect(() => {
     if (dark) {
       // dark background color
@@ -71,8 +73,8 @@ const Header = () => {
     <nav
       className="headerContainer"
       style={{
-        backgroundColor: true ? (dark ? '#030712bb' : "#ffffffcb" ): "#ffffff00",
-        backdropFilter: true ? "blur(5px)" : "none",
+        backgroundColor: dark ? '#030712bb' : "#ffffffcb" ,
+        backdropFilter: "blur(5px)",
       }}
     >
       

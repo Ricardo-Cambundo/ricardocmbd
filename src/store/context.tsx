@@ -10,7 +10,7 @@ export const ScrollProvider = ({ children }: { children: any }) => {
   const [scrolled, setScrolled] = useState(false); // Add this state
   const [dark, setDark] = useState(false);
   const [chat, setChat] = useState(true);
-  const [chatExpand, setChatExpand] = useState(false)
+  // const [chatExpand, setChatExpand] = useState(false)
 
   // useEffect(() => {
   //   const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -66,8 +66,8 @@ export const ScrollProvider = ({ children }: { children: any }) => {
         setDark,
         chat,
         setChat,
-        chatExpand,
-        setChatExpand
+        // chatExpand,
+        // setChatExpand
       }}
     >
       {children}

@@ -36,7 +36,7 @@ const Posts = () => {
           return (
             <div className="post" key={index} onClick={() => {
               navigate(`/blog/${i?.id}`)
-            }} style={{borderColor: dark && '#243044ff'}}>
+            }} style={{borderColor: dark && '#243044ff', backgroundColor: dark ? "#030712" : "white"}}>
               <div className="left">
                 <div className="postTitle" style={{color: dark && 'white'}}>{i?.title}</div>
                 <div className="postDescription" style={{color: dark && '#c9c9c9ff'}}>{i?.description}{i?.description}{i?.description}{i?.description}</div>

@@ -40,7 +40,7 @@
     align-items: center;
     gap: 5px;
     font-size: 14px;
-    color: grey;
+    color: #636363;
     margin-block: 7px;
 }
 .heroSection .contacts {
@@ -57,14 +57,14 @@
     /* color: #bebebe */
 }
 .heroSection .resume {
-    font-size: 12px;
+    font-size: 13px;
     display: inline-flex;
     flex-direction: row;
     align-items: center;
     gap: 10px;
     border: 1px solid #e4e4e4;
     border-radius: 5px;
-    padding: 5px 15px;
+    padding: 7px 15px;
     font-weight: 700;
     cursor: pointer;
     transition: 0.2s ease-in-out;

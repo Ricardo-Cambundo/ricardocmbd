@@ -256,7 +256,7 @@ const Work = () => {
         </div>
       </div>
       {tab == "work" && (
-        <div className="workList" style={{color: dark && '#e3e3e3', borderColor: dark && '#243044ff' }} >
+        <div className="workList" style={{color: dark && '#e3e3e3', borderColor: dark && '#243044ff', backgroundColor: dark ? "#030712" : "white" }} >
           {work.map((item: any, index: number) => {
             return (
               <div className="work" key={index}>
@@ -372,7 +372,7 @@ const Work = () => {
       )}
 
       {tab == "education" && (
-        <div className="workList" style={{color: dark && '#e3e3e3', borderColor: dark && '#243044ff' }}>
+        <div className="workList" style={{color: dark && '#e3e3e3', borderColor: dark && '#243044ff', backgroundColor: dark ? "#030712" : "white" }}>
           {education.map((item: any, index: number) => {
             return (
               <div className="work" key={index}>

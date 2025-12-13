@@ -4,6 +4,7 @@ import { ScrollContext } from "@/store/context";
 //@ts-ignore
 import axios from "axios";
 import { useContext, useEffect, useRef, useState } from "react";
+import { useKeyboardOffset } from "./useKeyboardOffset";
 
 // const chatPipeline = await pipeline("conversational", "microsoft/DialoGPT-medium");
 
@@ -179,11 +180,21 @@ He specializes in full-stack and mobile development.`;
     scrollToBottom();
   }, [thinking]);
   const inputRef = useRef<any>(null)
+  const [inputFocused, setInputFocused] = useState(false);
+
+  const keyboardOffset = useKeyboardOffset(inputFocused);
+
+
   useEffect(() => {
     chatExpand && inputRef?.current.focus()
   }, [chatExpand])
   return (
-    <div className="chatbox" style={{backgroundColor: dark && '#030712', borderColor: dark && '#283346ff'  }}>
+    <div className="chatbox" style={{backgroundColor: dark && '#030712', borderColor: dark && '#283346ff' ,
+transform: keyboardOffset
+      ? `translateY(-${keyboardOffset}px)`
+      : undefined,    transition: 'transform 0.25s ease-in-out'
+
+     }}>
       <div
         className="chatHeader"
         onClick={() => {
@@ -334,6 +345,9 @@ He specializes in full-stack and mobile development.`;
               }
             }}
             ref={inputRef}
+              onFocus={() => setInputFocused(true)}
+  onBlur={() => setInputFocused(false)}
+
             key={dark ? 'dark' : 'light'}
             type="text"
             value={chatText}

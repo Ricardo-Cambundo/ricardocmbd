@@ -140,7 +140,7 @@ const Blog = () => {
       <div className="page">
         <div className="greetings" style={{color: dark && 'white' }}>my blog</div>
         <div className="searchContainer">
-          <div className={dark ? "inputContainer1" : "inputContainer"} style={{borderColor: dark && '#243044ff' }}>
+          <div className={dark ? "inputContainer1" : "inputContainer"} style={{borderColor: dark && '#243044ff', backgroundColor: dark ? "#030712" : "white" }}>
             <input
                 key={dark ? 'dark' : 'light'}
               type="text"
@@ -164,7 +164,7 @@ const Blog = () => {
             }}
             value={filter}
           >
-            <SelectTrigger style={{ outline: "none",borderColor: dark && '#243044ff', color: dark && 'white'  }} className="w-[180px]">
+            <SelectTrigger style={{ outline: "none",borderColor: dark && '#243044ff', color: dark && 'white', backgroundColor: dark ? "#030712" : "white"  }} className="w-[180px]">
               <SelectValue style={{ outline: "none", color: dark && 'white' }} defaultValue={filter} />
             </SelectTrigger>
             <SelectContent style={{ outline: "none" }}>
@@ -180,7 +180,7 @@ const Blog = () => {
           return (
             <div className="post" key={index} onClick={() => {
               navigate(`/blog/${i?.id}`)
-            }} style={{borderColor: dark && '#243044ff'}}>
+            }} style={{borderColor: dark && '#243044ff', backgroundColor: dark ? "#030712" : "white"}}>
               <div className="left">
                 <div className="postTitle" style={{color: dark && 'white'}}>{i?.title}</div>
                 <div className="postDescription" style={{color: dark && '#c9c9c9ff'}}>{i?.description}{i?.description}{i?.description}{i?.description}</div>

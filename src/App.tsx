@@ -23,10 +23,10 @@ const Footer = lazy(() => import('./components/footer'));
 const Work = lazy(() => import('./components/work'));
 import { Route, Routes } from "react-router-dom";
 import "./index.css";
-import { ScrollProvider } from "./store/context";
 import Projects from './pages/projects';
 import axios from 'axios';
 import { baseURL } from './api/api';
+import { ChatProvider } from './store/chatContext';
 const Privacy = lazy(() => import('./pages/privacy'));
 const Blog = lazy(() => import('./pages/blog'));
 const Contact = lazy(() => import('./pages/contact'));
@@ -70,45 +70,43 @@ function App() {
       updateVisits()
   }, [])
   return (
-    <ScrollProvider>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <div className="homeBodyContainer">
-              <Header />
-              <div className="page">
-                <Hero />
-                <Work />
-                <Skills />
-                <Featured />
-                <Posts />
-                <Footer />
+      <ChatProvider>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <div className="homeBodyContainer">
+                <Header />
+                <div className="page">
+                  <Hero />
+                  <Work />
+                  <Skills />
+                  <Featured />
+                  <Posts />
+                  <Footer />
+                </div>
               </div>
-            </div>
-          }
-        />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/privacy" element={<Privacy />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/1" element={<Blog1 />} />
-        <Route path="/projects/1" element={<Project1 />} />
-        <Route path="/projects/2" element={<Project2 />} />
-        <Route path="/projects/4" element={<Project4 />} />
-        <Route path="/projects/7" element={<Project7 />} />
-        <Route path="/projects/8" element={<Project8 />} />
-        <Route path="/projects/9" element={<Project9 />} />
-        <Route path="/projects/3" element={<Project3 />} />
-        <Route path="/projects/6" element={<Project6 />} />
-        <Route path="/projects/5" element={<Project5 />} />
-
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/admin" element={<Admin />} />
-
-        <Route path='*' element={<NotFound/>}/>
-      </Routes>
-    </ScrollProvider>
+            }
+          />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/1" element={<Blog1 />} />
+          <Route path="/projects/1" element={<Project1 />} />
+          <Route path="/projects/2" element={<Project2 />} />
+          <Route path="/projects/4" element={<Project4 />} />
+          <Route path="/projects/7" element={<Project7 />} />
+          <Route path="/projects/8" element={<Project8 />} />
+          <Route path="/projects/9" element={<Project9 />} />
+          <Route path="/projects/3" element={<Project3 />} />
+          <Route path="/projects/6" element={<Project6 />} />
+          <Route path="/projects/5" element={<Project5 />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path='*' element={<NotFound/>}/>
+        </Routes>
+      </ChatProvider>
   );
 }
 

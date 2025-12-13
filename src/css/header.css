@@ -5,9 +5,9 @@
   right: 0;
   left: 0;
   backdrop-filter: blur(5px);
-  background-color: #ffffffcb;
+  /* background-color: #ffffffcb; */
   z-index: 5;
-  transition: background-color 0.3s ease; /* smooth transition */
+  /* transition: background-color 0.3s ease;  */
 }
 .header {
   display: flex;
@@ -101,8 +101,8 @@
   }
 }
 .header .toggleContainer svg {
-  width: 15px;
-  height: 16px;
+  width: 17px;
+  height: 18px;
 }
 .header .logoContainer {
   width: 75px;
@@ -129,6 +129,12 @@
   max-width: 330px;
   min-width: 200px;
   width: 100%;
+}
+@media screen and (max-width: 500px) {
+  .chatbox {
+    bottom: 10px;
+    right: 10px;
+  }
 }
 .chatHeader {
   padding: 13px 20px;

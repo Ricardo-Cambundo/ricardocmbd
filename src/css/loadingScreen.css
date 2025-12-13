@@ -21,7 +21,7 @@
     background-image: url("../assets/images/board.jpg");
     background-repeat: repeat;
     -webkit-background-clip:text;
-    animation: animate 15s ease-in-out infinite;
+    animation: animate 15s infinite;
     text-align: center;
     text-transform: uppercase;
     font-weight: 900;

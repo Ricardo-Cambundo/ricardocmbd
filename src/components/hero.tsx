@@ -6,10 +6,13 @@ import ricardo from '../assets/images/ricardo2.svg'
 import space from '../assets/images/space.svg'
 import chloe from '../assets/images/chloe.svg'
 import temple from '../assets/images/temple.svg'
+import { ChatContext } from "@/store/chatContext";
 const Hero = () => {
   //@ts-ignore
 
-  const { chat, setChat, setChatExpand } = useContext(ScrollContext);
+  const { chat, setChat } = useContext(ScrollContext);
+  const { setChatExpand } = useContext(ChatContext);
+  
   //@ts-ignore
   const { dark, setDark } = useContext(ScrollContext);
 const items = [
@@ -56,11 +59,11 @@ const items = [
     <div className="heroSection" style={{color: dark && 'white' }}>
       <div className="left">
         <div className="greetings">hey there! my name's<br/> ricardo cambundo</div>
-        <div className="description">
+        <div className="description" style={{fontWeight: '600'}}>
           Software developer &{" "}
           <span
-            style={{ fontWeight: "600", cursor: "help" }}
-            title="Computer Science"
+            // style={{ cursor: "help" }}
+            // title="Computer Science"
           >
             CS
           </span>{" "}
@@ -80,12 +83,12 @@ const items = [
           </svg>{" "}
           Huntsville, TX, USA
         </div>
-        <div  className="description" style={{ color: dark ? '#c9c9c9ff' : 'grey' }}>
+        <div  className="description" style={{ color: dark ? '#c9c9c9ff' : '#636363' }}>
           Driven by curiosity and code.<br></br> Join me as I contribute to the
           digital world
         </div>
 
-        <div className="stat1" style={{cursor: 'pointer'}} onClick={() => {
+        <div className="stat1" style={{cursor: 'pointer', color: dark && 'white' }} onClick={() => {
           setChat(true)
           setChatExpand(true)
         }}>

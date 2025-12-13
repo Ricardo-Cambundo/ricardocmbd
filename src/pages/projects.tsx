@@ -69,7 +69,7 @@ const ProjectItem = React.memo(({ i }: { i: any }) => {
   const { dark } = useContext(ScrollContext);
   const [dialogOpen, setDialogOpen] = useState(false);
   return (
-    <div className="project" style={{ borderColor: dark && "#243044ff" }} >
+    <div className="project" style={{ borderColor: dark && "#243044ff", backgroundColor: dark ? "#030712" : "white" }} >
       <Dialog
         open={dialogOpen}
         onOpenChange={(e) => {
@@ -479,7 +479,7 @@ const Projects = () => {
         <div className="searchContainer">
           <div
             className={dark ? "inputContainer1" : "inputContainer"}
-            style={{ borderColor: dark && "#243044ff" }}
+            style={{ borderColor: dark && "#243044ff", backgroundColor: dark ? "#030712" : "white" }}
           >
             <input
               key={dark ? "dark" : "light"}
@@ -513,6 +513,7 @@ const Projects = () => {
                 outline: "none",
                 borderColor: dark && "#243044ff",
                 color: dark && "white",
+                backgroundColor: dark ? "#030712" : "white"
               }}
               className="w-[180px]"
             >

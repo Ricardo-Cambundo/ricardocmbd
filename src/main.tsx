@@ -4,6 +4,9 @@ import "./index.css";
 import App from "./App.tsx";
 import { BrowserRouter as Router } from "react-router-dom";
 import LoadingScreen from "./pages/loadingScreen.tsx";
+import { ScrollProvider } from "./store/context";
+
+import { ThemeSparkles } from "./components/ThemeSparkles.tsx";
 // import motherboard from './assets/images/motherboard.svg'
 // import ricardo from './assets/images/ricardo2.svg'
 // import space from './assets/images/space.svg'
@@ -19,9 +22,12 @@ createRoot(document.getElementById("root")!).render(
   <Suspense fallback={<LoadingScreen />}>
     <Router>
       <StrictMode>
-        {/* <PreloadImages images={images}> */}
-          <App />
-        {/* </PreloadImages> */}
+        <ScrollProvider>
+          {/* <PreloadImages images={images}> */}
+                <ThemeSparkles />
+            <App />
+          {/* </PreloadImages> */}
+        </ScrollProvider>
       </StrictMode>
     </Router>
   </Suspense>

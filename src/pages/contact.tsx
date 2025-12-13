@@ -94,6 +94,7 @@ const Contact = () => {
                   placeholder="Name..."
                   style={{
                      borderColor: dark && "#283346ff",
+                     backgroundColor: dark ? "#030712" : "white"
                   }}
                 />
                 
@@ -110,6 +111,7 @@ const Contact = () => {
                   placeholder="Email..."
                   style={{
                      borderColor: dark && "#283346ff",
+                     backgroundColor: dark ? "#030712" : "white"
                   }}
                 />
               </div>
@@ -129,6 +131,7 @@ const Contact = () => {
                   placeholder="Leave feedback about the site, career opportunities or just to say hello etc..."
                   style={{
                      borderColor: dark && "#283346ff",
+                     backgroundColor: dark ? "#030712" : "white"
                   }}
                 ></textarea>
               </div>
