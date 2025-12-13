@@ -149,6 +149,7 @@ const items = [
           height='480'
           alt='Image 01'
           loading="eager"
+          style={{background: '#e7e7e7ff'}}
         />
       </article>
     );

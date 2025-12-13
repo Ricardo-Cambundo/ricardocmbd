@@ -12,23 +12,50 @@ export const ScrollProvider = ({ children }: { children: any }) => {
   const [chat, setChat] = useState(true);
   const [chatExpand, setChatExpand] = useState(false)
 
+  // useEffect(() => {
+  //   const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  //   setDark(prefersDarkScheme);
 
+  //   const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  //   const handleChange = (e) => setDark(e.matches);
+  //   mediaQuery.addEventListener('change', handleChange);
+
+  //   return () => mediaQuery.removeEventListener('change', handleChange);
+  // }, []);
+  
   useEffect(() => {
+    const themeColor = dark ? '#030712' : '#fff';
+    const metaTag = document.querySelector('meta[name="theme-color"]');
+    
+    if (metaTag) {
+      metaTag.setAttribute('content', themeColor);
+    } else {
+      const meta = document.createElement('meta');
+      meta.name = 'theme-color';
+      meta.content = themeColor;
+      document.head.appendChild(meta);
+    }
+    
+    
+  }, [dark]);
+  
 
-    // const handleScroll = () => {
-    //   const isScrolled = window.scrollY > 50;
-    //   if (scrolledRef.current !== isScrolled) {
-    //     // Only update if changed
-    //     scrolledRef.current = isScrolled;
-    //     setScrolled(isScrolled); // Triggers re-render
-    //   }
-    // };
+  // useEffect(() => {
 
-    // window.addEventListener("scroll", handleScroll, { passive: true });
-    // handleScroll();
+  //   // const handleScroll = () => {
+  //   //   const isScrolled = window.scrollY > 50;
+  //   //   if (scrolledRef.current !== isScrolled) {
+  //   //     // Only update if changed
+  //   //     scrolledRef.current = isScrolled;
+  //   //     setScrolled(isScrolled); // Triggers re-render
+  //   //   }
+  //   // };
 
-    // return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  //   // window.addEventListener("scroll", handleScroll, { passive: true });
+  //   // handleScroll();
+
+  //   // return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
 
   return (
     <ScrollContext.Provider

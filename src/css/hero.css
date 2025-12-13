@@ -24,8 +24,8 @@
 }
 .greetings, .greetings1 {
     font-weight: 800;
-    font-size: 36px;
-    font-family: cursive;
+    font-size: 35px;
+  font-family: "Calistoga", serif;
     margin-bottom: 15px;
 }
 .greetings1 {

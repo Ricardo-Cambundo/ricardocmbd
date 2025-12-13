@@ -35,7 +35,7 @@ const Header = () => {
 
   //@ts-ignore
 
-  const { scrolled, dark, setDark, chat, setChat, chatExpand, setChatExpand } = useContext(ScrollContext);
+  const { dark, setDark, chat, setChat, chatExpand, setChatExpand } = useContext(ScrollContext);
   useEffect(() => {
     if (dark) {
       // dark background color
@@ -95,7 +95,7 @@ const Header = () => {
             setOpen(val)
           }}>
             <DropdownMenuTrigger></DropdownMenuTrigger>
-            <DropdownMenuContent style={{ width: "100vw", marginTop: 40, background: 'white', borderColor: '#eeeeee' }}>
+            <DropdownMenuContent style={{ width: "100vw", marginTop: 20, background: 'white', borderColor: '#eeeeee' }}>
               {/* <DropdownMenuLabel>Menu</DropdownMenuLabel> */}
               <DropdownMenuItem onClick={() => {
               location.pathname != "/" && navigate("/");

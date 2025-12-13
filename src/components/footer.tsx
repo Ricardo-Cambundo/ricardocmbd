@@ -2,14 +2,36 @@ import { useNavigate } from "react-router-dom";
 import "../css/footer.css";
 import { ScrollContext } from "@/store/context";
 import { useContext } from "react";
-
+// import logo from "../assets/images/logo-long-black.svg";
+// import logoLight from "../assets/images/logo-long-white.svg";
 const Footer = () => {
+
   const navigate = useNavigate()
   //@ts-ignore
 
   const { dark, setDark } = useContext(ScrollContext);
   
   return (
+    <>
+    {/* <div style={{marginTop: 60, display: 'flex', flexDirection: 'row', marginBottom: 0}}>
+      <div
+          
+          style={{ cursor: "pointer !important", width: '115px',
+  height: '30px'}}
+          onClick={() => {
+            location.pathname != "/" && navigate("/");
+          }}
+        >
+          <img
+            loading="eager" src={dark ? logoLight : logo}
+            onClick={() => {
+              location.pathname != "/" && navigate("/");
+            }}
+          />
+          <span style={{color: dark ? 'white' : 'grey', fontSize: 13}}>Driven by curiosity and code</span>
+        </div>
+
+    </div> */}
     <div className="skillsContainer" id="footer">
       <span style={{color: dark ? '#ccccccff' : 'grey'}}>
         © {new Date().getFullYear()} {window.location.protocol}//
@@ -44,6 +66,7 @@ const Footer = () => {
         ></i>
       </div>
     </div>
+    </>
   );
 };
 
