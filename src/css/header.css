@@ -152,6 +152,30 @@
     
   }
 }
+.chatHeader .status {
+  width: 8px;
+  height: 8px;
+  clip-path: circle();
+  background: #3CC698;
+  animation: statusAnimation 2s infinite;
+}
+@keyframes statusAnimation {
+  0% {
+    transform: scale(1);
+    clip-path: circle();
+    background: #3CC698;
+  }
+  50% {
+    transform: scale(1.6);
+    background: #51f5be;
+  }
+  100% {
+    transform: scale(1);
+    clip-path: circle();
+    background: #3CC698;
+  }
+  
+}
 .chatHeader .left span {
   font-size: 12px;
 }
@@ -161,7 +185,7 @@
 }
 .chatbox .chatContainer {
   background-color: white;
-  transition: 0.2s ease-in-out;
+  transition: 0.13s ease-in-out;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -230,6 +254,10 @@
   flex-direction: row;
   gap: 10px;
   align-items: center;
+}
+.chatContainer .botMessage a{
+  text-decoration: underline;
+  
 }
 .chatContainer .botMessage ul,
 .chatContainer .botMessage ol {

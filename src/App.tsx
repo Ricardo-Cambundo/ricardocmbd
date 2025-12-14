@@ -51,7 +51,7 @@ function App() {
 
       const visitedOnce = (sessionStorage.getItem('visitedOnce')) || false
         if (!visitedOnce){
-          axios.post(`${baseURL}/api/addMonthlyView1`, {
+          axios.post(`${baseURL}/api/addMonthlyView`, {
             dateAdded: new Date()
           })
           .then(() => {

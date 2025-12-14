@@ -57,8 +57,8 @@ const Privacy = () => {
       
       <div className={dark ? "sectionTitle1" : "sectionTitle"}>Questions or Concerns?</div>
       If you have any questions, concerns, or just want to connect, you can email me at <span onClick={() => {
-        window.open('mailto:ricardocmbd@gmail.com?subject=Hello, I found your site&body=Hi, I came from your portfolio website.')
-      }}>ricardocmbd@gmail.com</span> or use the <span 
+        window.open('mailto:dev@ricardocmbd.com?subject=Hello, I found your site&body=Hi, I came from your portfolio website.')
+      }}>dev@ricardocmbd.com</span> or use the <span 
       style={{
       color: dark && "white",
       }}

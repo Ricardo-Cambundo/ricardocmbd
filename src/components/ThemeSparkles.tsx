@@ -15,6 +15,7 @@ export const ThemeSparkles: React.FC = () => {
   const location = useLocation()
   const isProjectRoute = /^\/projects\/.+/.test(location.pathname);
     const isBlogRoute = /^\/blog\/.+/.test(location.pathname);
+    const isPrivacy = /^\/privacy/.test(location.pathname);
 
 
   return (
@@ -35,7 +36,7 @@ export const ThemeSparkles: React.FC = () => {
           particleColor={
             dark
               ? "rgba(255, 255, 255, 0.3)"
-              : (isProjectRoute || isBlogRoute ? "rgba(177, 177, 177, 0.1)" : "rgba(153, 153, 153, 0.1)")
+              : (isProjectRoute || isBlogRoute || isPrivacy ? "rgba(177, 177, 177, 0.1)" : "rgba(141, 141, 141, 0.1)")
           }
         />
       </Suspense>

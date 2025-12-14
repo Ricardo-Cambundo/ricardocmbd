@@ -87,7 +87,7 @@ const Admin = () => {
               </PopoverTrigger>
               <PopoverContent className="profilePop">
                 <div className="username">ricardocmbd</div>
-                <div className="email">ricardocmbd@gmail.com</div>
+                <div className="email">dev@ricardocmbd.com</div>
 
                 <AlertDialog>
                   <AlertDialogTrigger style={{ width: "100%" }}>

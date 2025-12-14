@@ -42,7 +42,7 @@ const Contact = () => {
       setLoad(true);
       axios.post(`${baseURL}/api/send-email`, {
           name: `Nome: ${name}; Email: ${email};`,
-          email: 'ricardocmbd@gmail.com',
+          email: 'dev@ricardocmbd.com',
           title: 'CMBD Website',
           pw: 'true',
           body: `${body}`,

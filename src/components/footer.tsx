@@ -58,7 +58,7 @@ const Footer = () => {
         <i
           onClick={() => {
             window.open(
-              "mailto:ricardocmbd@gmail.com?subject=Hello my name is &body=I come from your portfolio website, "
+              "mailto:dev@ricardocmbd.com?subject=Hello my name is &body=I come from your portfolio website, "
             );
           }}
           className="bi bi-envelope"

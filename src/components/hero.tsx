@@ -69,7 +69,7 @@ const items = [
           </span>{" "}
           student
         </div>
-        <div className="stat" style={{color: dark && '#c9c9c9ff'}}>
+        <div className="stat" style={{color: dark && '#dbdbdbff'}}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -83,7 +83,7 @@ const items = [
           </svg>{" "}
           Huntsville, TX, USA
         </div>
-        <div  className="description" style={{ color: dark ? '#c9c9c9ff' : '#636363' }}>
+        <div  className="description" style={{ color: dark ? '#dbdbdbff' : '#636363' }}>
           Driven by curiosity and code.<br></br> Join me as I contribute to the
           digital world
         </div>
@@ -113,7 +113,7 @@ const items = [
         </div>
 
         <div className="contacts">
-            <div style={{color: dark && 'white'}} className="resume" onClick={() => {
+            <div style={{color: dark && 'white'}} className={dark ? "resume1" : "resume"} onClick={() => {
                 window.open('https://drive.google.com/file/d/1eIsH-NYiKXEGzGKJF-Z49Lqs0uPWappY/view?usp=sharing')
             }}>
                 Resume <i className="bi bi-file-earmark-text"></i>
@@ -125,7 +125,7 @@ const items = [
                 window.open('https://github.com/Ricardo-Cambundo')
             }} className="bi bi-github" style={{color: '#bebebe', cursor: 'pointer'}}></i>
             <i onClick={() => {
-                window.open('mailto:ricardocmbd@gmail.com?subject=Hello my name is &body=I come from your portfolio website, ')
+                window.open('mailto:dev@ricardocmbd.com?subject=Hello my name is &body=I come from your portfolio website, ')
             }} className="bi bi-envelope" style={{color: '#bebebe', cursor: 'pointer'}}></i>
         </div>
       </div>
@@ -133,7 +133,38 @@ const items = [
          <div className='group flex justify-center gap-2 w-[100%] mx-auto mb-10 mt-3'>
   {items.map((item, i: number) => {
     return (
-      <article key={i} className='group/article relative w-full rounded-xl overflow-hidden not-[&:hover]:group-hover:w-[20%] [&:not(:focus-within):not(:hover)]:group-focus-within:w-[20%] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.15)] before:absolute before:inset-x-0 before:bottom-0 before:h-1/3 before:bg-linear-to-t before:from-black/50 before:transition-opacity before:opacity-0 hover:before:opacity-100 focus-within:before:opacity-100 after:opacity-0 not-[&:hover]:group-hover:after:opacity-100 [&:not(:focus-within):not(:hover)]:group-focus-within:after:opacity-100 after:absolute after:inset-0 after:bg-white/30 after:backdrop-blur-sm after:rounded-lg after:transition-all focus-within:ring-3 focus-within:ring-indigo-300'>
+      <article
+  key={i}
+  tabIndex={0}
+  className="
+    group/article relative w-full rounded-xl overflow-hidden
+
+    /* width animations */
+    group-hover:w-[20%]
+    group-focus-within:w-[20%]
+    hover:w-full
+    focus-within:w-full
+    transition-[width] duration-300 ease-[cubic-bezier(.5,.85,.25,1.15)]
+    will-change-[width]
+
+    /* before overlay (gradient on active card) */
+    before:absolute before:inset-x-0 before:bottom-0 before:h-1/3
+    before:bg-linear-to-t before:from-black/50
+    before:transition-opacity before:opacity-0
+    hover:before:opacity-100
+    focus-within:before:opacity-100
+
+    /* after overlay (blur on siblings only) */
+    after:absolute after:inset-0 after:rounded-lg
+    after:bg-white/30 after:backdrop-blur-sm after:opacity-0
+    not-hover:group-hover:after:opacity-100
+    [&:not(:focus-within)]:group-focus-within:after:opacity-100
+    after:transition-opacity after:duration-200
+
+    focus-within:ring-3 focus-within:ring-indigo-300
+  "
+>
+
         <a
           className='absolute inset-0 text-white z-4 p-3 flex flex-col justify-end'
           href='#0'

@@ -92,13 +92,13 @@ const Skills = () => {
       <div className="skillsGrid">
         {skills.map((i: any, index: number) => {
           return (
-            <div className="skill" key={index}>
+            <div className="skill" key={index} style={{backgroundColor: dark ? '#111a27ff': '#F5F5F5', borderColor: dark ? '#283346ff': '#eeeeeec4', borderWidth: 2 }}>
               <div className="skillIconContainer" style={{backgroundColor: i?.color}}>
                 <i className={i?.icon} />
               </div>
-              <div className="skillInfo">
-                <div className="skillTitle">{i?.title}</div>
-                <div className="skillDescription">{i?.description}</div>
+              <div className="skillInfo" >
+                <div className="skillTitle" style={{color: dark && '#e3e3e3' }}>{i?.title}</div>
+                <div className="skillDescription" style={{color: dark && '#e3e3e3' }}>{i?.description}</div>
               </div>
             </div>
           );

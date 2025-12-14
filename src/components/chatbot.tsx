@@ -213,12 +213,8 @@ transform: keyboardOffset
             }}
           >
             <div
-              style={{
-                width: 8,
-                height: 8,
-                clipPath: "circle()",
-                background: "#3CC698",
-              }}
+
+              className="status"
             >
               ·
             </div>
