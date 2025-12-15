@@ -127,15 +127,15 @@ He specializes in full-stack and mobile development.`;
     });
 
     if (!response.ok) {
-      const errText = await response.text();
-      console.error("API error:", errText);
+      // const errText = await response.text();
+      // console.error("API error:", errText);
       return '';
     }
     const data = await response.json();
-    console.trace('response', data)
+    // console.trace('response', data)
     return data.message?.content?.[0]?.text || '';
   } catch (error) {
-    console.error("Error:", error);
+    // console.error("Error:", error);
     return '';
   }
   };

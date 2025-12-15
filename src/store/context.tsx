@@ -9,7 +9,6 @@ export const ScrollProvider = ({ children }: { children: any }) => {
   //@ts-ignore
   const [scrolled, setScrolled] = useState(false); // Add this state
   const [dark, setDark] = useState(false);
-  const [chat, setChat] = useState(true);
   // const [chatExpand, setChatExpand] = useState(false)
 
   // useEffect(() => {
@@ -64,8 +63,8 @@ export const ScrollProvider = ({ children }: { children: any }) => {
         scrolledRef: scrolledRef,
         dark,
         setDark,
-        chat,
-        setChat,
+        // chat,
+        // setChat,
         // chatExpand,
         // setChatExpand
       }}

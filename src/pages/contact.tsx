@@ -61,7 +61,7 @@ const Contact = () => {
 
       })
       .catch(err => {
-        console.trace('ricardo', err)
+        // console.trace('ricardo', err)
         setErrors([err?.response?.data?.message||"Backend trouble. Please Try again. If error persists, try again later."])
           setLoad(false)
 

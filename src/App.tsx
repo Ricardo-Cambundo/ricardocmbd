@@ -41,6 +41,8 @@ const Project9 = lazy(() => import('./pages/projects/project9(AngoTransExpress)'
 const Project3 = lazy(() => import('./pages/projects/project3(NaVia)'));
 const Project6 = lazy(() => import('./pages/projects/project6(AngoTransWeb)'));
 const Project5 = lazy(() => import('./pages/projects/project5(ISPAJ)'));
+const Project10 = lazy(() => import('./pages/projects/project10(PITRUCA)'));
+
 
 const Login = lazy(() => import('./pages/login'));
 const Admin = lazy(() => import('./pages/admin'));
@@ -101,6 +103,7 @@ function App() {
           <Route path="/projects/3" element={<Project3 />} />
           <Route path="/projects/6" element={<Project6 />} />
           <Route path="/projects/5" element={<Project5 />} />
+          <Route path="/projects/10" element={<Project10 />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/admin" element={<Admin />} />

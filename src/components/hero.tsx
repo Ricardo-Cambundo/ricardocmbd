@@ -10,8 +10,7 @@ import { ChatContext } from "@/store/chatContext";
 const Hero = () => {
   //@ts-ignore
 
-  const { chat, setChat } = useContext(ScrollContext);
-  const { setChatExpand } = useContext(ChatContext);
+  const { setChatExpand, chat, setChat } = useContext(ChatContext);
   
   //@ts-ignore
   const { dark, setDark } = useContext(ScrollContext);
@@ -114,7 +113,7 @@ const items = [
 
         <div className="contacts">
             <div style={{color: dark && 'white'}} className={dark ? "resume1" : "resume"} onClick={() => {
-                window.open('https://drive.google.com/file/d/1eIsH-NYiKXEGzGKJF-Z49Lqs0uPWappY/view?usp=sharing')
+                window.open('https://drive.google.com/file/d/1UtgwQZgboFM5Pb5OkjB3f4sVGQ6ij00u/view?usp=sharing')
             }}>
                 Resume <i className="bi bi-file-earmark-text"></i>
             </div>

@@ -36,8 +36,8 @@ const Header = () => {
 
   //@ts-ignore
 
-  const { dark, setDark, chat, setChat } = useContext(ScrollContext);
-  const { chatExpand, setChatExpand } = useContext(ChatContext);
+  const { dark, setDark } = useContext(ScrollContext);
+  const { chatExpand, setChatExpand, chat, setChat } = useContext(ChatContext);
   useEffect(() => {
     if (dark) {
       // dark background color

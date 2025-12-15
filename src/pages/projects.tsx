@@ -9,6 +9,8 @@ import going from "../assets/images/going_places 1.svg";
 import angotrans from "../assets/images/angotrans 1.svg";
 import animescmbd from "../assets/images/animescmbd 1.svg";
 import ispaj from "../assets/images/ispaj 1.svg";
+import pitruca from "../assets/images/pitruca.svg";
+
 // import { Blurhash } from "react-blurhash";
 
 import angotrans_site from "../assets/images/angotrans_site 1.svg";
@@ -426,7 +428,26 @@ const Projects = () => {
         "JWT",
       ],
       source: false,
-      website: "https://angotransexpress.ao/",
+      // website: "https://angotransexpress.ao/",
+    },
+    {
+      id: 10,
+      title: "PITRUCA",
+      description:
+        "Official website for Angola's biggest educational group with 10k+ monthly visitors",
+      image: pitruca,
+      tags: [
+        "React",
+        "JavaScript",
+        "Laravel/PHP",
+        "PostgreSQL",
+        "Google SMTP",
+        "RestAPIs",
+        "JWT",
+        "10k+ visitors/month",
+      ],
+      source: false,
+      website: "https://pitruca.edu.ao/",
     },
     ,
   ]);

@@ -61,7 +61,7 @@ const Dashboard = () => {
     const [monthlyViews, setMonthlyViews] = useState<any>([])
     useEffect(() => {
       
-      axios.get(`${baseURL}/api/monthlyViews1`)
+      axios.get(`${baseURL}/api/monthlyViews`)
       .then(res => {
         let mViews = [...res.data].filter((item)=> {
           if (new Date(item?.dateAdded).getFullYear() == new Date().getFullYear()) {
