@@ -23,20 +23,21 @@ export const ScrollProvider = ({ children }: { children: any }) => {
   // }, []);
   
   useEffect(() => {
-    const themeColor = dark ? '#030712' : '#fff';
-    const metaTag = document.querySelector('meta[name="theme-color"]');
+  const color = dark ? '#030712' : '#ffffff';
+
+  const metaTag = document.querySelector(
+    'meta[name="theme-color"]'
+  );
+  if (metaTag) {
+    metaTag.setAttribute('content', color);
+
     
-    if (metaTag) {
-      metaTag.setAttribute('content', themeColor);
-    } else {
-      const meta = document.createElement('meta');
-      meta.name = 'theme-color';
-      meta.content = themeColor;
-      document.head.appendChild(meta);
-    }
-    
-    
-  }, [dark]);
+  }
+
+  document.documentElement.style.backgroundColor = color;
+  document.body.style.backgroundColor = color;
+
+}, [dark]);
   
 
   // useEffect(() => {

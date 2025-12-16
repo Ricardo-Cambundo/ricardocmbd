@@ -409,7 +409,7 @@ const Projects = () => {
         "IOS",
         "Android",
       ],
-      source: true,
+      source: "https://github.com/Ricardo-Cambundo/animescmbd_front",
     },
     {
       id: 6,

@@ -36,7 +36,7 @@ export const ThemeSparkles: React.FC = () => {
           particleColor={
             dark
               ? "rgba(255, 255, 255, 0.3)"
-              : (isProjectRoute || isBlogRoute || isPrivacy ? "rgba(177, 177, 177, 0.1)" : "rgba(121, 121, 121, 0.1)")
+              : ((isProjectRoute || isBlogRoute || isPrivacy) ? "rgba(177, 177, 177, 0.1)" : "rgba(121, 121, 121, 0.1)")
           }
         />
       </Suspense>

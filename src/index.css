@@ -6,6 +6,15 @@
 html {
   scroll-behavior: smooth;
 }
+html,
+body {
+  background-color: #ffffff;
+  min-height: 100%;
+}
+html.dark,
+body.dark {
+  background-color: #030712;
+}
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
