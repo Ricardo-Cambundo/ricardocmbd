@@ -31,6 +31,7 @@ const Privacy = lazy(() => import('./pages/privacy'));
 const Blog = lazy(() => import('./pages/blog'));
 const Contact = lazy(() => import('./pages/contact'));
 const Blog1 = lazy(() => import('./pages/blog/blog1'));
+const Blog2 = lazy(() => import('./pages/blog/blog2(Retrocausality)'));
 const NotFound = lazy(() => import('./pages/404'));
 const Project1 = lazy(() => import('./pages/projects/project1(LevelRH)'));
 const Project2 = lazy(() => import('./pages/projects/project2(LevelInvoice)'));
@@ -94,6 +95,8 @@ function App() {
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/1" element={<Blog1 />} />
+          <Route path="/blog/2" element={<Blog2 />} />
+
           <Route path="/projects/1" element={<Project1 />} />
           <Route path="/projects/2" element={<Project2 />} />
           <Route path="/projects/4" element={<Project4 />} />
