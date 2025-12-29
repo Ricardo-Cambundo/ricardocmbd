@@ -54,7 +54,7 @@ const Blog2 = () => {
           <div className="image">
             <span
               style={{
-                background: dark && "#c4c4c4ff",
+                // background: dark && "#c4c4c4ff",
                 color: dark && "black",
                 borderColor: dark && "#eeeeee",
               }}
@@ -63,16 +63,12 @@ const Blog2 = () => {
               {1} image
             </span>
             <div
-              className={`${dark ? "imageContainer-light" : "imageContainer"}`}
-              style={{overflow: 'hidden', maxHeight: 500, position: 'relative', padding: 0,}}
+              
+              style={{overflow: 'hidden', maxHeight: 500, position: 'relative', padding: 0, aspectRatio: '4/2', borderRadius: 10}}
             >
-              {/* Placeholder for retrocausality visualization image */}
-              <div
-              className={`${dark ? "imageContainer-light" : "imageContainer"}`}
-             style={{overflow: 'hidden', maxHeight: 500, position: 'relative', padding: 0, objectFit: 'cover'}}>
-              {/* <img loading="lazy" src={levelinvoice} /> */}
+              
               <img src={retrocausality} style={{objectFit: 'cover', padding: 0, }}/>
-            </div>
+        
             </div>
           </div>
           
@@ -133,9 +129,7 @@ const Blog2 = () => {
             <p>
               On a human scale, we perceive time as flowing in only one direction, like an arrow shot from a bow. 
               A cause always comes before its effect: you flip a switch, then the light turns on; you drop a glass, 
-              then it shatters. This one-way flow is known as the arrow of time, and it's how we experience the universe—unless, 
-              of course, you're stuck on a customer service line, which can feel like a never-ending game where the only prize 
-              is your sanity slowly slipping away.
+              then it shatters. This one-way flow is known as the arrow of time, and it's how we experience the universe.
             </p>
             <p>
               The problem with this familiar, everyday perspective is that it can obscure the stranger phenomena 
@@ -147,7 +141,7 @@ const Blog2 = () => {
             
             <h2>3.1. The Universe's Building Blocks</h2>
             <p>
-              When we look at the universe's smallest building blocks—atoms and particles—we find that it operates 
+              When we look at the universe's smallest building blocks, atoms and particles, we find that it operates 
               in deeply counterintuitive ways. The rules of this quantum realm have led to questions that make 
               physicists uncomfortable. One of the biggest, central to the 2022 Nobel Prize in Physics, is this: 
               Is the universe "locally real"?
@@ -175,7 +169,7 @@ const Blog2 = () => {
                   <tr>
                     <td style={{padding: '12px', border: `1px solid ${dark ? '#444' : '#ddd'}`}}><strong>Locality</strong></td>
                     <td style={{padding: '12px', border: `1px solid ${dark ? '#444' : '#ddd'}`}}>
-                      A cause can only have an effect on things nearby. Information travels at a maximum speed 
+                      A cause must precede an effect. A cause can only have an effect on things nearby. Information travels at a maximum speed 
                       (the speed of light), so you can't press a button here and have something instantaneously 
                       happen in another galaxy.
                     </td>
@@ -183,7 +177,7 @@ const Blog2 = () => {
                   <tr style={{background: dark ? '#1e1e2e' : '#fafafa'}}>
                     <td style={{padding: '12px', border: `1px solid ${dark ? '#444' : '#ddd'}`}}><strong>Realism</strong></td>
                     <td style={{padding: '12px', border: `1px solid ${dark ? '#444' : '#ddd'}`}}>
-                      Objects have definite, fixed properties even when we aren't looking. A packet of crisps 
+                      Objects have definite, fixed properties even when we aren't looking. A packet of lays chips 
                       in the cupboard is salty both when you reach for it and for all the time prior to that point.
                     </td>
                   </tr>
@@ -333,7 +327,7 @@ def create_entangled_photons():
               </li>
               <li>
                 <strong>It contradicts our understanding of time's arrow.</strong> Retrocausality relies on the 
-                universe being "time symmetric"—meaning the laws of physics work the same forward and backward. 
+                universe being "time symmetric", meaning the laws of physics work the same forward and backward. 
                 This appears to clash with the second law of thermodynamics, which states that entropy (disorder) 
                 always increases, giving time its forward direction.
               </li>
@@ -351,9 +345,8 @@ def create_entangled_photons():
               universe is just naturally playing out in a deterministic fashion.
             </p>
             <p>
-              This raises a final, philosophical question. If I asked you to hit the like button on a video, was it 
-              always predetermined on a quantum level whether you would or not? The debate around retrocausality 
-              shows just how deeply we must question reality—and perhaps even our own free will—to make sense of 
+             The debate around retrocausality 
+              shows just how deeply we must question reality, and perhaps even our own free will,to make sense of 
               the universe.
             </p>
 

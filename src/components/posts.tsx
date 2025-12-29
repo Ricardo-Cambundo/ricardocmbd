@@ -12,6 +12,24 @@ const Posts = () => {
 
   const [posts, setPosts] = useState([
     {
+      id: 2,
+      title:
+        "The Future Affecting the Past: A Beginner's Guide to Retrocausality",
+      preDescription:
+        "Exploring the mind-bending concept where effects might precede causes in the quantum realm.",
+      description:
+        "Retrocausality challenges everything we know about time and causality. This first part explores the basic concepts, quantum puzzles, and why physicists are seriously considering that the future might influence the past.",
+      read: 7,
+      date: "2025-12-29",
+      tags: [
+        "Quantum Physics",
+        "Retrocausality",
+        "Time",
+        "Quantum Mechanics",
+        "Science",
+      ],
+    },
+    {
       id: 1,
       title: 'Hello World!',
       description: "This is my first post on my blog as I get everything set up and see how it all looks in Markdown. I’m using this as a little test to see how the formatting turns out. Overtime, I'll share more about my projects, insights on technology, helpful tips, and maybe even some personal stories along the way.",
