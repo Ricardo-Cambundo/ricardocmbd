@@ -11,7 +11,7 @@ import {
 } from "react-code-blocks";
 import { useContext, useEffect } from "react";
 import { ScrollContext } from "@/store/context";
-import retrocausality from "../../assets/images/blog/retrocausality.svg";
+import retrocausality from "../../assets/images/blog/retrocausality2.svg";
 
 const Blog2Part2 = () => {
   const navigate = useNavigate();
@@ -23,7 +23,7 @@ const Blog2Part2 = () => {
     preDescription: "Exploring how time-symmetric physics could revolutionize computation, from quantum algorithms to error correction.",
     description: "In Part 2, we dive into the practical implications of retrocausality for computer science. How might future quantum computers leverage backward-in-time information flow? What would retrocausal algorithms look like? And could this solve some of quantum computing's biggest challenges?",
     read: 9,
-    date: "2025-12-31",
+      date: "2026-01-20",
     tags: ["Quantum Computing", "Algorithms", "Information Theory", "Retrocausality", "Computer Science"],
   };
 
@@ -37,7 +37,7 @@ const Blog2Part2 = () => {
       <div className="page" style={{ paddingTop: 40 }}>
         <div
           onClick={() => {
-            navigate("/blog/retrocausality-part1"); // Link back to Part 1
+            navigate("/blog/2"); // Link back to Part 1
           }}
           className={`${dark ? "backHome-light" : "backHome"}`}
           style={{
@@ -115,10 +115,9 @@ const Blog2Part2 = () => {
             }}>
               <h3>🔙 Quick Recap from Part 1</h3>
               <p>
-                We explored how retrocausality suggests the future can influence the past at the quantum level. 
+                We explored how retrocausality <em>suggests</em> the future can influence the past at the quantum level in certain interpretive frameworks. 
                 This offers a third explanation for quantum entanglement that preserves both locality and realism, 
-                but requires accepting backward-in-time information flow. Now, let's explore what this means for 
-                the world of computation.
+                but requires accepting limited backward-in-time information flow. Importantly, retrocausality remains a fringe interpretation in quantum foundations (not part of mainstream views like Copenhagen or many-worlds) and is debated for issues like fine-tuning and consistency with no-signaling. Now, let's explore what this might hypothetically mean for computation.
               </p>
             </div>
 
@@ -171,9 +170,9 @@ const Blog2Part2 = () => {
             <p>
               Grover's algorithm searches an unsorted database of N items in O(√N) time, quadratically faster 
               than classical algorithms. 
-              The process involves initializing a quantum system. Here's how it might be interpreted retrocausally:
+              While the standard explanation remains fully foward-causal, some time-symmetric interpretations <em>reframe</em> it retrocausally. Here's how it might be interpreted retrocausally:
             </p>
-
+            <p><strong>Note:</strong> This is an interpretative reframing, not a new mechanism.</p>
             <CopyBlock
               theme={androidstudio}
               language="python"

@@ -12,6 +12,19 @@ const Posts = () => {
 
   const [posts, setPosts] = useState([
     {
+      id: 3,
+      title:
+        "Retrocausality in Computing: When Algorithms Run Backward in Time",
+      preDescription:
+        "Exploring how time-symmetric physics could revolutionize computation, from quantum algorithms to error correction.",
+      description:
+        "Exploring how time-symmetric physics could revolutionize computation, from quantum algorithms to error correction. We explored how retrocausality suggests the future can influence the past at the quantum level in certain interpretive frameworks. This offers a third explanation for quantum entanglement that preserves both locality",
+      read: 9,
+      date: "2026-01-20",
+        tags: ["Quantum Computing", "Algorithms", "Information Theory", "Retrocausality", "Computer Science"],
+
+    },
+    {
       id: 2,
       title:
         "The Future Affecting the Past: A Beginner's Guide to Retrocausality",
